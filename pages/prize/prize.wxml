@@ -1,0 +1,68 @@
+<view class='prizeBox'>
+  <view class='box hu_row'>
+    <image class='goods' src="{{activity.image}}" />
+    <view class='goods_information column'>
+      <view class='name'>{{activity.goodsTitle}}</view>
+      <view class="money hu_row">
+        <view>￥{{activity.goodsPrice}}</view>
+        <text>拼团省￥{{activity.spellPrice}}</text>
+      </view>
+      <view class='tips hu_row'>
+        <view>{{message}}</view>
+        <text>{{activity.alreadyNum}}人拼团</text>
+      </view>
+    </view>
+  </view>
+  <view class='box column'>
+    <view class='number hu_row'>
+      <view>我的夺宝号</view>
+      <text class='more' bindtap="moreFun" data-id="0">更多</text>
+    </view>
+    <view class='numberShow'>
+      <block wx:for="{{mySnatchNoList}}" wx:key="un">
+        <text>{{item}}</text>
+      </block>
+    </view>
+  </view>
+  <view class='box column'>
+    <view class='number hu_row'>
+      <view>中奖名单</view>
+    </view>
+    <block wx:for="{{winSnatchNoList}}" wx:key="un">
+      <view class='nameList hu_row'>
+        <image class='head' src="{{item.face}}" />
+        <view class='nameList_name'>{{item.nickname}}</view>
+        <view class='nameList_number'>{{item.snatchNo}}</view>
+        <view class='nameList_phone'>{{item.mobile}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='box'>
+    <view class='number notes hu_row'>
+      <view>夺宝须知</view>
+      <text class='more' bindtap="moreFun" data-id="1">更多</text>
+    </view>
+  </view>
+</view>
+
+<view class='recommend'>精品推荐</view>
+<list id="tempList" detail="{{parameter}}"></list>
+
+<view class='bg' bindtap="popupFun" wx:if="{{popup_number||popup_notes}}"></view>
+<!-- 我的夺宝号弹窗 -->
+<view class='popup_number' wx:if="{{popup_number}}">
+  <view class='tit'>夺宝码</view>
+  <view class='popup_li hu_row'>
+    <block wx:for="{{mySnatchNoList}}" wx:key="un">
+      <text>{{item}}</text>
+    </block>
+  </view>
+</view>
+<!-- 夺宝须知 -->
+<view class='popup_notes' wx:if="{{popup_notes}}">
+  <view class='tit'>夺宝说明</view>
+  <view>1. 拼团有效期 拼团有效期是自开团时刻起的24小时内，如果距离商品失效时间小于24小时，则以商品的结束时间为准。</view>
+  <view>2. 拼团失败 超过成团有效期24小时，未达成相应参团人数的团，则该团失败。 拼团失败的订单，系统会在1-2个工作日内处理退款，系统处理后1-10个工作日内原路退回至原支付账户中。 </view>
+  <view>3.收到质量问题怎么办？ 如遇产品有质量问题，可联系客服帮您换货或退款。按照国家规定提供七天无理由退货服务。 </view>
+  <view>4.巨柚可在法律法规允许范围内对活动进行解释</view>
+</view>

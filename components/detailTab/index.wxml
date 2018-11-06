@@ -1,0 +1,30 @@
+<!--components/detailTab/index.wxml-->
+<view>
+  <zan-tab list="{{ tab.navList }}" selected-id="{{ tab.selectedId }}" bindtabchange="handleTabChange"></zan-tab>
+  <view wx:if="{{selectedId==1}}">
+    <rich-text class='rich' nodes="{{html}}"></rich-text>
+  </view>
+  <view wx:else>
+    <ul class="assess-list">
+      <li wx:for="{{CommentList}}" wx:key="index">
+        <view class="wrap">
+          <view class="row between">
+            <view class='flex flex_center'>
+              <image class="user" mode='widthFix' src="{{item.weixinFace}}" />
+              <em class="shotName">{{item.uanme}}</em>
+            </view>
+            <i class="gray">{{item.commentTime}}</i>
+          </view>
+          <view class="row">
+            <p>{{item.content}}</p>
+            <section wx:if="{{item.image!=''&&item.image!=null}}" wx:for="{{item.image}}" wx:key="index">
+              <image class='appraiseImage' mode='widthFix' src="{{item}}" />
+            </section>
+          </view>
+        </view>
+
+      </li>
+    </ul>
+    <image class="no_data" mode='widthFix' wx:if="{{CommentList.length==0}}" src="../../static/images/empty.jpg" />
+  </view>
+</view>

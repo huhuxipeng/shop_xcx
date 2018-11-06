@@ -1,0 +1,6 @@
+  {
+    "navigationBarTitleText": "巨柚商城",
+    "usingComponents": {
+      "zan-cell": "../../dist/cell/index"
+    }
+  }

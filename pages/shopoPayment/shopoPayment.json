@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "店长礼包支付",
+  "usingComponents": {
+    "pay-action": "../../components/payAction/index"
+  }
+}

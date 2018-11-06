@@ -1,0 +1,85 @@
+<image class="cutpriceDetailsBg" src="/static/images/cutpriceDetails.png"></image>
+
+<view class='cutDetaBox'>
+  <view class='rulePopupBg' wx:if="{{rulePopup}}"></view> 
+  <view class='rulePopupBg' wx:if="{{cutpSuccess}}" bindtap='cutpSuccess'></view>
+
+  <text class='ruleBtn' bindtap="ruleFun">活动规则</text>
+  <view class='information column'>
+    <image class='informationPortrait' src="{{member.weixinFace?member.weixinFace:member.face}}"></image>
+    <text class='infoName'>{{member.nickname}}</text>
+    <text>{{bargainGoods.details}}</text>
+    <view class='infoProduct hu_row'>
+      <image src="{{bargainGoods.goodsImage}}"></image>
+      <view class='infoProduct_content column'>
+        <text class='productName'>{{bargainGoods.goodsName}}</text>
+        <view class='infoMoney hu_row'>
+          <view>￥{{bargainGoods.targetPrice}}</view>
+          <text>599人已{{bargainGoods.targetPrice}}元拿</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='alreadyBox hu_row'>
+    已砍
+    <text>{{bargainGoods.bargainPrices}}</text>元,还差
+    <text>{{bargainGoods.num}}</text>元
+  </view>
+  <view wx:if="{{shout}}" class='shout' bindtap="getUser">帮好友砍一刀</view>
+  <view wx:elif="{{barList=='00:00:00'}}" class='shout' >活动已结束</view>
+  <button wx:else open-type="share" class='shout'>去喊好友砍一刀</button>
+  <view class='countDown'>还剩{{barList}}结束,快来砍价吧~</view>
+
+  <view class='cutDownBox column'>
+    <view class='cutDownBox_tit'>砍价帮</view>
+    <block wx:for="{{memberBargainList}}" wx:key="un">
+      <view class='cutDownBox_li hu_row'>
+        <image src="{{memberBargainList[index].face}}"></image>
+        <view class='cutDownBox_info column'>
+          {{memberBargainList[index].nickname}}
+          <text>来一起砍价{{bargainGoods.targetPrice}}元拿</text>
+        </view>
+        <text class='cutDownBox_ts hu_row'>砍掉{{memberBargainList[index].bargainPrice}}元</text>
+      </view>
+    </block>
+  </view>
+
+  <view class='cutpList hu_row'>
+    <block wx:for="{{goodsList}}" wx:key="un">
+      <view class='cutpList_li' bindtap='detailsUrl' data-idx="{{index}}">
+        <image class='cutpList_img' src="{{item.image}}"></image>
+        <view class='cutpList_name'>{{item.name}}</view>
+        <view class='cutpList_money hu_row'>
+          <text>￥{{item.price}}</text>
+          <view>￥{{item.mktprice}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 帮砍价成功 -->
+<view wx:if="{{cutpSuccess}}" class='cutpSuccess column'>
+  <view>已帮忙砍价<text>{{bargainPrice}}</text>元</view>
+  <view>你也可以砍价0元得哦，快去挑选心仪的商品吧~</view>
+  <navigator class='cutpriceBtn' url="/pages/cutprice/cutprice">我也要砍价0元拿</navigator>
+</view>
+
+<!-- 活动规则弹窗 -->
+<view class='rulePopup' wx:if="{{rulePopup}}">
+  <view class='tit hu_fow'>活动规则</view>
+  <block wx:for="{{bargainGoods.rule}}" wx:key="un">
+    <view>{{item}}</view>
+  
+  </block>
+  <!-- <view>1. 邀请好友一起砍价，在24小时内砍到标靶价，按标靶价支付可领取商品</view>
+  <view>2. 每次砍价金额随机</view>
+  <view>3. 帮好友砍价，也可以自己发起砍价</view>
+  <view>4. 巨柚可在法律法规允许范围内对活动规则解释</view> -->
+
+  <image class='close2' src="/static/images/close2.png" bindtap="close2Fun"></image>
+</view>
+
+<!-- 分享 -->
+<image wx:if="{{shareState}}" bindtap="closeshoutFun" class='share' src="/static/images/share.png"></image>

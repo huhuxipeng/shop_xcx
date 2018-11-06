@@ -1,0 +1,43 @@
+view {
+  box-sizing: border-box;
+}
+
+.binding {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 28rpx 24rpx;
+  background-color: #fff;
+}
+
+.tit {
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+
+.codeInput {
+  overflow: hidden;
+  width: 646rpx;
+  height: 60rpx;
+  padding: 0 28rpx;
+  background: #f2f2f2;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.receive {
+  width: 702rpx;
+  height: 94rpx;
+  margin-top: 100rpx;
+  background: #f23814;
+  border-radius: 47rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 94rpx;
+}

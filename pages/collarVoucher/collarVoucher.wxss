@@ -1,0 +1,266 @@
+view, input {
+  box-sizing: border-box;
+}
+
+.hu_row, .hu_column {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.hu_row {
+  flex-direction: row;
+}
+
+.hu_column {
+  flex-direction: column;
+}
+
+.collarVoucher {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 30rpx;
+  background: #f35046;
+}
+
+.banner {
+  width: 100%;
+  height: 504rpx;
+  margin-bottom: 40rpx;
+  background: #ff0;
+}
+
+.phoneBox {
+  position: relative;
+  width: 686rpx;
+  margin: 0 auto;
+}
+
+.getCode {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  padding: 20rpx;
+  transform: translate(0, -50%);
+  font-size: 28rpx;
+  color: #f23814;
+  border-left: 2rpx solid #ccc;
+}
+
+.inp {
+  display: block;
+  width: 686rpx;
+  height: 92rpx;
+  margin: 0 auto 40rpx;
+  padding-left: 40rpx;
+  background: #fff;
+  border-radius: 48rpx;
+  font-size: 28rpx;
+}
+
+.shareBtn {
+  position: relative;
+  width: 686rpx;
+  height: 92rpx;
+  margin: 68rpx auto 40rpx;
+  /* background: url(../common/image/collarVoucher/btn.png) 0 0 no-repeat; *//* background-size: 100% 100%; */
+  color: #fff;
+  text-align: center;
+  line-height: 92rpx;
+  font-size: 36rpx;
+}
+
+.shareBtn button, .shareBtn text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  background: none;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+button::after {
+  border: none;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.use {
+  margin: 0 auto 26rpx;
+}
+
+.tips {
+  margin-bottom: 90rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #f7b833;
+}
+
+.voucher {
+  position: relative;
+  width: 686rpx;
+  margin: 0 auto;
+  padding: 40rpx 54rpx;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 4rpx #6b1111;
+}
+
+.h {
+  position: absolute;
+  top: -18rpx;
+  width: 12rpx;
+  height: 42rpx;
+}
+
+.h1 {
+  left: 66rpx;
+}
+
+.h2 {
+  right: 66rpx;
+}
+
+.cardVoucher {
+  position: relative;
+  width: 534rpx;
+  height: 190rpx;
+  margin: 0 auto 20rpx;
+  padding: 18rpx 10rpx;
+  background: #fff;
+  box-shadow: 0 2rpx 3rpx #666;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  width: 22rpx;
+  height: 100%;
+}
+
+.left {
+  left: -20.6rpx;
+}
+
+.right {
+  right: -20.6rpx;
+}
+
+.shop {
+  margin-bottom: 20rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop_f view:nth-child(1) {
+  width: 372rpx;
+}
+
+shop_z {
+  width: 100rpx;
+}
+
+.shop_f .shop_z view:nth-child(1) {
+  width: auto;
+}
+
+.shop view:nth-child(1) view:nth-child(1) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 6rpx;
+  margin-bottom: 16rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: #f23814;
+  text-align: justify;
+}
+
+.shop view:nth-child(1) view:nth-child(2) {
+  font-size: 22rpx;
+  color: #9b9b9b;
+}
+
+.shop view:nth-child(2) {
+  color: #f23814;
+}
+
+.shop view:nth-child(2) view:nth-child(1) {
+  margin-top: 26rpx;
+  font-size: 32rpx;
+}
+
+.shop view:nth-child(2) view:nth-child(2) {
+  font-size: 60rpx;
+}
+
+.date {
+  padding-top: 12rpx;
+  border-top: 2rpx dashed #dedede;
+  font-size: 20rpx;
+  color: #4a4a4a;
+}
+
+.cardVoucher:last-child {
+  margin: 0 auto 0;
+}
+
+.shareBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.shareBox text {
+  position: absolute;
+  top: 525rpx;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.shareBox image {
+  display: block;
+  width: 720rpx;
+  height: 596rpx;
+  margin: 30rpx auto 0;
+}
+
+.quan {
+  margin: 0 20rpx 8rpx 0;
+  padding: 6rpx 8rpx;
+  font-size: 20rpx;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.p_color0 {
+  background: #9b49c3;
+}
+
+.p_color1 {
+  background: #4d7ae8;
+}
+
+.p_color2 {
+  background: #4bc489;
+}
+
+.p_color3 {
+  background: #ea8033;
+}

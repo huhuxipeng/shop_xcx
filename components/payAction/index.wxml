@@ -1,0 +1,19 @@
+<!--components/payAction/index.wxml-->
+<action-sheet hidden="{{!actionSheetShow}}" bindchange="actionSheetChange">
+  <block wx:for="{{actionSheetItems}}" wx:key="index">
+    <action-sheet-item class="item" bindtap="bindItemTap" data-name="{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="cancelPay" >取消</action-sheet-cancel>
+</action-sheet>
+<zan-popup show="{{showPasswordPopup}}">
+  <view class='popup_main'>
+    <view class='title'>请输入支付密码</view>
+    <view class='row flex_center'>
+      <input class='password' bindinput="changeValue" data-prop="password" type='password' maxlength='6'></input>
+    </view>
+    <view class='footer row'>
+      <a bindtap="cancelPay" class="row_button gray">取消</a>
+      <a class="row_button green" bindtap="payByPassword" >确定</a>
+    </view>
+  </view>
+</zan-popup>

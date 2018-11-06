@@ -1,0 +1,80 @@
+.Box{
+  background: #fff;
+}
+
+.box{
+  padding: 20rpx 20rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone{
+  align-items: center;
+}
+
+.arrow{
+  margin-left: 20rpx;
+  width: 14rpx;
+  height: 30rpx;
+}
+
+.signPassword,.paymentPassword,.forgetBox{
+  background: #fff;
+}
+
+.icon4{
+  width: 38rpx;
+  height: 44rpx;
+  margin-right: 20rpx;
+}
+
+.mobile{
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.obtainBtn{
+  font-size: 30rpx;
+  color: #ccc;
+}
+
+.btnBox{
+  padding: 20rpx 20rpx;
+  justify-content: space-between;
+}
+
+.btnBox text{
+  flex: 1;
+  padding: 20rpx 0;
+  background: orangered;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 15rpx;
+}
+
+.complete{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20rpx;
+  background: orangered;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.spacing{
+  width: 160rpx;
+}
+
+.forget{
+  margin-right: 20rpx;
+  padding: 20rpx 0;
+  justify-content: flex-end;
+  font-size: 30rpx;
+  color: #ccc;
+}

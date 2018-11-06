@@ -1,0 +1,41 @@
+/* pages/writeLogistics/index.wxss */
+.row_wrap{
+  font-size: 28rpx;
+  border-radius: 0
+}
+.row_wrap .row{
+  padding-left: 0;
+}
+.row .flex_center{
+  width:183rpx;
+}
+.flex_grow_1{
+  position: relative;
+}
+.bar{
+  background-color: #dcdcdc;
+  width:100%;
+  height: 37rpx;
+}
+.select_img{
+  width:33rpx;position: absolute;right:0;top:6rpx;
+}
+.footer{
+  position: absolute;
+  bottom:0;
+}
+.gray{
+  color:#888;
+}
+.popup_wrap{
+  background:white;
+  width:750rpx;
+  max-height: 830rpx;
+  overflow-y: auto;
+}
+.title{
+  text-align: center;padding: 30rpx;
+}
+.selectWuliu .row{
+  width: 100%;padding: 5rpx 25rpx;
+}

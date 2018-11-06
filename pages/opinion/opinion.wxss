@@ -1,0 +1,71 @@
+
+
+.form{
+  position: relative;
+}
+
+.area{
+  width: 660rpx;
+  height: 300rpx;
+  margin: 22rpx;
+  padding: 22rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  color: #999;
+  font-size: 30rpx;
+}
+
+.textarte, .inp{
+  font-size: 28rpx;
+  color: #999;
+}
+
+.tips{
+  position: absolute;
+  top: 310rpx;
+  right: 33rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.contact{
+  padding: 0 30rpx;
+}
+
+.contactTips{
+  font-size: 34rpx;
+  color: #333;
+}
+
+.contactTips text{
+  margin-left: 10rpx;
+  color: #ccc;
+  font-size: 32rpx;
+}
+
+.qqwx{
+  margin-top: 20rpx;
+}
+
+.qqwxInp{
+  flex: 1;
+  margin-right: 20rpx;
+  padding-left: 20rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.btn{
+  position: fixed;
+  bottom: 38rpx;
+  left: 0;
+  width: 690rpx;
+  margin: 0 30rpx;
+  background: orangered;
+  border-radius: 15rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+}

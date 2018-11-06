@@ -1,0 +1,41 @@
+<zan-popup show="{{show}}">
+  <view class='popup_wrap'>
+    <view class='coupon_header'>
+      恭喜您
+    </view>
+    <view class='coupon_header'>
+      您有一张现金券待领取
+    </view>
+    <view class='coupon_main'>
+      <view>
+        <span class="big">{{detail.discountPrice}}</span>
+        <span class="little">元</span>
+      </view>
+      <view>满{{detail.minAmount}}元可用</view>
+      <view>领取时间：{{detail.getBeginTime}}-{{detail.getBeginTime}}</view>
+    </view>
+    <view class='pick_now' bindtap='takeCoupon'>立即领取</view>
+    <view class='pick_text'>领取后，现金券将放入您的账户。</view>
+    <view class='share_text'>
+      分享至
+    </view>
+    <view class='share_button_wrap flex'>
+      <button open-type="share" >
+        <image src='/static/images/shop/wechat.png'></image>
+        <view class='text'>微信好友</view>
+      </button>
+      <!-- <button open-type="share" >
+        <image src='/static/images/shop/wechatcircle.png'></image>
+        <view class='text'>朋友圈</view>
+      </button> -->
+    </view>
+    <image src="/static/images/shop/image_coupon_detail.png" class='popup_wrap_bg'></image>
+    <view class='coupon_close' bindtap='closeCouponDetail'>
+      ×
+    </view>
+    <view class='left_button select_button' bindtap='lastOne' >
+    </view>
+    <view class='right_button select_button' bindtap='nextOne'>
+    </view>
+  </view>
+</zan-popup>

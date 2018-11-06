@@ -1,0 +1,153 @@
+
+.plus, .bank{
+  width: 90%;
+  margin: 40rpx auto 0;
+  padding: 30rpx 0;
+  background: #fff;
+  font-size: 34rpx;
+  color: #333;
+  -webkit-box-shadow: 0.2rem 0.2rem 10px #ccc;
+  box-shadow: 0.2rem 0.2rem 10px #ccc;
+}
+
+.bank{
+  padding: 0 0 0;
+  background: none;
+  align-items: flex-start;
+}
+
+.icon{
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+}
+
+.information{
+  padding: 10rpx 0;
+  font-size: 38rpx;
+}
+
+.information text{
+  font-weight: bold;
+}
+
+.information view{
+  margin-top: 20rpx;
+  font-size: 34rpx;
+  color: #ccc;
+}
+
+.cardNumber{
+  margin-top: 30rpx;
+}
+
+.setUp{
+  width: 100%;
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 5rpx;
+  border-top: 1px solid #eee;
+  font-size: 28rpx;
+  justify-content: space-between;
+}
+
+.default{
+  color: #f00;
+  justify-content: center;
+}
+
+.default icon{
+  margin-top: 4rpx;
+  margin-right: 10rpx;
+}
+
+.delete{
+  
+  justify-content: center;
+}
+
+.trash{
+  width: 26rpx;
+  height: 34rpx;
+  margin-right: 10rpx;
+}
+
+
+
+
+
+
+.plus {
+  justify-content: center;
+  align-items: center;
+}
+
+.bankBox{
+  width: 96%;
+  margin-top: 20rpx;
+  padding: 15rpx;
+  background: #fff;
+}
+
+.plus image {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 15rpx;
+}
+
+.tips{
+  background: #eee;
+  padding: 10rpx 15rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.bindingRow{
+  padding: 22rpx 22rpx 22rpx;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+  border-top: 1px solid #eee;
+}
+
+.bindingRow text{
+  width: 100rpx;
+  flex-shrink: 0;
+}
+
+.bindingRow input{
+  flex: 2;
+}
+
+.nextStep{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30rpx 0;
+  background: orangered;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.tips2{
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.shortMessage{
+  display: block;
+  text-align: center;
+}
+
+.shortMessageRow input{
+  flex: 1;
+}
+
+.shortMessageRow .shortMessageText{
+  width: 220rpx;
+  color: orangered;
+}

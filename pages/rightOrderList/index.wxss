@@ -1,0 +1,7 @@
+/* pages/orderlist/index.wxss */
+.row{
+  font-size: 30rpx;
+}
+.red{
+  margin-left:15rpx;
+}

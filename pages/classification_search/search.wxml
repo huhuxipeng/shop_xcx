@@ -1,0 +1,46 @@
+<view class='top hu_row'>
+  <view class='searchBox hu_row'>
+    <image class='searchIcon' src="/static/images/search.png" />
+    <input focus bindinput="bindKeyInput" class='search'  placeholder="请输入商品名称" placeholder-style="color:#999" />
+  </view>
+  <text class='searchBtn' bindtap="searchClick">搜索</text>
+</view>
+
+<view class='goodsSort row' wx:if="{{goodsSort}}">
+  <view class="tab tab1 {{tabPosition==-1? 'down':''}}" bindtap="tabFun2">综合</view>
+  <block wx:for="{{tab}}" wx:key="unique">
+    <view class="tab {{tabPosition==index? 'down':''}}" catchtap="tabFun" data-idx="{{index}}">
+      {{item.name}}
+      <view class='arrow' catchtap="tabFun" data-idx="{{index}}">
+        <view catchtap="tabFun" data-idx="{{index}}"class="i i1 {{item.rise==true?'i1Sele':''}}"></view>
+        <view catchtap="tabFun" data-idx="{{index}}" class="i i2 {{item.rise==false?'i2Sele':''}}"></view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="wrap {{goodsSort==false?'wrap2':''}}">
+  <view class="wrapUl row">
+    <block wx:for="{{list}}" wx:key="unique">
+      <view class='wrapUl_list' bindtap="listClick" data-idx="{{index}}">
+        <image src="{{item.image}}"></image>
+        <text class='list_name'>{{item.name}}</text>
+        <view class='list_money'>
+          <view class='money_primary'>
+            <text>￥</text>{{item.price}}</view>
+          <view class='money_present'>
+            <text>￥</text>{{item.mktprice}}</view>
+        </view>
+        <view class='list_integral'>
+          可获红积分：
+          <text>{{item.redPoint}}</text>
+        </view>
+      </view>
+    </block>
+    <text class="no_data {{no_hide==false?'no_hide':''}}">没有更多数据了</text>
+  </view>
+</view>
+
+<view wx:if="{{nodata}}" class='empty'>
+  <image src="/static/images/empty.png" />
+</view>

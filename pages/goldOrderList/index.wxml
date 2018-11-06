@@ -1,0 +1,41 @@
+<!--pages/orderlist/index.wxml-->
+<view>
+  <view class='row'>
+  </view>
+  <zan-tab list="{{ tab.navList }}" selected-id="{{ tab.selectedId }}" bindtabchange="handleTabChange" />
+  <ul class='list_wrap'>
+    <li wx:for="{{dataList}}" wx:key="index">
+      <view class='row between order_title'>
+        <view class='flex'>
+          <image class='orderlistIcon' src="/static/images/shopcar/icon.png"></image>
+          {{item.shopStoreName}}
+          <view class='gray'>＞</view>
+        </view>
+        <view class='red'>{{item.statusText}}</view>
+      </view>
+      <view class='bg_fa'>
+        <view bindtap='orderDetail' data-orderId="{{item.orderId}}" data-id="{{item.id}}" class='row between'>
+          <image class='goods_img' mode='widthFix' src="{{item.squareImage}}"></image>
+          <view class='flex_column justify_center goods_detail'>
+            <view class='goods_name'>{{item.exchangeName}}</view>
+            <view class='gray'>规格：{{item.specs}}</view>
+          </view>
+          <view class='flex_column goods_prize'>
+            <view>{{item.exchangeCoin}}金币</view>
+            <view class='gray pri_line'>￥{{item.mktPrice}}</view>
+            <view class='gray'>X{{item.changeProductNum}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='total_prize'>
+        合计：{{item.realPaymen}}金币
+      </view>
+      <view class='row justify_end'>
+        <a class="primary" wx:if="{{item.orderStatus==2}}" data-item="{{item}}" bindtap="logistics">查看物流</a>
+        <a class="primary red" wx:if="{{item.orderStatus==2}}" data-item="{{item}}" bindtap="confirm">确认收货</a>
+        <!-- <a class="primary red" wx:if="{{item.orderStatus==3}}" data-item="{{item}}" bindtap="apprise">评价</a> -->
+        <a class="primary" wx:if="{{item.orderStatus==3}}" data-item="{{item}}" bindtap="logistics">查看物流</a>
+      </view>
+    </li>
+  </ul>
+</view>

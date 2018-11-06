@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "评价",
+  "usingComponents": {
+    "zan-checkbox": "../../dist/checkbox/index"
+  }
+}

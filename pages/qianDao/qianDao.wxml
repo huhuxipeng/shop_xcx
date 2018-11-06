@@ -1,0 +1,48 @@
+<view class='qianDaoBox column'>
+  <image class='goldIcon' src="/static/images/goldIcon.png" />
+  <text class='myGold'>我的金币</text>
+  <text class='goldNum'>{{res_data.coins}}</text>
+  <button bindtap='qdBtnFun'>{{qdBtn}}</button>
+</view>
+
+<view class="topBar">
+  <view class='whichDateBox hu_row'>
+    <image class='icon13' catchtap='icon13Fun' src="/static/images/icon13.png" />
+    <view class="whichDate">{{toYear}}年{{toMonth}}月</view>
+    <image class='icon14' catchtap='icon14Fun' src="/static/images/icon14.png" />
+  </view>
+</view>
+
+<view class="monthBox" catchtouchend="monthTouch">
+  <view class="weekDay">
+    <view class="week">日</view>
+    <view class="week">一</view>
+    <view class="week">二</view>
+    <view class="week">三</view>
+    <view class="week">四</view>
+    <view class="week">五</view>
+    <view class="week week2">六</view>
+  </view>
+  <view class="monthDay">
+    <view class="tr" wx:for="{{MonthDayArray}}" wx:key="month">
+      <view id="{{item.num}}" class="day {{item.isShowDayInfo ? 'showDayInfo':'hideDayInfo'}}" wx:for="{{item}}" wx:key="day" wx:for-index="idx">
+        <view class="{{item.isToday ? 'today':''}}">
+          <text class="gongli">{{item.num}}</text>
+          <text class="nongli">{{item.nongli}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="qiandaoSuccess_bg {{qiandaoSuccess?'':'hide'}}"></view>
+<view class="qiandaoSuccess {{qiandaoSuccess?'':'hide'}}">
+  <image class='qiandaoImg' src="/static/images/qiandao.png" />
+  <view class='qiandaoSuccess_view column'>
+    <image src="/static/images/goldIcon.png" />
+    <text class='add'>+1</text>
+    <text class='text'>恭喜您获得1金币</text>
+    <text class='text'>记得每天来签到哦~</text>
+    <view class='know' bindtap='knowFun'>知道了</view>
+  </view>
+</view>

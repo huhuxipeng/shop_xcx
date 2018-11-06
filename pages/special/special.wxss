@@ -1,0 +1,44 @@
+.specialBox {
+  flex-wrap: wrap;
+  padding: 20rpx;
+  justify-content: space-between;
+}
+
+.specialbox {
+  width: 47%;
+  margin-bottom: 20rpx;
+  padding: 8rpx;
+  background: #fff;
+}
+
+.specialbox image {
+  width: 100%;
+  /* min-height: 300rpx; */
+}
+
+.name {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 30rpx;
+}
+
+.price {
+  margin-top: 10rpx;
+  justify-content: space-between;
+}
+
+.price view {
+  font-size: 28rpx;
+}
+
+.priceText {
+  color: red;
+}
+
+.primary{
+  color: #ccc;
+  text-decoration: line-through;
+}

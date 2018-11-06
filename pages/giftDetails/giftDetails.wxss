@@ -1,0 +1,140 @@
+.swiperBox {
+  height: 750rpx;
+}
+
+.swiperBox image {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.giftDetailsBox {
+  padding: 0 20rpx;
+  background: #fff;
+  padding-bottom: 20rpx;
+}
+
+.name {
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.money {
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+.present {
+  margin-right: 10rpx;
+  color: #f22d07;
+}
+
+.primary {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.shipping {
+  margin-top: 5rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.choice {
+  margin: 20rpx 0;
+  padding: 20rpx 20rpx;
+  background: #fff;
+  justify-content: space-between;
+  font-size: 28rpx;
+  align-items: center;
+}
+
+.choice image {
+  width: 16rpx;
+  height: 30rpx;
+}
+
+.details {
+  background: #fff;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #f22d07;
+}
+
+.details text {
+  padding: 20rpx 0;
+  border-bottom: 2px solid #f22d07;
+}
+
+.purchaseBtn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  padding: 28rpx 0;
+  background: #f22d07;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.blackBg, .hideBox {
+  position: fixed;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+}
+
+.blackBg {
+  top: 0;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+
+.hideBox {
+  bottom: -500px;
+  height: 700rpx;
+  background: #fff;
+  color: #fff;
+}
+
+.specifications {
+  padding: 20rpx 20rpx 0;
+  font-size: 36rpx;
+  color: red;
+}
+
+.specifications image{
+  width: 188rpx;
+  height: 188rpx;
+  margin-right: 20rpx;
+}
+
+.parameterNum{
+  padding: 20rpx 20rpx 0;
+  font-size: 36rpx;
+  color: #333;
+  justify-content: space-between;
+}
+
+.listBox_number{
+  width: 100rpx;
+  height: 30rpx;
+  margin: 0 10rpx;
+  text-align: center;
+}
+
+.reduce,.plus{
+  padding: 0 20rpx;
+}
+
+.reduce,.plus,.listBox_number{
+  border: 1px solid #eee;
+  border-radius: 10rpx;
+}
+
+.hideBox .purchaseBtn{
+  position: absolute;
+}

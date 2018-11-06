@@ -1,0 +1,75 @@
+<image class='logo' mode="widthFix" src="/static/images/logo.png"></image>
+
+<view class='signCode column' wx:if="{{state==0}}">
+  <view class='box hu_row'>
+    <image class='icon4' src="/static/images/icon4.png" />
+    <input type="number" bindinput='mobile' placeholder='手机号' placeholder-class='place' maxlength='11' />
+  </view>
+  <view class='box hu_row'>
+    <image class='icon4' src="/static/images/icon3.png" />
+    <input type="number" bindinput='codes' placeholder='请输入验证码' placeholder-class='place' />
+    <text class='get' bindtap='count'>{{count}}</text>
+  </view>
+
+  <view class='signCodeBtn' bindtap='signCodeBtn' data-id="1">立即登录</view>
+</view>
+
+<view class='signCode column' wx:if="{{state==1}}">
+  <view class='box hu_row'>
+    <image class='icon4' src="/static/images/icon4.png" />
+    <input type="number" bindinput='mobile' placeholder='手机号' placeholder-class='place' maxlength='11' />
+  </view>
+  <view class='box hu_row'>
+    <image class='icon4' src="/static/images/icon3.png" />
+    <input type="password" bindinput='password' placeholder='请输入密码' maxlength='18' placeholder-class='place' />
+  </view>
+  <view class='signCodeBtn' bindtap='signpassword'>立即登录</view>
+</view>
+
+<view class='list hu_row' wx:if="{{register==false}}">
+  <view class='bor' bindtap='registerBtn'>用户注册</view>
+  <navigator url='/pages/setUp/setUp?id=1' class='bor'>忘记密码</navigator>
+  <view bindtap='passwordSign'>{{text}}</view>
+</view>
+
+<view class='register column' wx:if="{{register}}">
+  <view class='box hu_row'>
+    <image class='icon4' src="/static/images/icon4.png" />
+    <input type="number" bindinput='mobile' placeholder='手机号' placeholder-class='place' maxlength='11' />
+  </view>
+  <view class='box hu_row'>
+    <image class='icon4' src="/static/images/icon3.png" />
+    <input type="number" bindtap='code' bindinput='codes' placeholder='验证码' placeholder-class='place' />
+    <text class='get' bindtap='count'>{{count}}</text>
+  </view>
+  <view class='box hu_row'>
+    <image class='icon4' src="/static/images/icon5.png" />
+    <input type="password" bindinput='password' placeholder='密码(6-18位字符)' placeholder-class='place' maxlength='18' />
+  </view>
+
+  <view class='signCodeBtn' bindtap='lastStep'>上一步</view>
+  <view class='signCodeBtn registerBtn' bindtap='signCodeBtn' data-id="2">注册</view>
+</view>
+
+<view class='segmentingLine hu_row'>
+  <text></text>
+  <view>微信授权登录</view>
+  <text></text>
+</view>
+
+<button class='sure' open-type='getUserInfo' bindgetuserinfo="getUserinfo">按钮</button>
+
+<view class='bindBoxBg' bindtap='bindBoxBgFun' wx:if="{{hasUserInfo}}"></view>
+
+<view class='bindBox' wx:if="{{hasUserInfo}}">
+  <view class='bindBox_tit'>绑定手机</view>
+  <view class='row'>
+    <input placeholder-class="bindInp" style="color:#666" placeholder="请输入手机号" bindinput="changeValue" data-prop="phoneNum" maxlength='11' />
+    <button wx:if="{{timeout==0}}" class='primary' bindtap="sendCode">发送验证码</button>
+    <button wx:if="{{timeout>0}}" class='primary' disabled='disabled' bindtap="sendCode">{{timeout}}S</button>
+  </view>
+  <view class='row'>
+    <input placeholder-class="bindInp" placeholder="请输入验证码" maxlength='8' bindinput="changeValue" data-prop="passcode" />
+  </view>
+  <button class='bindBtn' bindtap="binding" style='margin-top:82rpx;'>绑定</button>
+</view>

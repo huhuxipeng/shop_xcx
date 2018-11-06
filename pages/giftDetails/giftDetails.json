@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "店长礼包详情",
+  "usingComponents": {
+    "detail-tab": "../../components/detailTab/index",
+    "footer-buy": "../../components/footerBuy/index"
+  }
+}

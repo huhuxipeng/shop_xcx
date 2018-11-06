@@ -1,0 +1,54 @@
+<!--pages/orderlist/index.wxml-->
+<view>
+  <view class='row'>
+  </view>
+  <zan-tab scroll="true" list="{{ tab.navList }}" selected-id="{{ tab.selectedId }}" bindtabchange="handleTabChange" />
+  <ul class='list_wrap'>
+    <li wx:for="{{dataList}}" wx:key="index">
+      <view class='row between order_title'>
+        <view class='flex'>
+          <image class='orderlistIcon' src="/static/images/shopcar/icon.png"></image>
+          {{item.comName}}
+          <view class='gray'>＞</view>
+        </view>
+        <view class='red'>{{item.statusText}}</view>
+      </view>
+      <view class='bg_fa'>
+        <view bindtap='orderDetail' data-orderId="{{item.orderId}}" class='row between '>
+          <image class='goods_img' mode='widthFix' src="{{item.image}}"></image>
+          <view class='flex_column justify_center goods_detail'>
+            <view class='goods_name'>{{item.goodsTitle}}</view>
+            <view class='gray'>规格：{{item.productSpecs}}</view>
+          </view>
+          <view class='flex_column goods_prize'>
+            <view class='gray'>X{{item.num}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='total_prize'>
+        合计：￥{{item.orderAmount}}
+      </view>
+      <view class='row between'>
+        <view class='goods_name'>
+          还差{{item.completeNum-item.participateNum}}人拼团成功
+        </view>
+        <view wx:if="{{item.status == 1}}" class='goods_name'>
+          {{item.endTime}}
+        </view>
+        <view class='flex right'>
+          <a wx:if="{{item.orderStatus==0}}" class="primary" data-item="{{item}}" bindtap="cancel">取消订单</a>
+          <a wx:if="{{item.orderStatus==0}}" class="primary red " data-item="{{item}}" bindtap="pays">立即支付</a>
+          <a wx:if="{{item.orderStatus==1}}" class="primary red " data-item="{{item}}" bindtap="invinte">邀请好友</a>
+          <a wx:if="{{item.orderStatus==2}}" class="primary red " data-item="{{item}}" bindtap="confirm">确认收货</a>
+          <a wx:if="{{item.orderStatus==2||item.orderStatus==3}}" data-item="{{item}}" bindtap="logistics" class="primary red ">查看物流</a>
+          <a wx:if="{{item.orderStatus==3||item.orderStatus==-7||item.orderStatus==-8||item.orderStatus==-9}}" class="primary" data-item="{{item}}" bindtap="deleteOrder">删除订单</a>
+          <a wx:if="{{item.orderStatus==4||item.orderStatus==5&&item.spellType==1}}" class="primary red " data-item="{{item}}" bindtap="prizeDetail" bindtap="zjxqFun">中奖详情</a>
+          <a wx:if="{{(item.orderStatus==-6||item.orderStatus==-8)&&item.spellType==1&&item.status==2}}" class="primary red " data-item="{{item}}" bindtap="prizeDetail" bindtap="zjxqFun">中奖详情</a>
+        </view>
+
+
+      </view>
+    </li>
+  </ul>
+  <pay-action show="{{showPayAction}}" orderId="{{orderId}}" spellId="{{spellId}}" payOptions="{{payOptions}}"></pay-action>
+</view>

@@ -1,0 +1,71 @@
+.shopownerBox view {
+  flex: 1;
+  padding: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.binding, .condition {
+  background: rgba(255, 64, 60, 0.3);
+  color: #fff;
+}
+
+.shop {
+  background: #eee;
+  color: #ccc;
+}
+
+.condition{
+  position: relative;
+}
+
+.icon2{
+  position: absolute;
+  top: 50%;
+  right: -18rpx;
+  width: 20rpx;
+  height: 56rpx;
+  margin-top: -28rpx;
+}
+
+.box{
+  padding: 0 20rpx;
+}
+
+.conditionBox,.conditionList{
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  color: #ccc;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.conditionBox text{
+  padding-right: 10rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.conditionList{
+  padding: 30rpx 0;
+}
+
+.conditionList view{
+  flex: 2;
+}
+
+.icon0{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.recharge{
+  padding: 4rpx 10rpx;
+  border: 1px solid #ff8a00;
+  color: #ff8a00;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+}
+
+

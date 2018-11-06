@@ -1,0 +1,2 @@
+<!--pages/webview/index.wxml-->
+<web-view wx:if="{{src}}" src="{{src}}" binderror="binderror" bindtap='clickSth' bindload="bindload" bindmessage="bindmessage"></web-view>

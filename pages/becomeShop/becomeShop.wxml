@@ -1,0 +1,19 @@
+<view class='shopownerBox hu_row'>
+  <view class='binding'>绑定手机</view>
+  <view class='condition'>完成条件</view>
+  <view class='shop'>开店成功</view>
+</view>
+
+<view class='text'>恭喜您成为巨柚店长</view>
+<image class='becomeShop' src="/static/images/becomeShop.png" />
+
+<view class='profit column'>
+  <text class='profitTit'>您获得以下权益</text>
+  <text>1.获得专属礼包</text>
+  <text>2.随礼包获得店长名片</text>
+  <text>3.添加xx微信号，获得一对一管家指导</text>
+  <text>4.转发店长推广二维码或者商品下级客户购买获得红积分和黄积分收入。</text>
+</view>
+
+
+<navigator class="nextStep" bindtap='nextStep' open-type='switchTab' url='/pages/mine/index'>你的店长收入</navigator>

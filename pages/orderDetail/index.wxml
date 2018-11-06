@@ -1,0 +1,112 @@
+<!--pages/orderDetail/index.wxml-->
+<view class='order_state_wrap'>
+  <view class='row between'>
+    <view class='flex_column'>
+      <view>{{statusText}}</view>
+      <view wx:if="{{status==0}}">
+        {{times}} 订单自动关闭
+      </view>
+      <view wx:if="{{status==5}}">
+        {{times}} 自动确认收货
+      </view>
+    </view>
+    <view class='icon_wrap flex_center flex'>
+      <image mode='widthFix' src='{{statusImg}}'></image>
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between'>
+    <view class='left flex '>
+      <view class='flex_center flex'>
+        <image mode='widthFix' class='icon' src="/static/images/positionIcon.png">
+        </image>
+      </view>
+      <view class='flex_column'>
+        <view>
+          收货人：{{detail.order.shipName}}
+        </view>
+        <view>
+          {{detail.order.shipAddress}}
+        </view>
+      </view>
+    </view>
+    <view class='right'>
+      {{detail.order.shipMobile}}
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row '>
+    <image mode='widthFix' class="icon" src='/static/images/shopcar/icon.png'></image>
+    {{detail.comName}}
+    <view class='more_wrap'>
+      <view class='more'></view>
+    </view>
+  </view>
+  <view class='bg_fa' wx:for="{{detail.orderItemsList}}" wx:for-item="o" wx:for-index="i" wx:key="i">
+    <view class='row between align_center'>
+      <image class='goods_img' mode='widthFix' src="{{o.goodsImage}}"></image>
+      <view class='flex_column justify_center goods_detail'>
+        <view class='goods_name'>{{o.goodsName}}</view>
+        <view class='gray' wx:if="{{o.productSpec}}">规格：{{o.productSpec}}</view>
+        <view class='gray' wx:if="{{o.specs}}">规格：{{o.specs}}</view>
+      </view>
+      <view class='flex_column goods_prize'>
+        <view wx:if="{{o.price}}">￥{{o.price}}</view>
+        <view wx:if="{{o.flashsalePrice}}">￥{{o.flashsalePrice}}</view>
+        <view wx:if="{{detail.order.exchangeCoin}}">{{detail.order.exchangeCoin}}金币</view>
+        <view class='gray pri_line' wx:if="{{orderType!=2}}">￥{{o.goodsPrice}}</view>
+        <view class='gray'>X{{o.buyCount}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between' style='border-bottom:1px solid #eee'>
+    <view>商品金额</view>
+    <view wx:if="{{orderType!=2}}">￥{{detail.order.goodsAmount}}</view>
+    <view wx:if="{{orderType==2}}">{{detail.order.exchangeCoin}}金币</view>
+  </view>
+  <view class='row between'>
+    <view>运费</view>
+    <view>￥{{detail.order.shipAmount}}</view>
+  </view>
+   <view class='row between' wx:if="{{detail.order.discount}}">
+    <view>优惠金额</view>
+    <view>￥{{detail.order.discount}}</view>
+  </view>
+  <view wx:if="{{detail.order.cloudPoint}}" class='row between'>
+    <view>云积分</view>
+    <view>-￥{{detail.order.cloudPoint}}</view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between'>
+    <view>应付总额</view>
+    <view wx:if="{{orderType!=2}}">￥{{detail.order.orderAmount}}</view>
+    <view wx:if="{{orderType==2}}">{{detail.order.realPaymen}}金币</view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view wx:if="{{detail.order.orderSn}}" class='row between'>
+    <view>订单号</view>
+    <view>{{detail.order.orderSn}}</view>
+  </view>
+  <view wx:if="{{detail.order.createTime}}" class='row between'>
+    <view>下单时间</view>
+    <view>{{detail.order.createTime}}</view>
+  </view>
+  <view wx:if="{{detail.order.paymentTime}}" class='row between'>
+    <view>付款时间</view>
+    <view>{{detail.order.paymentTime}}</view>
+  </view>
+  <view wx:if="{{detail.order.createDate}}" class='row between'>
+    <view>下单时间</view>
+    <view>{{detail.order.createDate}}</view>
+  </view>
+  <view wx:if="{{detail.order.paymentDate}}" class='row between'>
+    <view>付款时间</view>
+    <view>{{detail.order.paymentDate}}</view>
+  </view>
+</view>

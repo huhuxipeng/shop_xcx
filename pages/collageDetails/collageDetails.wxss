@@ -1,0 +1,291 @@
+@import "/pages/treasureDetails/treasureDetails.wxss";
+
+page{
+  padding-bottom: 15%;
+}
+
+.swiperBox {
+  height: 637rpx;
+}
+
+.swiperBox image {
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+  padding: 0 16rpx;
+}
+
+.money {
+  padding: 6rpx 0;
+  align-items: center;
+}
+
+.present {
+  margin-right: 10rpx;
+  font-size: 36rpx;
+  color: #f22d07;
+}
+
+.primary {
+  font-size: 22rpx;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.sold {
+  width: 100%;
+  text-align: right;
+  font-size: 26rpx;
+  color: #f22d07;
+}
+
+.nameBox {
+  margin-top: 10rpx;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.collageIcon {
+  width: 90rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.name {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.shipping {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+.shipping_introduce {
+  margin-bottom: 5rpx;
+  justify-content: space-between;
+}
+
+.stepTit {
+  margin-top: 20rpx;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+
+.stepBox {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.stepBox column {
+  width: 187rpx;
+  flex-shrink: 1;
+}
+
+.stepBox text {
+  width: 52rpx;
+  height: 52rpx;
+  margin: 0 auto;
+  background: orangered;
+  line-height: 52rpx;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.stepBox view {
+  margin: 10rpx 0;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.shopBox {
+  padding: 16rpx 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.shopBox image {
+  width: 78rpx;
+  height: 78rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.shopInformation {
+  flex-grow: 1;
+  font-size: 24rpx;
+}
+
+.shopInformation .shopName {
+  margin-bottom: 6rpx;
+  font-size: 28rpx;
+}
+
+.bond {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.bond text {
+  color: #f22d07;
+}
+
+.getShop {
+  width: 160rpx;
+  height: 46rpx;
+  margin-top: 14rpx;
+  background: none;
+  flex-shrink: 0;
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 24rpx;
+  color: #f22d07;
+  border: 1px solid #f22d07;
+  border-radius: 20rpx;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+
+.explain {
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  width: 80%;
+  max-height: 660rpx;
+  padding: 15rpx;
+  background: #fff;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 15rpx;
+}
+
+.explainTit{
+  position: relative;
+  padding-bottom: 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.close2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.explainText{
+  margin-top: 10rpx;
+  line-break: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.nav.row{
+  height: auto;line-height: auto;padding: 0;
+}
+.nav.row view{
+  padding: 10rpx 0;
+}
+.nav.row .join {
+  width:auto;
+  padding: 10rpx 30rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .conductBox{
+  overflow: hidden;
+  max-height: 630rpx;
+  margin: 40rpx 0;
+}
+
+.conductBoxTit{
+  flex-shrink: 0;
+  font-size: 28rpx;
+  justify-content: space-between;
+}
+
+.group{
+  flex-shrink: 0;
+  margin-top: 30rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.group image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.groupName{
+  flex:1;
+  margin-left: 15rpx;
+  font-size: 30rpx;
+}
+
+.groupTime{
+  font-size: 28rpx;
+}
+
+.groupTime view{
+  margin-bottom: 3rpx;
+}
+
+.groupTime text{
+  color: red;
+}
+
+.groupBtn{
+  margin-left: 20rpx;
+  padding: 8rpx 12rpx;
+  background: red;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+} */

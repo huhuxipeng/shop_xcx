@@ -1,0 +1,13 @@
+/* pages/supportRight/index.wxss */
+.goods_detail{
+  width: auto;
+}
+.flex_center view{
+  text-align: left
+}
+.row_wrap{
+  font-size: 30rpx;margin-bottom:20rpx
+}
+.row input{
+  width:91rpx;
+}

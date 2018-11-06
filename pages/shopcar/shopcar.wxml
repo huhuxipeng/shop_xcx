@@ -1,0 +1,78 @@
+<!-- 全选区块 -->
+<view class='settlement' wx:if="{{empty==false}}">
+  <icon class="quanxuanBtn" wx:if="{{selectAllStatus}}" type="success" color="#ff5900" bindtap="selectAll" />
+  <icon class="quanxuanBtn" wx:else type="circle" bindtap="selectAll" />
+  <text class="totalSelection">全选</text>
+  <view class='settlement_dynamic hu_row' bindtap="settlementFun">
+    <text>结算</text>
+    <view>({{settlement}})</view>
+  </view>
+  <view class='shopMoney hu_row'>
+    <view>￥</view>
+    <text>{{totalPrice}}</text>
+  </view>
+  <text class='total'>合计:</text>
+</view>
+
+<block wx:if="{{empty==false}}" wx:for="{{shops}}" wx:key="unifque" wx:for-index="idx">
+  <view class='shopcarBox column' wx:if="{{item.shopcarBox}}">
+    <view class='shopcar_box'>
+      <view class='shop hu_row'>
+        <icon class="circle" wx:if="{{item.shopSele}}" type="success" color="#ff5900" bindtap="shopsList" data-index="{{idx}}" />
+        <icon class="circle" wx:else type="circle" bindtap="shopsList" data-index="{{idx}}" />
+        <view class='shopName hu_row'>
+          <image class='icon' src="/static/images/shopcar/icon.png"></image>
+          <text>{{item.shopName}}</text>
+          <image class='arrow2' src="/static/images/shopcar/arrow2.png"></image>
+        </view>
+      </view>
+      <!-- 同店商品 -->
+      <block wx:for="{{item.carts}}" wx:key="unique">
+        <view class="commodity_information  {{item.deleteData ? 'touch-move-active' : ''}}" wx:if="{{item.hasList}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}" data-shop="{{item.shopId}}">
+          <view class='commodity_informationBox'>
+            <icon class="circle" wx:if="{{item.selected}}" type="success" color="#ff5900" bindtap="selectList" data-shop="{{item.shopId}}" data-index="{{index}}" />
+            <icon class="circle" wx:else type="circle" bindtap="selectList" data-shop="{{item.shopId}}" data-index="{{index}}" />
+            <image class='commodity_informationCp' data-index="{{idx}}" data-idx="{{index}}" bindtap="jumpFun" src="{{item.image}}"></image>
+            <view class='information_introduce column' data-index="{{idx}}" data-idx="{{index}}" bindtap="jumpFun">
+              <text class='information_introduceName'>{{item.title}}</text>
+              <text class="information_introduceName colorCss">{{item.taste}}</text>
+              <view class="listBox_num hu_row {{item.taste?'mar':''}}">
+                <view class='shopMoney hu_row'>
+                  <view>￥</view>
+                  <text>{{item.price}}</text>
+                </view>
+                <view class='shopMoney hu_row mktprice'>
+                  <view>￥</view>
+                  <text>{{item.mktprice}}</text>
+                </view>
+                <text class='num'>x{{item.num}}</text>
+              </view>
+            </view>
+
+            <view class="addReduce hu_row">
+              <view catchtap="reduceFun" data-shop="{{item.shopId}}" data-index="{{index}}">-</view>
+              <input type='number' value="{{item.num}}" bindinput="blurFn" bindblur="bindblurFun" data-shop="{{item.shopId}}" data-index="{{index}}" />
+              <view catchtap="addFun" data-shop="{{item.shopId}}" data-index="{{index}}">+</view>
+            </view>
+          </view>
+          <view class="del flex flex_center" catchtap="del" data-index="{{index}}" data-shop="{{item.shopId}}">删除</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>
+
+<!-- 购物车没数据出现推荐版块 -->
+<view wx:if="{{empty}}">
+  <view class='shoppingEmpty'>
+    <view class='shopBox'>
+      <image src="/static/images/shopcar/gouwuche.png"></image>
+      <view class='shopText'>
+        <text>您的购物车已经饿瘪了</text>
+        <navigator url="/pages/search/search">马上去逛逛</navigator>
+      </view>
+    </view>
+  </view>
+  <view class='recommend'>精品推荐</view>
+  <list id="tempList" detail="{{parameter}}"></list>
+</view>

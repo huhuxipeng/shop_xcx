@@ -1,0 +1,90 @@
+<view class='Box' wx:if="{{Box}}">
+  <view class='box hu_row' bindtap="signPassword"><text>登录密码修改</text><image class='arrow' src="/static/images/arrow.png" /></view>
+  <view class='box hu_row' bindtap='paymentPassword'><text>支付密码</text><image class='arrow' src="/static/images/arrow.png" /></view>
+  <view class='box hu_row' bindtap='binding'><text>手机绑定</text><view class='phone hu_row'>{{decompose1}}****{{decompose2}}<image class='arrow' src="/static/images/arrow.png" /></view></view>
+  <view class='box hu_row' bindtap='cachingFun'><text>清除缓存</text><image class='arrow' src="/static/images/arrow.png" /></view>
+</view>
+<!-- 登录密码修改获取验证码 -->
+<view class='signPassword' wx:if="{{signPassword}}">
+  <view class='box hu_row'>
+    <image class="icon4" src="/static/images/icon4.png" />
+    <input class='mobile' bindinput="inputValue" placeholder-style="color:#ccc" type="number" maxlength='11' placeholder='注册时填写的手机号码' />
+  </view>
+  <view class='box hu_row'>
+    <image class="icon4" src="/static/images/icon3.png" />
+    <input class='mobile' bindinput="verificationCode" placeholder-style="color:#ccc" type="number" maxlength='11' placeholder='验证码' />
+    <text class='obtainBtn' bindtap='obtainBtn'>{{count}}</text>
+  </view>
+  <view class='btnBox hu_row'>
+    <!-- <text bindtap='lastStepFun'>上一步</text> -->
+    <text bindtap='nextStepFun'>下一步</text>
+  </view>
+</view>
+<!-- 修改密码 -->
+<view class='new' wx:if="{{new}}">
+  <view class='box hu_row'>
+    <image class="icon4" src="/static/images/icon5.png" />
+    <input class='mobile' bindinput="newPassword" placeholder-style="color:#ccc" type="number" maxlength='18' placeholder='新密码(6-18位)' />
+  </view>
+  <view class='box hu_row'>
+    <image class="icon4" src="/static/images/icon5.png" />
+    <input class='mobile' bindinput="surePassword" placeholder-style="color:#ccc" type="number" maxlength='18' placeholder='确认密码(6-18位)' />
+  </view>
+  <view class='complete' bindtap='complete'>完成</view>
+</view>
+
+
+<!-- 设置新密码 -->
+<view class='paymentPassword' wx:if="{{paymentPassword}}">
+  <view class='box hu_row' wx:if="{{payPassword}}">
+    <text class='spacing'>原密码</text>
+    <input class='mobile' type='password' bindinput="paymentPrimary" placeholder-style="color:#ccc" maxlength='6' placeholder='原密码' />
+  </view>
+  <view class='box hu_row'>
+    <text class='spacing'>新密码</text>
+    <input class='mobile' type='password' bindinput="newPassword" placeholder-style="color:#ccc" maxlength='6' placeholder='新密码' />
+  </view>
+  <view class='box hu_row'>
+    <text class='spacing'>确认密码</text>
+    <input class='mobile' type='password' bindinput="surePassword" placeholder-style="color:#ccc" maxlength='6' placeholder='确认密码' />
+  </view>
+  <text class='forget hu_row' bindtap='forgetFun'>忘记原密码</text>
+  <view class='complete' bindtap='PasswordComplete'>完成</view>
+</view>
+
+<!-- 忘记原密码 -->
+<view class='forgetBox' wx:if='{{forget}}'>
+  <view class='box hu_row'>
+    <text class='spacing'>手机号</text>
+    <input class='mobile' type='text' bindinput="inputValue" placeholder-style="color:#ccc" maxlength='11' placeholder='请输入您的手机号码' />
+    <text class='obtainBtn' bindtap='forgetObtainFun'>{{count}}</text>
+  </view>
+  <view class='box hu_row'>
+    <text class='spacing'>验证码</text>
+    <input class='mobile' type='text' bindinput="verificationCode" placeholder-style="color:#ccc" placeholder='验证码' />
+  </view>
+  <view class='box hu_row'>
+    <text class='spacing'>新密码</text>
+    <input class='mobile' type='password' bindinput="newPassword" placeholder-style="color:#ccc" maxlength='6' placeholder='新密码' />
+  </view>
+  <view class='box hu_row'>
+    <text class='spacing'>确认密码</text>
+    <input class='mobile' type='password' bindinput="surePassword" placeholder-style="color:#ccc" maxlength='6' placeholder='确认密码' />
+  </view>
+  <view class='complete' bindtap='forgetComplete'>确认</view>
+</view>
+
+
+<!-- 手机绑定 -->
+<view class='binding' wx:if="{{binding}}">
+  <view class='box hu_row'>
+    <text class='spacing'>+86</text>
+    <input class='mobile' type='text' bindinput="inputValue" placeholder-style="color:#ccc" maxlength='11' placeholder='请输入您的手机号码' />
+    <text class='obtainBtn' bindtap='forgetObtainFun'>{{count}}</text>
+  </view>
+  <view class='box hu_row'>
+    <text class='spacing'>验证码</text>
+    <input class='mobile' type='text' bindinput="verificationCode" placeholder-style="color:#ccc" placeholder='验证码' />
+  </view>
+  <view class='complete' bindtap='bindingComplete'>立即绑定</view>
+</view>

@@ -1,0 +1,25 @@
+/* pages/addressAddOrEdit/index.wxss */
+page{
+  background:white;
+}
+.green{
+  color:green
+}
+.row{
+  padding:22rpx 17rpx;
+  font-size: 33rpx;
+  border-top:1px solid #eee;
+  background:white;
+}
+.row .left{
+  width:205rpx;
+}
+.row textarea{
+  height:234rpx;
+}
+.row_button{
+  padding: 45rpx;
+  font-size: 38rpx;
+  border-radius: 12rpx;
+  margin-top:133rpx;
+}

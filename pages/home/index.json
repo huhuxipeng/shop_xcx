@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "巨柚商城",
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-cell-group": "../../dist/cell-group/index",
+    "zan-icon": "../icon/index",
+    "zan-search": "../../dist/search/index",
+    "zan-tab": "../../dist/tab/index",
+    "zan-popup": "../../dist/popup/index",
+    "zan-button": "../../dist/btn/index",
+    "index-model": "../../components/indexModel/index",
+    "couponDetail": "../../components/couponDetail/index",
+    "doc-page": "../../components/doc-page/index"
+  }
+}

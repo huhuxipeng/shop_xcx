@@ -1,0 +1,63 @@
+<view class="mydetails" id="mydetails">
+  <view class="detailsBox">
+    <image class='icon4Bg' src="/static/images/mycoupon/icon4.png"></image>
+    <view class="detailsTit">{{o_coupon.cpnName}}</view>
+    <view class="box hu_column">
+      <view class="describe hu_column">
+        <view class="hu_row">
+          <view class="price">{{o_coupon.discountPrice}}</view>
+          <view>元</view>
+          <view wx:if="{{tabIndex==0}}" class="span span{{o_coupon.cpnType}}">{{o_coupon.cpnTypes}}</view>
+          <view wx:else class="span span4">{{o_coupon.cpnTypes}}</view>
+        </view>
+        <view class="ms1">满{{o_coupon.minAmount}}元可用</view>
+
+        <view wx:if="{{tabIndex==0}}" class="immediateUse" bindtap='useFun'>立即使用</view>
+        <view wx:elif="{{tabIndex==1}}" class="immediateUse immediateUses">已使用</view>
+        <view wx:else class="immediateUse immediateUses">已过期</view>
+
+        <view class="ms2">{{o_coupon.placeRemark}}</view>
+      </view>
+      <view class="time hu_column">
+        <view class="hu_row">
+          <view>有效期</view>
+          <view>{{o_coupon.useBeginTime}}-{{o_coupon.useEndTime}}</view>
+        </view>
+        <view class="hu_row">
+          <view>券编码</view>
+          <view>{{o_coupon.cpnSn}}</view>
+        </view>
+      </view>
+      <view class="rule hu_row" bindtap="ruleFun">
+        <view>使用规则</view>
+        <image src="/static/images/mycoupon/backgo.png" />
+      </view>
+      <view class="btns hu_row">
+        <view class="hu_column">
+          <image mode="widthFix" src="/static/images/mycoupon/icon1.png" />
+          
+          <button wx:if="{{tabIndex==0}}" open-type="share" data-id="z" class='shout'>转赠好友</button>
+          <view wx:else class='shout' bindtap='btnFun'>转赠好友</view>
+        </view>
+        <view class="hu_column">
+          <image mode="widthFix" src="/static/images/mycoupon/icon2.png" />
+          <button wx:if="{{tabIndex==0&&o_coupon.grantType==0}}" open-type="share" data-id="l" class='shout'>邀请领券</button>
+          <view wx:else class='shout' bindtap='btnFun'>邀请领券2</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{activity}}" class="activity hu_column">
+    <view class="icon5Box hu_row">
+      <image bindtap="icon5Fun" class="icon5" src="/static/images/mycoupon/icon5.png" />
+    </view>
+    <view class="activityTit">使用规则</view>
+    <view class="activityContent hu_column">
+      <view>{{o_coupon.useRule}}</view>
+      <!-- <view>·获得你的公开信息（昵称、头像、性别等)</view>
+      <view>·使用身份信息（姓名、手机号、证件）办理业</view>
+      <view>·查询你的芝麻分等信用信息，如尚未开通芝麻信用服务，则予以开</view> -->
+    </view>
+  </view>
+  <view wx:if="{{activity}}" class="activityBg"></view>
+</view>

@@ -1,0 +1,123 @@
+<view class='shopBox'>
+  <view class='shop_top'>
+    <view class='search_wrap flex' style='background:white;'>
+      <image class='searchIcon' src="/static/images/search.png" />
+      <input focus bindinput="bindKeyInput" class='search' placeholder="搜索" placeholder-style="color:#999" />
+      <text class='searchBtn' bindtap="searchClick">搜索</text>
+    </view>
+    <image bindtap='showErweiCode' class='min_erwei_code' src='/static/images/shop/icon_Shop_code.png'></image>
+    <image class='banner-bg' src="/static/images/shop/image_shop_base_map.png" />
+    <view class='logo_wrap flex_column flex_center'>
+      <image class='logo' src="{{shopData.shopStoreLogo}}" />
+      <text>{{shopData.shopStoreName}}</text>
+    </view>
+  </view>
+  <view class='information'>
+    <view class='ensure'>
+      <image src="/static/images/protect.png" /> 已缴纳保证金
+      <text>￥{{shopBond}}</text>
+    </view>
+    <!-- <image class='twoCodeImg' src="{{shopData.twoCodeImg}}" /> -->
+  </view>
+  <view class='row_wrap' wx:if="{{couponList.length}}">
+    <view class='row' wx:if="{{couponList.length<=2}}">
+      <view wx:for="{{couponList}}" class='flex type_1 {{item.type}} {{item.color}}' wx:key="index">
+        <view class='left'>{{item.typName}}</view>
+        <view class='right coupon flex'>
+          <view class='flex'>
+            <span class='little'>￥</span>
+            <text class='big'>{{item.discountPrice}}</text>
+          </view>
+          <view class='flex_column flex_center'>
+            <view class='top'>满{{item.minAmount}}使用</view>
+            <view wx:if="{{couponList.length==1}}" class='bottom'>领取时间：{{item.getBeginTime}}-{{item.getEndTime}}</view>
+          </view>
+        </view>
+        <view bindtap='pickNow' data-index="{{index}}" class='pick_now flex flex_center'>立即领取</view>
+      </view>
+    </view>
+    <view class='long_row' wx:if="{{couponList.length>2}}">
+      <view wx:for="{{couponList}}" wx:key="index" class='coupon_child flex_column {{item.color}}'>
+        <view class='top flex'>
+          <span class='little'>￥</span>
+          <text class='big'>{{item.discountPrice}}</text>
+          <view class='flex_column flex_center'>
+            <view class='coupon_name'>{{item.typName}}</view>
+            <view class='full'>满{{item.minAmount}}使用</view>
+          </view>
+        </view>
+        <view class='bottom flex_grow_1 flex_center flex'>
+          <view bindtap='pickNow' data-index="{{index}}" class='pick_now'>立即使用</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{spellinList.length}}" class='spelling'>
+    <view class='spellingTit hu_row'>
+      <view class='line'></view>
+      <view class='titText'>大家正在拼</view>
+      <view class='line'></view>
+    </view>
+    <view  style='height:222rpx;' class='spellingContent hu_row'>
+      <block wx:for="{{spellinList}}" wx:key="s">
+        <view class='contentBox' bindtap="contentClick" data-idx="{{index}}">
+          <image src="{{item.image}}" />
+          <view class='contentPrice'>￥{{item.spellPrice}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+</view>
+
+<view class='goodsSort row' wx:if="{{goodsSort}}">
+  <view class="tab tab1 {{tabPosition==-1? 'down':''}}" data-idx="{{index}}" catchtap="tabFun2">综合</view>
+  <block wx:for="{{tab}}" wx:key="unique">
+    <view class="tab {{tabPosition==index? 'down':''}}" catchtap="tabFun" data-idx="{{index}}">
+      {{item.name}}
+      <view class='arrow'>
+        <view class="i i1 {{item.rise==true?'i1Sele':''}}"></view>
+        <view class="i i2 {{item.rise==false?'i2Sele':''}}"></view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="wrap {{goodsSort==false?'wrap2':''}}">
+  <view class="wrapUl row">
+    <block wx:for="{{list}}" wx:key="unique">
+      <view class='wrapUl_list' bindtap="listClick" data-idx="{{index}}">
+        <image src="{{item.image}}"></image>
+        <text class='list_name'>{{item.name}}</text>
+        <view class='list_money'>
+          <view class='money_primary'>
+            <text>￥</text>{{item.price}}</view>
+          <view class='money_present'>
+            <text>￥</text>{{item.mktprice}}</view>
+        </view>
+        <view class='list_integral'>
+          可获红积分：
+          <text>{{item.redPoint}}</text>
+        </view>
+      </view>
+    </block>
+    <text class="no_data {{no_hide==false?'no_hide':''}}">没有更多数据了</text>
+  </view>
+</view>
+
+<view wx:if="{{nodata}}" class='empty'>
+  <image src="/static/images/empty.png" />
+</view>
+<couponDetail index="{{couponIndex}}" couponList="{{couponList}}" value="{{showCouponDetail}}"></couponDetail>
+<zan-popup show="{{showErweiCodePopup}}">
+  <view class="erweiCodePopup flex flex_column flex_center">
+  <view bindtap="closeErweiCodePopup" class="coupon_close flex flex_center"> × </view>
+    <view class='test'>{{shopData.shopStoreName}}</view>
+    <image class='bigErweicode' src="{{shopData.twoCodeImg}}" />
+    <view class='save_button' bindtap='preservation'>
+      保存图片
+    </view>
+  </view>
+</zan-popup>
+<nav></nav>

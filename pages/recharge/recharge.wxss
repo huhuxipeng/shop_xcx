@@ -1,0 +1,58 @@
+.main{
+  padding: 30rpx 20rpx;
+  background: #fff;
+}
+
+.money{
+  font-size: 36rpx;
+}
+
+.import{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  align-items: center;
+}
+
+.import input{
+  flex: 1;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.tips{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+
+.tips view{
+  color: red;
+}
+
+.btnBox{
+  margin-top: 90%;
+  padding: 0 20rpx;
+}
+
+.rechargeBtn{
+  margin-bottom: 10rpx;
+  padding: 20rpx 0;
+  background: #ccc;
+  border-radius: 15rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.rechargeBtn2{
+  background: #ff403c;
+}
+
+.agreementBox{
+  align-items: center;
+}
+
+.agreement{
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #008dde;
+}

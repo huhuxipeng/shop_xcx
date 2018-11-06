@@ -1,0 +1,208 @@
+page {
+  background: #fff;
+}
+
+.logo {
+  display: block;
+  width: 200rpx;
+  margin: 60rpx auto 0;
+}
+
+.signCode, .list, .register {
+  padding: 20rpx 80rpx;
+}
+
+.box {
+  position: relative;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.box input, .place {
+  flex: 1;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.icon4 {
+  width: 38rpx;
+  height: 44rpx;
+  margin-right: 20rpx;
+}
+
+.get {
+  padding-right: 20rpx;
+  font-size: 28rpx;
+  color: red;
+}
+
+.signCodeBtn {
+  width: 100%;
+  margin-top: 60rpx;
+  padding: 20rpx 0;
+  background: red;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}
+
+.list {
+  padding: 0rpx 80rpx 20rpx;
+  font-size: 30rpx;
+  color: #ccc;
+}
+
+.list view, .list navigator {
+  margin-top: 20rpx;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.bor {
+  border-right: 2px solid #eee;
+}
+
+.registerBtn {
+  margin-top: 20rpx;
+}
+
+.row {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 75rpx;
+  padding: 0 20rpx;
+  line-height: 75rpx;
+  margin-top: 12rpx;
+  white-space: nowrap;
+  color: #ccc;
+  font-size: 26rpx
+}
+
+.shrink_0 {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+}
+
+.between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+.flex_column {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  height: 100%;
+}
+
+.flex_column image {
+  width: 100%;
+}
+
+.row input {
+  height: 100%;
+  
+  flex-grow: 1;
+  padding-left: 12rpx;
+}
+
+.row button {
+  height: 68rpx;
+  line-height: 68rpx;
+  padding: 0 42rpx;
+  background: none;
+  border: none;
+}
+
+.row button.primary, .row button.primary {
+  position: absolute;
+  z-index: 2;
+  top: 20rpx;
+  right: 0;
+  min-width: 100rpx;
+  width: auto;
+  height: 40rpx;
+  border-left: 1px solid #dedede;
+  white-space: nowrap;
+  line-height: 36rpx;
+  border-radius: 0;
+  font-size: 28rpx;
+  color: #F2300A;
+}
+
+.sure {
+  width: 112rpx;
+  height: 112rpx;
+  margin-top: 30rpx;
+  background: url(http://jymall.oss-cn-beijing.aliyuncs.com/comment/conf/wx.png) 0 0 no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  text-indent: 100rpx;
+  border: none;
+}
+
+.segmentingLine {
+  margin-top: 124rpx;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  justify-content: center;
+  align-items: center;
+}
+
+.segmentingLine view {
+  margin: 0 24rpx;
+}
+
+.segmentingLine text {
+  width: 146rpx;
+  height: 2rpx;
+  background: #9b9b9b;
+}
+
+.bindBox{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 624rpx;
+  background: #fff;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  border-radius: 20rpx;
+}
+
+.bindBoxBg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+
+.bindBox_tit{
+  margin-bottom: 60rpx;
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  color: #4A4A4A;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+.bindInp{
+  font-size: 34rpx;
+  color: #ccc;
+}
+
+.bindBtn{
+  background: none;
+  border-top: 1px solid #ccc;
+  border-radius: 0;
+}
+button::after{ border: none; }

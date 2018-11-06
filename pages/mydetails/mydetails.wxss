@@ -1,0 +1,258 @@
+view {
+  box-sizing: border-box;
+}
+
+.hu_row, .hu_column {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.hu_row {
+  flex-direction: row;
+}
+
+.hu_column {
+  flex-direction: column;
+}
+
+.mydetails {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f23814;
+}
+
+.detailsBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 686rpx;
+  height: 1062rpx;
+  transform: translate(-50%, -50%);
+}
+
+.icon4Bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 686rpx;
+  height: 138rpx;
+}
+
+.detailsTit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 686rpx;
+  height: 138rpx;
+  padding: 36rpx 0 0 40rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.box {
+  height: 924rpx;
+  margin-top: 136rpx;
+  padding: 72rpx 40rpx 50rpx;
+  background: #fff;
+  border-radius: 0 0 16rpx 16rpx;
+}
+
+.describe {
+  margin-top: -30rpx;
+  padding-bottom: 44rpx;
+  align-items: center;
+  border-bottom: dashed 2rpx #ccc;
+}
+
+.describe .hu_row {
+  position: relative;
+  height: auto;
+}
+
+.describe .hu_row .price {
+  margin-top: 0;
+  margin-right: 5rpx;
+  font-size: 96rpx;
+}
+
+.describe .hu_row view {
+  margin-top: 70rpx;
+  font-size: 32rpx;
+}
+
+.describe .hu_row .span {
+  position: absolute;
+  top: 8rpx;
+  right: -84rpx;
+  padding: 4rpx 6rpx;
+  color: #fff;
+  border-radius: 16rpx;
+  font-size: 20rpx;
+}
+
+.describe .hu_row .span0 {
+  background: #9b49c3;
+}
+
+.describe .hu_row .span1 {
+  background: #4d7ae8;
+}
+
+.describe .hu_row .span2 {
+  background: #4bc489;
+}
+
+.describe .hu_row .span3 {
+  background: #ea8033;
+}
+
+.describe .hu_row .span4 {
+  background: #ccc;
+}
+
+.ms1 {
+  margin: 16rpx 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.immediateUse {
+  width: 100%;
+  height: 80rpx;
+  margin-bottom: 28rpx;
+  background: #f23814;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.immediateUses{
+  background: #ccc;
+}
+
+.ms2 {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 36rpx;
+}
+
+.time {
+  padding-bottom: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: dashed 2rpx #ccc;
+}
+
+.time .hu_row {
+  margin-top: 30rpx;
+}
+
+.time .hu_row view:nth-child(1) {
+  margin-right: 100rpx;
+}
+
+.rule {
+  padding: 40rpx 0;
+  border-bottom: dashed 2rpx #ccc;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.rule image {
+  width: 23rpx;
+  height: 38rpx;
+}
+
+.btns {
+  padding-top: 50rpx;
+}
+
+.btns .hu_column {
+  position: relative;
+  width: 50%;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.btns .hu_column image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  flex-grow: 0;
+  width: 48rpx;
+  margin: 0 0 12rpx -24rpx;
+}
+
+.activity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 638rpx;
+  padding: 32rpx 32rpx 75rpx;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.icon5Box {
+  justify-content: flex-end;
+}
+
+.icon5 {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.activityTit {
+  margin: 34rpx 0 50rpx;
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+}
+
+.activityContent {
+  overflow-y: auto;
+  max-height: 1000rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.activityContent p {
+  margin-bottom: 8rpx;
+  line-height: 40rpx;
+}
+
+.activityBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+
+.shout {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 94rpx;
+  padding: 0;
+  box-sizing: inherit;
+  line-height: 140rpx;
+  font-size: 24rpx;
+  background: rgba(255, 255, 255, 0);
+  outline: none;
+  text-align: center;
+}
+
+button::after {
+  border: none;
+}

@@ -1,0 +1,27 @@
+<view class='top' bindtap="navigate">
+  <zan-search  placeholder="搜索..." />
+</view>
+
+<ul class='classifyLeft'>
+  <block wx:for="{{goodsCat}}" wx:key="unique" wx:for-index="idx">
+    <li class="{{classifyNavId===idx ? 'sele' : ''}}" catchtap="classifyIDFun" data-id="{{idx}}">{{item.name}}</li>
+  </block>
+</ul>
+
+<view class="classifyRight">
+  <block wx:for="{{goodsCat2[classifyNavId].secGoodsCatList}}" wx:key="unique" wx:for-index="idx">
+    <view class='commodityList'>
+      <view class='commodityList_tit'>
+        <text class='line1'></text>
+        <text class='line2'></text>
+        <text>{{item.name}}</text>
+      </view>
+      <block wx:for="{{item.thirdGoodsCatList}}" wx:key="unique">
+        <view class='commodityBox'>
+          <image data-id="{{item.catId}}" bindtap="ify_jump" src="{{item.image}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

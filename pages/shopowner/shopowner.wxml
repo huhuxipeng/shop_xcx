@@ -1,0 +1,30 @@
+<view class='shopownerBox hu_row'>
+  <view class='binding'>绑定手机</view>
+  <view class='condition'>完成条件
+    <image class='icon2' src="/static/images/icon2.png" />
+  </view>
+  <view class='shop'>开店成功</view>
+</view>
+
+<view class='box column'>
+  <view class='conditionBox hu_row'>
+    <text>店长条件</text>(满足以下任意一条,即可获取店长资格)
+  </view>
+  <view class='conditionList hu_row'>
+    <image class='icon0' src="/static/images/icon0.png" />
+    <view>充值满200元，立送200元积分</view>
+    <navigator class='recharge' open-type='navigate' url='/pages/recharge/recharge'>立即充值</navigator>
+  </view>
+  <view class='conditionList hu_row'>
+    <image class='icon0' src="/static/images/icon1.png" />
+    <view>消费满200元，立送200元积分</view>
+    <navigator class='recharge' open-type='switchTab' url='/pages/home/index'>立即购买</navigator>
+  </view>
+  <view class='conditionList hu_row'>
+    <image class='icon0' src="/static/images/icon1.png" />
+    <view>购买店长礼包</view>
+    <navigator class='recharge' open-type='navigate' url='/pages/shopoPayment/shopoPayment'>立即购买</navigator>
+  </view>
+
+
+</view>

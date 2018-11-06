@@ -1,0 +1,45 @@
+<image class='collageBanner' src="/static/images/collageBanner.jpg" />
+<view class='conduct column'>
+  <view class='title hu_row'>
+    <view></view>
+    <text>大家正在拼</text>
+    <view></view>
+  </view>
+  <view class='collageProductBox hu_row'>
+    <block wx:for="{{recommendedList}}" wx:key="un">
+      <view class='collageProduct' bindtap='conductFun' data-idx="{{index}}">
+        <image src="{{item.image}}" />
+        <text>￥{{item.spellPrice}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='goodsSort row'>
+  <view class="tab tab1 {{tabPosition==-1? 'down':''}}" bindtap="tabFun2">综合</view>
+  <block wx:for="{{tab}}" wx:key="unique">
+    <view class="tab {{tabPosition==index? 'down':''}}" catchtap="tabFun" data-idx="{{index}}">
+      {{item.name}}
+      <view class='arrow' catchtap="tabFun">
+        <view class="i i1 {{item.rise==true?'i1Sele':''}}"></view>
+        <view class="i i2 {{item.rise==false?'i2Sele':''}}"></view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='list'>
+  <block wx:for="{{spellActivityList}}" wx:key="un">
+    <view class='listBox' bindtap='listBoxFun' data-idx="{{index}}">
+      <image src="{{item.image}}" />
+      <view class='listName'>{{item.goodsTitle}}</view>
+      <view class='listData hu_row'>
+        <view class='listData_money'>￥{{item.spellPrice}}</view>
+        <view class='go hu_row'>
+          已拼成多少{{item.alreadyNum}}件
+          <text>去开团</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,12 @@
+<index-model wx:for="{{pageFloorList}}" wx:key="index" wx:if="{{index<moudelLength}}" detail="{{item}}"></index-model>
+<view class='specialBox hu_row'>
+  <view wx:for="{{specialList}}" wx:key="un" bindtap='navFun' data-idx="{{index}}" class='specialbox'>
+    <image mode="widthFix" src="{{item.image}}"></image>
+    <view class='name'>{{item.name}}</view>
+    <view class='price hu_row'>
+      <view class='priceText'>￥{{item.price}}</view>
+      <view class='primary'>￥{{item.mktprice}}</view>
+    </view>
+  </view>
+
+</view>

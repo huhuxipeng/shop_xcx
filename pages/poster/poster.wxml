@@ -1,0 +1,13 @@
+<swiper previous-margin="120rpx" bindchange="onSwip" next-margin="40rpx" skip-hidden-item-layout="true">
+  <swiper-item  wx:for="{{imgObj}}" wx:key="index"><image src="{{item.posterQrcodeImg}}"/></swiper-item>
+</swiper>
+
+<canvas class='ewmImg' canvas-id="myCanvas" bindtouchstart="start" bindtouchmove="move" />
+<view class='preservation' bindtap='preservation'>保存图片</view>
+<button wx:if="{{grant}}" class='preservation' open-type="openSetting" bindopensetting="handler">打开授权</button>
+
+<view class='popup' wx:if="{{know}}">
+  <view class='arrow hu_row'><image src="/static/images/collarVoucher/arrow.png" /></view>
+  <view class='popupText'>赚取更多收益，就是要积极花样推广，点击右上角，马上去分享推广吧～</view>
+  <view class='know' bindtap='know'>知道了</view>
+</view>

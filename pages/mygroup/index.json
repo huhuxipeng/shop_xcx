@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "拼团列表",
+  "usingComponents": {
+    "zan-cell": "../../dist/cell/index",
+    "pay-action": "../../components/payAction/index",
+    "zan-tab": "../../dist/tab/index"
+  }
+}

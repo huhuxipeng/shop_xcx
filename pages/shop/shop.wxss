@@ -1,0 +1,461 @@
+@import "../search/search.wxss";
+
+page {
+  padding-bottom: 115rpx;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+}
+
+.wrap {
+  margin-top: 20rpx;
+  padding: 0 2%;
+}
+
+.wrap2 {
+  margin-top: 10%;
+}
+
+.goodsSort {
+  position: relative;
+  top: 20rpx;
+  background: #fff;
+}
+
+.emrpxy {
+  top: 80rpx;
+  z-index: 20;
+}
+
+.banner {
+  width: 100%;
+  height: 260rpx;
+}
+
+.information {
+  position: relative;
+  top: -7rpx;
+  background: #fff;
+  line-height: 60rpx;
+  color: #333;
+}
+
+/* 
+.shopLogo {
+  position: absolute;
+  top: -50rpx;
+  left: 24rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+} */
+
+.shopName {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  width: 260rpx;
+  margin-left: 18%;
+  font-size: 28rpx;
+}
+
+.ensure {
+  margin-left: 24rpx;
+  font-size: 28rpx;
+}
+
+.ensure image {
+  width: 22rpx;
+  height: 24rpx;
+}
+
+.ensure text {
+  color: #f22d07;
+}
+
+.twoCodeImg {
+  position: absolute;
+  top: -60rpx;
+  right: 14rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.spelling {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.spelling::-webkit-scrollbar {
+  display: none;
+}
+
+.spellingTit {
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.line {
+  width: 100rpx;
+  height: 3rpx;
+  background: #ccc;
+}
+
+.titText {
+  margin: 0 20rpx;
+}
+
+.spellingContent {
+  overflow-x: auto;
+  margin-top: 5rpx;
+  text-align: center;
+}
+
+.contentBox {
+  width: 150rpx;
+  margin: 0 15rpx;
+  padding-bottom: 30rpx;
+}
+
+.spellingContent image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.contentPrice {
+  line-height: 16rpx;
+  font-size: 28rpx;
+  color: orangered;
+}
+
+.row_wrap view {
+  box-sizing: border-box;
+}
+
+.type_1>view {
+  height: 100%;
+}
+
+.type_1 {
+  width: 716rpx;
+  height: 108rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 4rpx 6rpx 6rpx 4rpx;
+  position: relative;
+}
+
+.row .type_2 {
+  width: 352rpx;
+}
+
+.row .type_2:first-child {
+  margin-right: 16rpx;
+}
+
+.type_1 .left {
+  width: 82rpx;
+  padding: 8rpx 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  line-height: 28rpx;
+}
+
+.type_1 .right {
+  flex-grow: 1;
+  padding: 10rpx;
+  justify-content: center;
+}
+
+.type_1.color_1 .left {
+  border-right: 2rpx dashed rgba(234, 128, 51, 1);
+}
+
+.color_1 {
+  border: 2rpx solid rgba(234, 128, 51, 1);
+  color: rgba(234, 128, 51, 1);
+}
+
+.color_1 .pick_now {
+  background-color: rgba(234, 128, 51, 1);
+}
+
+.color_1.coupon_child .top {
+  border-bottom: 2rpx dashed rgba(234, 128, 51, 1);
+}
+
+.type_1.color_2 .left {
+  border-right: 2rpx dashed #4d7ae8;
+}
+
+.color_2 {
+  border: 2rpx solid #4d7ae8;
+  color: #4d7ae8;
+}
+
+.color_2 .pick_now {
+  background-color: #4d7ae8;
+}
+
+.color_2.coupon_child .top {
+  border-bottom: 2rpx dashed #4d7ae8;
+}
+
+.type_1.color_3 .left {
+  border-right: 2rpx dashed #4bc489;
+}
+
+.color_3 {
+  border: 2rpx solid #4bc489;
+  color: #4bc489;
+}
+
+.color_3 .pick_now {
+  background-color: #4bc489;
+}
+
+.color_3.coupon_child .top {
+  border-bottom: 2rpx dashed #4bc489;
+}
+
+.type_1 .coupon .little {
+  font-size: 36rpx;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.type_1 .top {
+  position: relative;
+  z-index: 0;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  line-height: 32rpx;
+  height: auto;
+}
+
+.type_1 .bottom {
+  font-size: 20rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(234, 128, 51, 1);
+  line-height: 32rpx;
+}
+
+.type_1 .coupon .big {
+  font-size: 96rpx;
+  padding: 0;
+  position: relative;
+  left: -.2rem;
+  letter-spacing: -8rpx;
+  flex-direction: column;
+  line-height: 2rem;
+}
+
+.type_2.type_1 .coupon .little {
+  font-size: 28rpx;
+}
+
+.type_2.type_1 .coupon {
+  flex-direction: column;
+}
+
+.type_2.type_1 .top {
+  font-size: 24rpx;
+}
+
+.type_2.type_1 .coupon .big {
+  font-size: 72rpx;
+  letter-spacing: -6rpx;
+  line-height: 1.2rem;
+}
+
+.type_1 .flex_column {
+  margin-left: 9rpx;
+  padding-top: 7rpx;
+}
+
+.type_1 .pick_now {
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  font-size: 20rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 20rpx;
+  padding: 16rpx;
+  margin: 16rpx 20rpx 0 0;
+}
+
+.long_row {
+  width: auto;
+  display: flex;
+  padding: 16rpx;
+  display: -webkit-flex;
+  overflow: auto;
+}
+
+.coupon_child {
+  width: 246rpx;
+  height: 134rpx;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 8rpx 0px rgba(0, 0, 0, 0.09);
+  border-radius: 4rpx 4rpx 8rpx 8rpx;
+  margin-right: 14rpx;
+}
+
+.coupon_child .top {
+  position: relative;
+  z-index: 0;
+  padding-bottom: 4rpx;
+}
+
+.coupon_child .top .little {
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.coupon_child .top .big {
+  font-size: 72rpx;
+  line-height: 72rpx;
+}
+
+.coupon_child .coupon_name {
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  line-height: 28rpx;
+}
+
+.coupon_child .full {
+  font-size: 20rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  line-height: 24rpx;
+}
+
+.coupon_child .bottom .pick_now {
+  width: 158rpx;
+  color: white;
+  border-radius: 16rpx;
+  height: 32rpx;
+  font-size: 20rpx;
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 292rpx;
+  z-index: -1;
+}
+
+.shop_top {
+  position: relative;
+  width: 100%;
+  height: 292rpx;
+  margin-bottom: 40rpx;
+}
+
+.search_wrap {
+  width: 574rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 30rpx;
+  position: absolute;
+  bottom: -30rpx;
+  font-size: 28rpx;
+  left: 88rpx;
+}
+
+.logo_wrap {
+  position: absolute;
+  background: none;
+  width: 250rpx;
+  top: 20rpx;
+  left: 250rpx;
+  color: white;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.logo_wrap .logo {
+  width: 106rpx;
+  height: 106rpx;
+  border-radius: 50%;
+  border: #eeeeee 1px solid;
+}
+
+.min_erwei_code {
+  position: absolute;
+  top: 36rpx;
+  width: 36rpx;
+  height: 36rpx;
+  right: 36rpx;
+}
+
+.bigErweicode {
+  width: 356rpx;
+  height: 356rpx;
+}
+
+.search_wrap .searchBtn {
+  height: 60rpx;
+  line-height: 60rpx;
+  border: none;
+  margin: 0;
+}
+
+.erweiCodePopup {
+  background: white;
+  width: 686rpx;
+  height: 766rpx;
+}
+
+.erweiCodePopup .test {
+  color: #333;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.save_button {
+  width: 532rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  color:white;
+  text-align: center;
+  background: rgba(242, 56, 20, 1);
+  border-radius: 47rpx;
+  margin-top:60rpx;
+}
+.coupon_close {
+height:54rpx;
+width:54rpx;
+font-size:67rpx;
+line-height:44rpx;
+color:#333;
+border-radius:54rpx;
+position:absolute;
+top:20rpx;
+right:20rpx;
+text-align:center;
+
+}

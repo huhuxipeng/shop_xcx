@@ -1,0 +1,48 @@
+<view class='row_wrap'>
+  <view class='row between flex_center'>
+    <image class='goods_img' mode='widthFix' src="{{detail.goodsImage}}"></image>
+    <view class='flex_column justify_center goods_detail'>
+      <view class='goods_name'>{{detail.goodsName}}</view>
+      <view class='gray'>规格：{{detail.productSpec}}</view>
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between'>
+    <view>退货类型</view>
+    <view bindtap='showTypeSelect'>{{rightType}}</view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between'>
+    <view>退款原因</view>
+    <view bindtap='showReasonSelect'>{{reason}}</view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between'>
+    <view>退款金额</view>
+    <view>
+      <input bindinput="changeValue"  value='{{money}}' data-prop="money" type='digit'></input>
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row'>最多￥{{detail.price}}（含邮费）</view>
+</view>
+<view class='row' style='position:absolute;bottom:0'>
+  <a bindtap="subbmit" class="row_button">提交</a>
+</view>
+<!-- 退款类型选择窗 -->
+<action-sheet hidden="{{!rightTypeShow}}">
+  <block wx:for="{{types}}" wx:key="index">
+    <action-sheet-item class="item" bindtap="rightTypeChange" data-name="{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="showTypeSelect">取消</action-sheet-cancel>
+</action-sheet>
+<action-sheet hidden="{{!reasonShow}}">
+  <block wx:for="{{reasons}}" wx:key="index">
+    <action-sheet-item class="item" bindtap="reasonChange" data-name="{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel" bindtap="showReasonSelect">取消</action-sheet-cancel>
+</action-sheet>

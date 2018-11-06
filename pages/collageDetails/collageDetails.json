@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "拼团详情",
+  "usingComponents": {
+    "detail-tab": "../../components/detailTab/index",
+    "footer-buy": "../../components/footerBuy/index"
+  }
+}

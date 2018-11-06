@@ -1,0 +1,45 @@
+<view class='row_wrap'>
+  <view class='row between'>
+    <view class='gray'>可提现积分：{{detail.hasRedPoint}}</view>
+    <view class='gray'>({{detail.pointScale}}积分等于1人民币)</view>
+  </view>
+  <view class='row' style='padding-top:0;'>
+    <a class="row_button">可提现金额：￥{{detail.hasRedPoint*detail.pointScale}}</a>
+  </view>
+</view>
+<view class='row_wrap' style='background:white;'>
+  <view class='row between'>
+    <view class='flex_center flex'>提现积分：</view>
+    <view class='flex_grow_1'>
+      <input placeholder='{{detail.placeholder}}' data-prop="drawPoint" bindinput='changeValue' ></input>
+    </view>
+  </view>
+  <view class='row between'>
+    <view class='flex_center flex'>提现到</view>
+  </view>
+  <view wx:if="{{bank}}" class='row between' bindtap="selectBank">
+    <view class='flex flex_center'>
+      <image style='width:37rpx;height:37rpx;' src='{{bank.bankImage}}'></image>
+      <text style='white-space:nowrap;margin-left:11rpx;'>{{bank.accountName}}</text>
+    </view>
+    <text style='white-space:nowrap;margin-left:11rpx;'>{{bank.card1}}**********{{bank.card2}}</text>
+  </view>
+  <view wx:else class='row between' bindtap="selectBank">
+    <view class='flex flex_center'>
+      <image style='width:37rpx' mode='widthFix' src='/static/images/bank.png'></image>
+      <text style='white-space:nowrap;margin-left:11rpx;'>银行卡</text>
+    </view>
+    <view class=" more_warp">
+      <view class="zan-arrow"></view>
+    </view>
+  </view>
+  <view class='remark_wrap'>
+    <view wx:for="{{remark}}" wx:key="index" class='gray'>
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+</view>
+  <view class='row footer'>
+  <a bindtap="submit" class="row_button">完成</a>
+  </view>

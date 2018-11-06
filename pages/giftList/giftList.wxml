@@ -1,0 +1,21 @@
+<view class='wrap'>
+  <view class="wrapUl row">
+    <block wx:for="{{list}}" wx:key="unique">
+      <view class='wrapUl_list' bindtap="wrapListClick" data-idx="{{index}}">
+        <image src="{{item.image}}"></image>
+        <text class='list_name'>{{item.gpName}}</text>
+        <view class='list_money'>
+          <view class='money_primary'>
+            <text>￥</text>{{item.price}}</view>
+          <view class='money_present'>
+            <text>￥</text>{{item.mktprice}}</view>
+        </view>
+        <view class='list_integral'>
+          可获红积分：
+          <text>{{item.redPoint}}</text>
+        </view>
+      </view>
+    </block>
+    <text class="no_data {{no_hide==false?'no_hide':''}}">没有更多数据了</text>
+  </view>
+</view>

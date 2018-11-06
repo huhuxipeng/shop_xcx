@@ -1,0 +1,46 @@
+<view class="collarVoucher" id="collarVoucher">
+  <image class="banner" src="/static/images/collarVoucher/banner.png" alt="" />
+  <view class="phoneBox" wx:if="{{receiveState==false}}">
+    <input class="inp" type="text" bindinput='inpFun' maxlength='11' placeholder="请输入手机号码" />
+    <text class="getCode" bindtap='getCodeFun'>{{CodeText}}</text>
+  </view>
+  <input class="inp" type="text" wx:if="{{receiveState==false}}" bindinput="codeFun" placeholder="请输入验证码" />
+  <view class="shareBtn use" bindtap="receiveFun" wx:if="{{receiveState==false}}">
+    <image class='btn' src="/static/images/collarVoucher/btn.png" />
+    <text>立即领取</text>
+  </view>
+  <view class="shareBtn" bindtap="shareGuide" wx:if="{{receiveState}}">
+    <image class='btn' src="/static/images/collarVoucher/btn.png" />
+    <button open-type="share" class='shout'>分享给好友</button>
+  </view>
+  <view class="shareBtn use" catchtap="useFun" wx:if="{{receiveState}}">
+    <image class='btn' src="/static/images/collarVoucher/btn.png" />
+    <text>去使用</text>
+  </view>
+
+  <view class="tips">请您点击立即领取，获取现金券，领完为止。</view>
+  <view class="voucher hu_column">
+    <image class="h h1" src="/static/images/collarVoucher/h.png" />
+    <image class="h h2" src="/static/images/collarVoucher/h.png" />
+    <view class="cardVoucher hu_column">
+      <image class="icon left" src="/static/images/collarVoucher/left.png" />
+      <image class="icon right" src="/static/images/collarVoucher/right.png" />
+      <view class="shop shop_f hu_row">
+        <view>
+          <view>{{couponList.cpnName}}</view>
+          <view><text class='quan p_color{{couponList.cpnType}}'>{{couponList.cpnTypes}}</text>满{{couponList.minAmount}}可用</view>
+        </view>
+        <view class="shop_z hu_row">
+          <view>￥</view>
+          <view>{{couponList.discountPrice}}</view>
+        </view>
+      </view>
+      <view class="date">{{couponList.getBeginTime}}-{{couponList.getEndTime}}</view>
+    </view>
+    
+  </view>
+  <view wx:if="{{shareState}}" class="shareBox" bindtap="closeShare">
+    <image src="/static/images/collarVoucher/share.png" alt="分享" />
+    <text>点击右上角分享给好友</text>
+  </view>
+</view>

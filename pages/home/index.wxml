@@ -1,0 +1,44 @@
+<view class="container">
+  <zan-search placeholder="搜索..." keyword="{{ inputValue }}" bindtap="toSearch" disabled="true" />
+
+  <view style="margin-top:25rpx">
+    <zan-tab list="{{ tab.navList }}" scroll="true" selected-id="{{ tab.selectedId }}" bindtabchange="handleTabChange" />
+  </view>
+  <index-model wx:for="{{pageFloorList}}" wx:key="index" wx:if="{{index<moudelLength}}" detail="{{item}}"></index-model>
+  <zan-popup class="couponPopup" closeOnClickOverlay='true' type="center" show="{{ couponPopup }}" >
+      <view class="couponPopup_wrap">
+        <image style='height:5.6667rem;' class="header_img" src="/static/images/home/home_coupon_decoration.png"></image>
+        <view class="title">
+          恭喜你获得{{couponList.length}}张现金券
+        </view>
+        <view  class="flex flex_center flex_column coupon_wrap">
+          <view class="coupon flex" wx:for="{{couponList}}" bindtap='showRelDetail' data-item="{{item}}" style="margin-bottom:.6rem;"  wx:key="index">
+            <view class="left flex_column flex align_center">
+              <view class="top">
+                <span class="little red">￥</span>
+                <span class="big red">{{item.discountPrice}}</span>
+              </view>
+              <view class="gray">
+                满{{item.minAmount}}可用
+              </view>
+              <view class='top_ball ball'></view>
+              <view class='bottom_ball ball'></view>
+            </view>
+            <view class="right flex flex_column align_center">
+              <view class="top flex">
+                <view class="quan">{{item.typeName}}</view>
+                <view class="quan_title">{{item.cpnName}}</view>
+              </view>
+              <view class="bottom flex">
+                {{item.useEndTime}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <image class="to_use" bindtap="toUse" src="/static/images/home/home_button_use.png" ></image> 
+        <image class='closeCoupon' bindtap='closeCouponPopup' src="/static/images/home/icon_home_close.png" ></image>
+      </view>
+
+    </zan-popup>
+    <couponDetail index="0" couponList="{{pickCouponList}}" value="{{showCouponDetail}}" ></couponDetail>
+</view>

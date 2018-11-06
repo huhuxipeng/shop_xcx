@@ -1,0 +1,43 @@
+<view class='rule' bindtap="ruleFun">规则</view>
+<image class='treasure' src="/static/images/treasure.png" />
+
+
+<view class="example">
+  <view animation="{{animationData}}" class="marquee_text hu_row" style='width:{{length}}px;'>
+    <block wx:for="{{dataList}}" wx:key="un">
+      <view class='broadcastList hu_row'>
+        <image src="{{item.face}}"></image>
+        <text>{{item.message}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+
+
+<view class='list'>
+  <block wx:for="{{spellActivityList}}" wx:key="un">
+    <view class='listBox' bindtap='listBoxFun' data-idx="{{index}}">
+      <image src="{{item.image}}" />
+      <view class='listName'>{{item.goodsTitle}}</view>
+      <view class='listData hu_row'>
+        <view class='listData_money'>￥{{item.spellPrice}}</view>
+        <view class='go hu_row'>
+          {{item.alreadyNum}}人拼团
+          <text>去拼团</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='bg' wx:if="{{explain}}"></view>
+<view class='explain' wx:if="{{explain}}">
+  <view class='explainTit'>
+    活动规则
+    <image bindtap="closeRuleFun" class='close2' src="/static/images/close2.png" />
+  </view>
+  <view class='explainText'>1. 在规定的时间内，邀请好友成团，成团后有中奖资格，若开奖时间未达成拼团人数，款项将自动原路返还</view>
+  <view class='explainText'>2. 如存在刷单，恶意虚假用户等违规行为，平台有权判定成团无效</view>
+</view>

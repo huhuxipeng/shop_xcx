@@ -1,0 +1,24 @@
+<block wx:for="{{childMemberList}}" wx:key="un">
+  <view class='Box hu_row' wx:if="{{number>=1}}">
+    <view class='column'>
+      <image class='portrait' src="{{item.face}}" />
+      <view class='follow'>{{follow}}</view>
+    </view>
+    <view class='information column'>
+      <view class='informationBox hu_row'>
+        <view>{{item.nickname}}</view>
+        <text class='bor'>普通会员</text>
+        <view>ID:{{item.memberId}}</view>
+      </view>
+      <view class='informationBox hu_row'>
+        <view>总交易金额：</view>
+        <text>￥{{item.amount}}</text>
+      </view>
+      <view class='informationBox hu_row'>
+        <view>累计贡献红积分：</view>
+        <text>￥{{item.redPoint}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<view class='number'>总人数：{{number}}人</view>

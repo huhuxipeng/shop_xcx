@@ -1,0 +1,82 @@
+<view style="height:{{detail.height}};overflow: hidden;">
+  <view  class='row flex_column' style='flex-wrap:wrap;' wx:if="{{detail.modelId=='1001'}}">
+    <image class='child' wx:for="{{detail.pageFloorModuleList}}" wx:key="index" mode="widthFix" bindtap="showDetail" data-rel="{{item}}" src="{{item.pic}}" />
+  </view>
+  <!-- 轮播图 -->
+  <view style="height: 100%;" wx:if="{{detail.modelId=='1002' && detail.pageFloorModuleList.length>1}}">
+    <swiper class="swiper" style="height: 100%;" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{detail.pageFloorModuleList}}" wx:key="index">
+        <swiper-item>
+          <image style="width:100%;" mode="widthFix" bindtap="showDetail" data-rel="{{item}}" src="{{item.pic}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 单页轮播图 -->
+  <view wx:elif="{{detail.modelId=='1002'}}">
+    <image style="width:100%;" mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[0]}}" src="{{detail.pageFloorModuleList[0].pic}}" />
+  </view>
+  <view class="row" wx:elif="{{detail.modelId=='1003'||detail.modelId=='1004'||detail.modelId=='1006'||detail.modelId=='1007'}}">
+    <image wx:for="{{detail.pageFloorModuleList}}" wx:key="index" mode="widthFix" bindtap="showDetail" data-rel="{{item}}" src="{{item.pic}}" />
+  </view>
+  <view class="row" wx:elif="{{detail.modelId=='1005'}}">
+    <image style="width:50%;" mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[0]}}" src="{{detail.pageFloorModuleList[0].pic}}" />
+    <view style="width:50%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[1]}}" src="{{detail.pageFloorModuleList[1].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[2]}}" src="{{detail.pageFloorModuleList[2].pic}}" />
+    </view>
+  </view>
+  <!-- 图标 -->
+  <view wx:if="{{detail.modelId=='1008'}}" class="row between">
+    <image style="width:33.3333%;" mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[0]}}" src="{{detail.pageFloorModuleList[0].pic}}" />
+    <view style="width:33.3333%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[1]}}" src="{{detail.pageFloorModuleList[1].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[2]}}" src="{{detail.pageFloorModuleList[2].pic}}" />
+    </view>
+    <image style="width:33.3333%;" mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[3]}}" src="{{detail.pageFloorModuleList[3].pic}}" />
+  </view>
+  <!-- 图标 -->
+  <view wx:if="{{detail.modelId=='1009'}}" class="row between">
+    <image style="width:33.3333%;" mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[0]}}" src="{{detail.pageFloorModuleList[0].pic}}" />
+    <view style="width:33.3333%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[1]}}" src="{{detail.pageFloorModuleList[1].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[2]}}" src="{{detail.pageFloorModuleList[2].pic}}" />
+    </view>
+    <view style="width:33.3333%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[3]}}" src="{{detail.pageFloorModuleList[3].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[4]}}" src="{{detail.pageFloorModuleList[4].pic}}" />
+    </view>
+  </view>
+  <!-- 图标 -->
+  <view wx:if="{{detail.modelId=='1010'}}" class="row between">
+    <view style="width:33.3333%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[0]}}" src="{{detail.pageFloorModuleList[0].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[1]}}" src="{{detail.pageFloorModuleList[1].pic}}" />
+    </view>
+    <image style="width:33.3333%;" mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[2]}}" src="{{detail.pageFloorModuleList[2].pic}}" />
+    <view style="width:33.3333%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[3]}}" src="{{detail.pageFloorModuleList[3].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[4]}}" src="{{detail.pageFloorModuleList[4].pic}}" />
+    </view>
+  </view>
+  <!-- 图标 -->
+  <view wx:if="{{detail.modelId=='1011'}}" class="row between">
+    <view style="width:33.3333%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[0]}}" src="{{detail.pageFloorModuleList[0].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[1]}}" src="{{detail.pageFloorModuleList[1].pic}}" />
+    </view>
+    <view style="width:33.3333%;" class="flex_column row">
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[2]}}" src="{{detail.pageFloorModuleList[2].pic}}" />
+      <image mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[3]}}" src="{{detail.pageFloorModuleList[3].pic}}" />
+    </view>
+    <image style="width:33.3333%;" mode="widthFix" bindtap="showDetail" data-rel="{{detail.pageFloorModuleList[4]}}" src="{{detail.pageFloorModuleList[4].pic}}" />
+
+  </view>
+  <view class="row" style="width: auto;overflow-x: auto" wx:elif="{{detail.modelId=='1012'}}">
+    <image style="width:337.5rpx" class="shrink_0" wx:for="{{detail.pageFloorModuleList}}" mode="widthFix" bindtap="showDetail" data-rel="{{item}}" src="{{item.pic}}" />
+  </view>
+  <view class="row" style="overflow-x: scroll" wx:elif="{{detail.modelId=='1013'}}">
+    <image style="width:600rpx" wx:for="{{detail.pageFloorModuleList}}" mode="widthFix" bindtap="showDetail" data-rel="{{item}}" src="{{item.pic}}" />
+  </view>
+
+</view>

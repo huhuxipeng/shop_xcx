@@ -1,0 +1,23 @@
+<view class='Box hu_row'>
+  <image class='default' src="{{face}}" />
+  <view class='box column'>
+    <text class='name'>{{logiInfo.expName}}</text>
+    <text>运单号: {{logiInfo.number}}</text>
+  </view>
+</view>
+
+<view class='wrap column'>
+  <block wx:for="{{list}}" wx:key="un">
+    <view class="wrapBox hu_row {{index==0?'sele':''}}">
+      <view class='wrapBoxLeft column'>
+        <text>{{item.decompose2}}</text>
+        <text>{{item.decompose1}}</text>
+      </view>
+      <view class='wrapBoxRight'>
+        <icon wx:if="{{index==0}}" type="success" size="22" color='red'  />
+        <view wx:else class='icon'></view>
+        {{item.status}}
+      </view>
+    </view>
+  </block>
+</view>

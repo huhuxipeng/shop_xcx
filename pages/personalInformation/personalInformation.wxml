@@ -1,0 +1,19 @@
+<view class='wrap column'>
+  <view class='box hu_row'>ID<text>{{member.memberId}}</text></view>
+  <view class='box hu_row'>
+    头像
+    <image class='tx' src="{{tempFilePaths}}" />
+    <button class='getimg' bindtap="chooseimage">获取图片</button>
+  </view>
+  <view class='box hu_row'>
+    昵称
+    <input class='nicknameInput' type="text" placeholder='{{member.nickname}}' placeholder-class='color:#999;' bindinput="nickname" />
+    <view class='confirm' bindtap='confirm'>确认</view>
+  </view>
+  <navigator url='/pages/setUp/setUp?id=3' class='box hu_row'>余额支付密码<image class='arrow' src="/static/images/arrow.png" /></navigator>
+</view>
+<view class='signOut' bindtap='signOut'>切换账号</view>
+
+<view style=''>
+  <canvas canvas-id="attendCanvasId" style='position:flex;top:-1000px;width:{{canvasWidth}};height:{{canvasHeight}}'></canvas>
+</view>

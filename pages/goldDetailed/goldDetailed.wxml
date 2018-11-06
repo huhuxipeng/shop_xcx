@@ -1,0 +1,34 @@
+<view class='tab hu_row'>
+  <view bindtap="seleClick" data-idx="0" class="{{sele==0?'sele':''}}">全部记录</view>
+  <view bindtap="seleClick" data-idx="1" class="{{sele==1?'sele':''}}">获得记录</view>
+  <view bindtap="seleClick" data-idx="2" class="{{sele==2?'sele':''}}">消耗记录</view>
+</view>
+
+<view class="detailedBox hu_row {{sele!=0?'hide':''}}">
+  <view class='detailed line hu_row'>
+    <image class='goldIcon' src="/static/images/goldIcon.png" />
+    <view class='column'>
+      累计金币
+      <text>{{memberCoinNum.coinSum}}</text>
+    </view>
+  </view>
+  <view class='detailed hu_row'>
+    <image class='goldIcon' src="/static/images/goldIcon.png" />
+    <view class='column'>
+      剩余金币
+      <text>{{memberCoinNum.coin}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="recordList column">
+  <block wx:for="{{memberCoinDetails}}" wx:key="un">
+    <view class='recordList_li hu_row'>
+      {{item.coinType}}
+      <view class='recordList_liBox column'>
+        {{item.coinNum}}
+        <view class='hu_row'><text>{{time[index]}}</text></view>
+      </view>
+    </view>
+  </block>
+</view>

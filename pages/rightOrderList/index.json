@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "维权订单",
+  "usingComponents": {
+    "zan-cell": "../../dist/cell/index",
+    "zan-tab": "../../dist/tab/index"
+  }
+}

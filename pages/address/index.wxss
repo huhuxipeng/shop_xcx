@@ -1,0 +1,23 @@
+/* pages/address/index.wxss */
+page{
+  height:100%;overflow:auto;
+}
+view{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.address_wrap{
+  background: white;
+}
+.row_wrap{
+  font-size: 27rpx;
+  margin-bottom:20rpx;
+}
+.row a.action{
+  
+  margin-right:15rpx;
+}
+.footer{
+  position: absolute;
+  bottom:0;
+}

@@ -1,0 +1,16 @@
+.wrap {
+  padding: 20rpx 20rpx 0;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  text-align: justify;
+}
+
+.rechargeBtn {
+  margin-top: 30%;
+  padding: 20rpx 0;
+  background: #ff403c;
+  border-radius: 15rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+}

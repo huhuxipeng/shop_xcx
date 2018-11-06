@@ -1,0 +1,86 @@
+.tab{
+  overflow: auto;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+}
+
+.tab view{
+  flex: 1;
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.sele{
+  border-bottom: 2px solid red;
+}
+
+.detailedBox{
+  margin: 20rpx 0;
+  padding: 30rpx;
+  background: #fff;
+  justify-content: space-between;
+}
+
+.detailed{
+  flex: 1;
+  justify-content: center;
+}
+
+.line{
+  border-right: 1px solid #eee;
+}
+
+.detailed view{
+  font-size: 28rpx;
+}
+
+.goldIcon{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 10rpx;
+  margin-right: 16rpx;
+}
+
+.detailed text{
+  text-align: center;
+  color: red;
+  font-size: 36rpx;
+}
+
+.recordList{
+  overflow-y: auto;
+  max-height: 900rpx;
+}
+
+.recordList::-webkit-scrollbar{
+  /* display: none; */
+}
+
+.recordList_li{
+  flex-shrink: 0;
+  padding: 20rpx 40rpx;
+  background: #fff;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #333;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.recordList_liBox{
+  align-items: flex-end;
+}
+
+.recordList_liBox text{
+  margin-top: 10rpx;
+}
+
+.recordList_liBox view{
+  color: #999;
+  font-size: 24rpx;
+}
+
+.hide{
+  display: none;
+}

@@ -1,0 +1,138 @@
+@import "../../api/common.wxss";
+/* components/couponDetail/index.wxss */
+.popup_wrap {
+  position: relative;
+  width: 718rpx;
+  height: 1052rpx;
+  padding-top: 18rpx;
+  border-radius: 4rpx;
+}
+
+.popup_wrap_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.coupon_header {
+  font-size: 48rpx;
+  font-family: DFWaWaSC-W5;
+  font-weight: normal;
+  color: white;
+  line-height: 58rpx;
+  text-align: center;
+  -webkit-text-stroke: 2rpx white;
+}
+
+.coupon_close {
+  width: 54rpx;
+  height: 54rpx;
+  font-size: 59rpx;
+  line-height: 44rpx;
+  color: white;
+  border-radius: 54rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  text-align: center;
+}
+
+.coupon_main {
+  margin-top: 120rpx;
+  color: #f14d44;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.coupon_main>view:first-child {
+  height: 112rpx;
+}
+
+.coupon_main .big {
+  font-size: 96rpx;
+}
+
+.coupon_main .little {
+  font-size: 32rpx;
+  position: relative;
+}
+
+.popup_wrap .pick_now {
+  width: 400rpx;
+  height: 76rpx;
+  background: linear-gradient(180deg, rgba(254, 226, 85, 1) 0%, rgba(245, 166, 35, 1) 100%);
+  border-radius: 38rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 76rpx;
+  margin: 126rpx auto 22rpx;
+  text-align: center;
+}
+
+.popup_wrap .pick_text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(247, 184, 51, 1);
+  text-align: center;
+  width: 100%;
+  line-height: 34rpx;
+}
+
+.popup_wrap .share_text {
+  margin-top: 120rpx;
+  font-size: 36rpx;
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  line-height: 50rpx;
+}
+.share_button_wrap{
+  justify-content: center;
+}
+.share_button_wrap>button:first-child{
+}
+.share_button_wrap button{
+  background:none;display: inline-block;
+  width:auto;
+  height: auto;
+  border:none;box-shadow: 0 0 0 0;
+}
+.share_button_wrap button::after{
+border:none;box-shadow: 0 0 0 0;
+}
+.share_button_wrap image {
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 51rpx;
+}
+
+.share_button_wrap .text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 32rpx;
+  text-align: center;
+}
+.select_button{
+  position: absolute;
+  top:467rpx;
+  width:64rpx;
+  height: 64rpx;
+  z-index: 1;
+}
+.left_button{
+  left:22rpx;
+}
+.right_button{
+  right:22rpx;
+}

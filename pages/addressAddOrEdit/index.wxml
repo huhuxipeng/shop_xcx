@@ -1,0 +1,37 @@
+<view>
+  <view class='row'>
+    <view class='left'>收件人</view>
+    <view class='right'>
+      <input bindinput="changeValue" data-prop="name" placeholder='你的名字' value='{{addr.name}}' />
+    </view>
+  </view>
+  <view class='row'>
+    <view class='left'>联系方式</view>
+    <view class='right'>
+      <input bindinput="changeValue" type='number' maxlength='11' data-prop="mobile" placeholder='你的手机号' value='{{addr.mobile}}' />
+    </view>
+  </view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker row">
+      <view class='left'>收货地址</view>
+      <view class='right more_warp flex_grow_1'>{{region[0]}}，{{region[1]}}，{{region[2]}}
+        <view class='zan-arrow'></view>
+      </view>
+    </view>
+  </picker>
+  <view class='row'>
+    <textarea bindinput="changeValue" data-prop="addressDetail" maxlength="522" value='{{addr.addressDetail}}' placeholder="请输入详细信息"></textarea>
+  </view>
+  <view class='row'>
+    <view class='left'>设为默认地址</view>
+    <view class='right flex_grow_1' style='text-align:right;'>
+      <zan-checkbox checkbox-class="checkbox-demo" checked="{{addr.defAddr}}" bindinput="handleCheckboxChange"></zan-checkbox>
+    </view>
+  </view>
+  <view class='row'>
+    <a class="row_button" bindtap="getProvinceId">
+      完成
+    </a>
+  </view>
+  <zan-toast id="set_success"></zan-toast>
+</view>

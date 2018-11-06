@@ -1,0 +1,49 @@
+<!--pages/orderlist/index.wxml-->
+<view>
+  <view class='row'>
+  </view>
+  <zan-tab scroll="true" list="{{ tab.navList }}" selected-id="{{ tab.selectedId }}" bindtabchange="handleTabChange" />
+  <ul class='list_wrap'>
+    <li wx:for="{{dataList}}" wx:key="index">
+      <view class='row between order_title'>
+        <view class='flex'>
+          <image class='orderlistIcon' src="/static/images/shopcar/icon.png"></image>
+          {{item.comName}}
+          <view class='gray'>＞</view>
+          <span wx:if="{{item.orderType==1}}" class="red">[抢购]</span>
+        </view>
+        <view class='red'>{{item.statusText}}</view>
+      </view>
+      <view class='bg_fa' wx:for="{{item.goodsList}}" wx:for-item="o" wx:for-index="i" wx:key="i">
+        <view bindtap='orderDetail' data-orderId="{{o.orderId}}" data-orderType="{{item.orderType}}" class='row between'>
+          <image class='goods_img' mode='widthFix' src="{{o.goodsImage}}"></image>
+          <view class='flex_column justify_center goods_detail'>
+            <view class='goods_name'>{{o.goodsName}}</view>
+            <view class='gray'>规格：{{o.productSpec}}</view>
+          </view>
+          <view class='flex_column goods_prize'>
+            <view>￥{{o.price}}</view>
+            <view class='gray pri_line'>￥{{o.goodsPrice}}</view>
+            <view class='gray'>X{{o.buyCount}}</view>
+          </view>
+        </view>
+        <view class="row justify_end" wx:if="{{item.orderStatus!=0&&item.orderStatus!=7&&item.rightCloseStatus!=1}}">
+          <a class="primary red" data-item="{{o}}" data-orderType="{{item.orderType}}" data-idx="{{index}}" wx:if="{{o.status==0}}" bindtap="applyfo">申请维权</a>
+        </view>
+      </view>
+      <view class='total_prize'>
+        合计：￥{{item.orderAmount}}
+      </view>
+      <view class='row justify_end'>
+        <a class="primary" wx:if="{{item.orderStatus==5}}" data-item="{{item}}" bindtap="logistics">查看物流</a>
+        <a class="primary red" wx:if="{{item.orderStatus==5}}" data-item="{{item}}" bindtap="confirm">确认收货</a>
+        <a class="primary red" wx:if="{{item.orderStatus==0}}" data-item="{{item}}" bindtap="cancel">取消订单</a>
+        <a class="primary red" wx:if="{{item.orderStatus==0}}" data-item="{{item}}" bindtap="pays">立即支付</a>
+        <a class="primary red" wx:if="{{item.orderStatus==6}}" data-item="{{item}}" bindtap="apprise">评价</a>
+        <a class="primary" wx:if="{{item.orderStatus==6}}" data-item="{{item}}" bindtap="logistics">查看物流</a>
+      </view>
+    </li>
+  </ul>
+</view>
+<zan-toast id="zan-toast-test"></zan-toast>
+<pay-action show="{{showPayAction}}" orderId="{{orderId}}" flashsaleId="{{flashsaleId}}" payOptions="{{payOptions}}"></pay-action>

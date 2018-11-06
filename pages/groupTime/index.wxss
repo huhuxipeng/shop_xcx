@@ -1,0 +1,90 @@
+/* pages/groupTime/index.wxss */
+
+.row image.goods_img {
+  width: 222rpx;
+}
+
+.row_wrap {
+  margin-bottom: 15rpx;
+}
+
+.row {
+  box-sizing: border-box;
+}
+
+.row a {
+  box-sizing: border-box;
+}
+
+.goods_detail {
+  line-height: 40rpx;box-sizing: border-box;
+}
+
+.goods_detail .goods_name {
+  font-size: 32rpx;
+}
+
+.goods_detail .red {
+  font-size: 33rpx;
+}
+
+.goods_detail .gray {
+  font-size: 30rpx;
+}
+
+.between {
+  padding: 25rpx 0 25rpx 25rpx;
+}
+
+.row_button {
+  border-radius: 20rpx;
+}
+
+.rowBtn{
+  line-height: 60rpx;
+}
+
+.child {
+  position: relative;
+}
+
+.child .fir {
+  position: absolute;
+  top: 3rpx;
+  left: 15rpx;
+  font-size: 25rpx;
+  line-height: 30rpx;
+  height: 30rpx;
+  background: #ff4500;
+  color: white;
+  border-radius: 15rpx;
+}
+
+.child image {
+  width: 100rpx;
+  border-radius: 50rpx;
+}
+
+.mast_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mast {
+  position: absolute;top: 0; right: 0;
+  width:444rpx;
+}
+.gth{
+  width:36rpx;
+  height: 36rpx;
+  border-radius: 18rpx;
+  background:red;
+  color:white;
+  font-size: 24rpx;margin-right:6rpx;
+}

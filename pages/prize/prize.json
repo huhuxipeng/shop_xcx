@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "中奖详情",
+  "usingComponents": {
+    "list": "../../components/list/list"
+  }
+}

@@ -1,0 +1,43 @@
+<view class='row_wrap'>
+  <view class='row'>
+    <view class='flex flex_center'>物流公司</view>
+    <view class='flex_grow_1' bindtap='showPopup' >
+      <text class='gray'>{{logiName}}</text>
+      <image class='select_img' style='width:38rpx;height:32rpx;' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAMAAAAR8Wy4AAAAUVBMVEUAAACZmZmbm5uYmJiampqampqYmJidnZ2enp6fn5+bm5uZmZmZmZmampqenp6ampqZmZmZmZmZmZmZmZmdnZ2enp6dnZ2ampqampqampqYmJjrAHW2AAAAGnRSTlMA8CvrExD1OjMvDfrJw04h4+G7jWVGJQlZF+HDYMsAAAB1SURBVAjXPY9ZEoQgDESJAUTAwWXc+v4HFUyK/HS915CqmH2xps7tg5EZ4ZspCZOaAGrGUTcT/NMMY1QzIMUal0fob8jVsNzNyetQI2Ycav7Y5fMm/MMWG6e1KM/SU/z4QP4Wgaz2WXp2um+WE+iSW4QLL9K/fdEFcZuz/JgAAAAASUVORK5CYII='></image>
+    </view>
+  </view>
+  <view class='row'>
+    <view class='flex flex_center'>物流单号</view>
+    <view class='flex_grow_1'>
+      <input placeholder='填写物流单号' data-prop="logiNo"  bindinput='changeValue'></input>
+    </view>
+  </view>
+
+</view>
+<view class='bar'></view>
+
+<view class='row_wrap'>
+  <view class='row'>
+    <view class='flex flex_center'>退货说明</view>
+    <view class='flex_grow_1'>
+      <input placeholder='选填'></input>
+    </view>
+  </view>
+</view>
+<view class='footer row'>
+  <a class="row_button" bindtap="submit" >完成</a>
+</view>
+<zan-popup type="bottom" style="width:100%;" show="{{ show }}">
+  <view class='popup_wrap' >
+    <view class='title'>选择物流公司</view>
+    <view class='row_wrap selectWuliu'>
+    <radio-group bindchange="select_this">
+      <view class='row' wx:for="{{logiList}}" data-item="{{item}}" wx:key="index">
+      <radio value='{{item.logiId}}'>
+        {{item.logiName}}
+      </radio>
+      </view>
+     </radio-group>
+    </view>
+  </view>
+</zan-popup>

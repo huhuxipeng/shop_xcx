@@ -1,0 +1,28 @@
+/* components/payAction/index.wxss */
+@import "../../api/common.wxss";
+.popup_main {
+  width:500rpx;
+  border-radius: 15rpx;
+  height: 255rpx;
+  position: relative
+}
+.popup_main .title{
+  font-size: 35rpx;
+  text-align: center;
+}
+.popup_main .password{
+  border:1px solid #ccc;
+  width:370rpx;
+  margin-top:30rpx;
+  text-align: center;
+}
+.footer{
+  position: absolute;
+  left: 0;
+  right:0;
+  bottom:0;
+}
+.row_button.gray{
+background: #eee;
+color:black;
+}

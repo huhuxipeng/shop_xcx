@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "购物车",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+      "list": "../../components/list/list"
+    }
+}

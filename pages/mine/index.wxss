@@ -1,0 +1,95 @@
+/* pages/mine/index.wxss */
+.row{
+  font-size: 30rpx;
+}
+.row .face{
+  width:120rpx;height:120rpx;overflow:hidden;border:1px solid red;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.row .info{
+  line-height: 45rpx;
+}
+.row .nickname{
+  font-size: 40rpx;
+}
+.row .money{
+  text-align: center;
+    line-height: 45rpx;
+}
+.row .info view,.row .money view{
+  margin-top:15rpx;
+}
+.dianzhang{
+position:absolute;
+bottom:-20rpx;
+background:red;
+color:white;
+left:19rpx;
+font-size:25rpx;
+padding:2rpx 20rpx;
+border-radius:3rpx;
+
+}
+a.primary{
+  border:1px solid #333;
+  border-radius: 15rpx;
+  height: 50rpx;line-height: 47rpx;
+  padding: 0 15rpx;
+}
+a.primary.red{
+  border:1px solid red;
+}
+.header{
+  padding: 30rpx;position: relative;
+}
+.background{
+  position: absolute;
+  z-index: -1;
+  width:100%;
+  height:100%;
+  top:0;right:0;left:0;bottom:0;
+}
+.jifen{
+  margin:15rpx 0 10rpx 0 ;
+  font-size: 31rpx;
+}
+
+.order_menu_wrap image{
+  width:123rpx;
+}
+.order_menu_wrap .jifen{
+  margin:10rpx 0 ;
+  font-size: 25rpx;
+}
+
+.shopownerBox{
+  width: 100%;
+  box-sizing:border-box;
+  margin-top: 12px;
+  padding: 20rpx 60rpx 0;
+  background: #fff;
+  flex-wrap:wrap;
+}
+
+.shopBox{
+  width: 50%;
+  margin-bottom: 40rpx;
+  flex-shrink: 0;
+  font-size: 26rpx;
+  align-items: center;
+}
+
+.shopBox image{
+  width: 65rpx;
+  height: 65rpx;
+  margin-right: 10rpx;
+}
+
+.color{
+  color: #ccc;
+}
+
+.ts{
+  justify-content: center;
+}

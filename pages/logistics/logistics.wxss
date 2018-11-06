@@ -1,0 +1,76 @@
+.Box{
+  margin: 20rpx 0;
+  padding: 20rpx;
+  background: #fff;
+}
+
+.default{
+  width: 188rpx;
+  height: 188rpx;
+  margin-right: 20rpx;
+}
+
+.box{
+  font-size: 24rpx;
+  color: #999;
+  justify-content: center;
+}
+
+.box .name{
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.wrapBox{
+  padding: 0 20rpx;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.sele{
+  padding-top: 20rpx;
+}
+
+.sele .wrapBoxRight{
+  padding: 0 0 20rpx 40rpx;
+  color: #333;
+}
+
+.sele .wrapBoxRight icon{
+  top: 0;
+}
+
+.wrapBoxLeft{
+  flex: 1;
+  font-size: 30rpx;
+  text-align: center;
+  border-right: 2px solid #eee;
+  justify-content: center;
+}
+
+.wrapBoxRight{
+  position: relative;
+  flex: 2;
+  padding: 20rpx 0 20rpx 40rpx;
+  font-size: 30rpx;
+  text-align: justify;
+  color: #999;
+}
+
+.icon,.wrapBoxRight icon{
+  position: absolute;
+  left: -25rpx;
+  top: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background: #eee;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.wrapBoxRight icon{
+  background: none;
+  border: none;
+}

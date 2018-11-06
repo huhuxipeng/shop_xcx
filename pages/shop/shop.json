@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "店铺详情",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "zan-popup": "../../dist/popup/index",
+    "nav": "../../components/nav/nav",
+    "couponDetail": "../../components/couponDetail/index"
+  }
+}

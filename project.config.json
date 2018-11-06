@@ -1,0 +1,359 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wxd6ea035868182042",
+	"projectname": "juyoo%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/classification/classification",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/shopcar/shopcar",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "商品详情",
+					"pathName": "pages/details/details",
+					"query": "goodsId=8032"
+				},
+				{
+					"id": 4,
+					"name": "店铺",
+					"pathName": "pages/shop/shop",
+					"query": "goodsId=8031"
+				},
+				{
+					"id": -1,
+					"name": "结算",
+					"pathName": "pages/settlement/settlement",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "砍价",
+					"pathName": "pages/cutprice/cutprice",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "砍价详情",
+					"pathName": "pages/cutpriceDetails/cutpriceDetails",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "红云积分",
+					"pathName": "pages/redcloud/redcloud",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "帮助中心",
+					"pathName": "pages/help/help",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "金币明细",
+					"pathName": "pages/goldDetailed/goldDetailed",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的邀请码",
+					"pathName": "pages/invitation/invitation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/about/about",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/opinion/opinion",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加银行卡",
+					"pathName": "pages/bankCard/bankCard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收藏列表",
+					"pathName": "pages/collection/collection",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "限时抢购",
+					"pathName": "pages/timeLimit/timeLimit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "金币兑换",
+					"pathName": "pages/goldExchange/goldExchange",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "拼团",
+					"pathName": "pages/collage/collage",
+					"query": ""
+				},
+				{
+					"id": 19,
+					"name": "拼团详情",
+					"pathName": "pages/collageDetails/collageDetails",
+					"query": "activityId=203"
+				},
+				{
+					"id": 20,
+					"name": "维权订单详情",
+					"pathName": "pages/rightDetail/index",
+					"query": "id=434"
+				},
+				{
+					"id": 21,
+					"name": "申请维权",
+					"pathName": "pages/supportRight/index",
+					"query": "orderId=3779"
+				},
+				{
+					"id": 22,
+					"name": "订单列表",
+					"pathName": "pages/orderlist/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "夺宝专区",
+					"pathName": "pages/treasure/treasure",
+					"query": ""
+				},
+				{
+					"id": 24,
+					"name": "夺宝详情",
+					"pathName": "pages/treasureDetails/treasureDetails",
+					"query": "activityId=324"
+				},
+				{
+					"id": -1,
+					"name": "店长中心",
+					"pathName": "pages/shopowner/shopowner",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "店长礼包列表",
+					"pathName": "pages/giftList/giftList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "店长礼包详情",
+					"pathName": "pages/giftDetails/giftDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "店长礼包支付",
+					"pathName": "pages/shopoPayment/shopoPayment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "金币兑换订单列表",
+					"pathName": "pages/goldOrderList/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "充值",
+					"pathName": "pages/recharge/recharge",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/setUp/setUp",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "店长中心绑定手机",
+					"pathName": "pages/shopBinding/shopBinding",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "店长协议",
+					"pathName": "pages/shopAgreement/shopAgreement",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "成为店长",
+					"pathName": "pages/becomeShop/becomeShop",
+					"query": ""
+				},
+				{
+					"id": 31,
+					"name": "物流信息",
+					"pathName": "pages/logistics/logistics",
+					"query": "orderId:1601"
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/personalInformation/personalInformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "手机登录",
+					"pathName": "pages/phoneSign/phoneSign",
+					"query": ""
+				},
+				{
+					"id": 38,
+					"name": "拼团结算页",
+					"pathName": "pages/groupBlance/index",
+					"query": "options={\"productId\":13283,\"num\":1,\"activityId\":\"312\"}"
+				},
+				{
+					"id": 39,
+					"name": "拼团分享页",
+					"pathName": "pages/groupTime/index",
+					"query": "orderId=1712&spellId=1115"
+				},
+				{
+					"id": 40,
+					"name": "评价",
+					"pathName": "pages/appraise/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的商品",
+					"pathName": "pages/myGoods/myGoods",
+					"query": ""
+				},
+				{
+					"id": 42,
+					"name": "专题",
+					"pathName": "pages/special/special",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "签到",
+					"pathName": "pages/qianDao/qianDao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的客户",
+					"pathName": "pages/myCustomer/myCustomer",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "授权",
+					"pathName": "pages/authorize/index",
+					"query": "activityId=324"
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/integralWay/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "退货物流",
+					"pathName": "pages/writeLogistics/index",
+					"query": "id=470"
+				},
+				{
+					"id": -1,
+					"name": "新增地址",
+					"pathName": "pages/addressAddOrEdit/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的现金券",
+					"pathName": "pages/myCoupon/myCoupon",
+					"query": ""
+				},
+				{
+					"id": 50,
+					"name": "现金券详情",
+					"pathName": "pages/mydetails/mydetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领取现金券",
+					"pathName": "pages/collarVoucher/collarVoucher",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "海报分享",
+					"pathName": "pages/poster/poster",
+					"query": ""
+				}
+			]
+		}
+	}
+}

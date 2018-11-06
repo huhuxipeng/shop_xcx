@@ -1,0 +1,43 @@
+<view class='Box column'>
+  <block wx:for="{{memberGoods}}" wx:key="un">
+    <view class="commodity_information {{item.deleteData ? 'touch-move-active' : ''}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-idx="{{index}}">
+      <view class='commodity_informationBox'>
+        <view class='box hu_row'>
+          <image class='goodsImg' src="{{item.image}}" />
+          <view class='goodsDetails hu_row'>
+            <view class='content column'>
+              <view class='name'>{{item.name}}</view>
+              <view class='contentMoney hu_row'>
+                ￥{{item.price}}
+                <text class='canGet'>可获得</text>
+                <view>红积分:</view>0.00
+              </view>
+            </view>
+            <image class='ewm' catchtap='ewm' data-idx='{{index}}' src="{{item.qRCodePath}}" />
+          </view>
+        </view>
+      </view>
+      <view class="del" catchtap="del" data-idx='{{index}}'>删除</view>
+    </view>
+  </block>
+</view>
+
+
+<view class="popupBg {{popupState?'':'hide'}}"></view>
+<view class="popup {{popupState?'':'hide'}}">
+  <image class='close' bindtap='close' src="/static/images/close.png" />
+  <view class='popupBox hu_row'>
+    <image src="{{popup.image}}" />
+    <view class='content column'>
+      <view class='name'>{{popup.name}}</view>
+      <view class='contentMoney hu_row'>
+        ￥{{popup.price}}
+        <text class='canGet'>可获得</text>
+        <view>红积分:</view>0.00
+      </view>
+    </view>
+  </view>
+  <canvas class='ewmImg' canvas-id="myCanvas" bindtouchstart="start" bindtouchmove="move" />
+  <view class='peservation' bindtap='Okgenerate'>保存图片到相册</view>
+</view>
+

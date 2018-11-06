@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "银行卡管理",
+  "usingComponents": {
+    "zan-toast": "../../dist/toast/index",
+    "zan-checkbox": "../../dist/checkbox/index"
+  }
+}

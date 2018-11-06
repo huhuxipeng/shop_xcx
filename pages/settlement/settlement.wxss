@@ -1,0 +1,255 @@
+page{
+  padding-bottom: 100rpx;
+}
+
+.line {
+  width: 750rpx;
+  height: 10rpx;
+  background: #f00 url(http://img.juyooo.com/other/line.png) 0 0 repeat-x;
+}
+
+.settleBox {
+  margin-bottom: 25rpx;
+  background: #fff;
+}
+
+.address {
+  position: relative;
+  padding: 36rpx 36rpx;
+  align-items: center;
+}
+
+.addressContent {
+  font-size: 28rpx;
+  color: #333;
+}
+.hongzi{
+  color: red;
+  padding-right: 8rpx;
+}
+
+.addressContent1 text {
+  margin-left: 40rpx;
+  margin-bottom: 5rpx;
+} 
+
+.positionIcon {
+  width: 28rpx;
+  height: 34rpx;
+  margin-right: 30rpx;
+}
+
+.arrow2 {
+  position: absolute;
+  top: 50%;
+  right: 24rpx;
+  width: 10rpx;
+  height: 22rpx;
+  margin-top: -11rpx;
+}
+.quanIn{
+  right: 24rpx;
+  width: 10rpx;
+  height: 22rpx;
+  margin-top: -11rpx;
+  }
+
+.add {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.shopBox {
+  padding: 20rpx 36rpx;
+  font-size: 28rpx;
+  color: #333;
+  align-items: center;
+}
+
+.shopBox image {
+  width: 32rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.productContent {
+  padding: 20rpx 36rpx;
+  align-items: center;
+}
+
+.product {
+  width: 138rpx;
+  height: 138rpx;
+  margin-right: 30rpx;
+  flex-shrink: 0;
+}
+
+.productBox {
+  width: 100%;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.productName {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.parameter{
+  margin-top: 20rpx;
+  color: #999;
+}
+
+.settleMoney {
+  width: 100%;
+  justify-content: space-between;
+  color: #f22d07;
+}
+
+.settleMoney text {
+  color: #999;
+}
+
+.listBox {
+  background: #fff;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.leaveWord {
+  padding: 16rpx 36rpx;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.leaveWord input {
+  flex-grow: 1;
+  margin-left: 20rpx;
+  color: #999;
+}
+
+.postage {
+  padding: 16rpx 36rpx;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.smallPlan{
+  padding: 16rpx 36rpx;
+  justify-content: flex-end;
+}
+
+.smallPlan text{
+  margin-left: 10rpx;
+  color: #f22d07;
+}
+
+.total{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100rpx;
+  padding-left: 36rpx;
+  background: #fff;
+  border-top: 1px solid #eee;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+
+.total text{
+  padding-left: 10rpx;
+  flex-grow: 2;
+  color: #f22d07;
+}
+
+.total .payment{
+  width: 240rpx;
+  height: 100%;
+  background: #f22d07;
+  font-size: 32rpx;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0.5;
+}
+
+.realName{
+  padding: 15rpx 36rpx;
+  background: #fff;
+  font-size: 28rpx;
+  color: #333;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.realName input{
+  width: 70%;
+}
+
+.customs{
+  margin-bottom: 20rpx;
+  color: red;
+  font-size: 24rpx;
+}
+
+
+
+.zhifufangshi{
+  padding: 5rpx 36rpx;
+  text-align: left;
+  font-size: 28rpx
+}
+#zhifu .shopBox{
+  position: relative;
+  border-bottom: solid 1px #F5F5F5;
+}
+#zhifu .shopBox image{
+  width: 25px;
+  height: 25px;
+}
+.selectImg{
+  width: 18px !important;
+  height: 18px !important;
+  display: inline-block;
+  position: absolute;
+  right: 19px;
+  top: 13px
+}
+.selectImg image{
+  width: 100% !important;
+  height: 100% !important
+}
+
+@import "../../api/common.wxss";
+.popup_main {
+  width:500rpx;
+  border-radius: 15rpx;
+  height: 255rpx;
+  position: relative
+}
+.popup_main .title{
+  font-size: 35rpx;
+  text-align: center;
+}
+.popup_main .password{
+  border:1px solid #ccc;
+  width:370rpx;
+  margin-top:30rpx;
+  text-align: center;
+}
+.footer{
+  position: absolute;
+  left: 0;
+  right:0;
+  bottom:0;
+}
+.row_button.gray{
+background: #eee;
+color:black;
+}

@@ -1,0 +1,44 @@
+<view class='shopownerBox hu_row'>
+  <view class='binding'>绑定手机</view>
+  <view class='condition'>完成条件
+    <image class='icon2' src="/static/images/icon2.png" />
+  </view>
+  <view class='shop'>开店成功</view>
+</view>
+
+<view class='box column'>
+  <view class='conditionBox hu_row'>
+    <text>特别声明:</text>开店礼包无法进行退换货处理！
+  </view>
+
+
+  <navigator class='sele' wx:if="{{goodsList==''}}" url="/pages/giftList/giftList">
+    点击选购买的商品
+  </navigator>
+
+  <view class='sele hu_row' wx:else bindtap='jumpGiftList'>
+    <image src="{{goodsList[0].image}}" />
+    <view class='data column'>
+      <text class='name'>{{goodsList[0].name}}</text>
+      <view>
+        <text>￥{{goodsList[0].price}}</text>
+        <text class='buyOff'>X{{goodsList[0].buyCount}}</text>
+      </view>
+    </view>
+    <text class='choice'>重新选择</text>
+  </view>
+
+  <view class='address column'>
+    <text class='addressText'>收货地址</text>
+    <view class='addressee column' bindtap="addressee">
+      <view class='information1 hu_row'>
+        <text>收件人: {{addr.name}}</text>
+        <text>{{addr.mobile}}</text>
+      </view>
+      <view>{{addr.provinceName}}{{addr.cityName}}{{addr.districtName}}{{addr.addressDetail}}</view>
+    </view>
+  </view>
+  <view class='subBtn' bindtap='submitFun'>提交订单</view>
+</view>
+
+<pay-action show="{{showPayAction}}" orderId="{{orderId}}" payOptions="{{payOptions}}"></pay-action>

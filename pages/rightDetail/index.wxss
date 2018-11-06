@@ -1,0 +1,18 @@
+/* pages/rightDetail/index.wxss */
+.row_wrap .bg_fa{
+  border-top:1px solid #eee;
+}
+.row_wrap>.row{
+  border-top:1px solid #eee;
+}
+.row{
+  font-size: 30rpx;
+}
+.row .left{
+  width:173rpx;
+  font-size: 25rpx;
+}
+.row .right{
+  text-align: right;
+  
+}

@@ -1,0 +1,49 @@
+<view class='Box'>
+  <view class='tab hu_row'>
+    <view class="tab_li {{tabIndex==0?'tab_sele':''}}" bindtap='tabFun' data-idx="0">未使用({{useData.noUse}})
+      <view class='xian'></view>
+    </view>
+    <view class="tab_li {{tabIndex==1?'tab_sele':''}}" bindtap='tabFun' data-idx="1">已使用({{useData.use}})
+      <view class='xian'></view>
+    </view>
+    <view class="tab_li {{tabIndex==2?'tab_sele':''}}" bindtap='tabFun' data-idx="2">已过期({{useData.overdue}})
+      <view class='xian'></view>
+    </view>
+  </view>
+
+  <view class='voucher' wx:if="tabs">
+    <block wx:for="{{dataList}}" wx:key="un">
+      <view class='voucherBox hu_row' bindtap="mydetailsFun" data-idx="{{index}}">
+        <view class='voucherIcon column'>
+          <image wx:if="{{tabIndex==0}}" class='vouIcon' src="/static/images/mycoupon/bg{{item.cpnType}}.png"></image>
+          <image wx:else class='vouIcon' src="/static/images/mycoupon/bg4.png"></image>
+          <view class='voucherIconText column'>
+            <view>￥
+              <text>{{item.discountPrice}}</text>
+            </view>
+            <text class='vou_ms'>满{{item.minAmount}}可用</text>
+          </view>
+        </view>
+        <view class='voucher_content column'>
+          <view class="voucher_content1 column">
+            <view class="name hu_row">
+              <text class="{{item.couponClass}},{{tabIndex!=0?'coupon4':''}}">{{item.cpnTypes}}</text>{{item.cpnName}}</view>
+            <view class="date hu_row">
+              <text>{{item.useBeginTime}}-{{item.useEndTime}}</text>
+              <text class="useBtn {{item.useClass}}" catchtap="immediate" data-idx="{{index}}" wx:if="{{tabIndex==0}}">立即使用</text>
+            </view>
+            <view class="details hu_row">查看详情
+              <image src="/static/images/mycoupon/icon6.png" />
+            </view>
+          </view>
+          <image class="overdue" wx:if="{{tabIndex==1}}" src="/static/images/mycoupon/icon3.png" />
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<view class="binding_voucher hu_row" bindtap="mybindingFun">
+  <image src="/static/images/mycoupon/icon0.png" />绑定现金券
+</view>

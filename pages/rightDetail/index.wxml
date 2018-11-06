@@ -1,0 +1,58 @@
+<view class='row_wrap'>
+  <view class='row between order_title'>
+    <view class='flex'>{{detail.order.comName}}
+    </view>
+  </view>
+  <view class='bg_fa' wx:for="{{detail.items}}" wx:for-item="o" wx:for-index="i" wx:key="i">
+    <view bindtap='orderDetail' data-orderId="{{o.orderId}}" class='row between'>
+      <image class='goods_img' mode='widthFix' src="{{o.goodsImage}}"></image>
+      <view class='flex_column justify_center goods_detail'>
+        <view class='goods_name'>{{o.goodsName}}</view>
+        <view class='gray'>规格：{{o.productSpec}}</view>
+      </view>
+      <view class='flex_column goods_prize'>
+        <view>￥{{o.price}}</view>
+        <view class='gray pri_line'>￥{{o.goodsPrice}}</view>
+        <view class='gray'>X{{o.buyCount}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='row bold'>
+    维权进度
+  </view>
+  <view wx:for="{{detail.right.processList}}" wx:key="index" class='row between'>
+    <view class='left'>{{item.createTime}}</view>
+    <view class='right flex flex_center'>{{item.rightStatus.processText}}</view>
+  </view>
+  <view class='bg_fa row bold'>
+    维权信息
+  </view>
+  <view class='bg_fa row between'>
+    <view>维权单号</view>
+    <view>{{detail.right.serial}}</view>
+  </view>
+  <view class='bg_fa row between'>
+    <view>维权类型</view>
+    <view wx:if="{{detail.right.itemsType==0}}">仅退款</view>
+    <view wx:if="{{detail.right.itemsType==1}}">退货退款</view>
+  </view>
+  <view class='bg_fa row between'>
+    <view>退款金额</view>
+    <view>{{detail.right.price}}</view>
+  </view>
+  <view class='bg_fa row between'>
+    <view>退款说明</view>
+    <view>{{detail.right.reason}}</view>
+  </view>
+  <view class='bg_fa row between'>
+    <view></view>
+    <a bindtap="cancel" wx:if='{{detail.right.rightStatus==1}}' class="primary red">取消维权</a>
+    <a bindtap="cancel" wx:if='{{detail.right.rightStatus==2}}' class="primary red">取消维权</a>
+    <a bindtap="write" wx:if='{{detail.right.rightStatus==2}}' class="primary red">填写退货物流</a>
+    <a bindtap="logi" wx:if='{{detail.right.rightStatus==3||detail.right.rightStatus==4||detail.right.rightStatus==5}}' class="primary red">退货物流</a>
+    <a bindtap="again" wx:if='{{detail.right.rightStatus==6}}' class="primary red">重新维权</a>
+    <a bindtap="again" wx:if='{{detail.right.rightStatus==7}}' class="primary red">重新维权</a>
+    <a bindtap="cancel" wx:if='{{detail.right.rightStatus==8}}' class="primary red">取消维权</a>
+    <a bindtap="again" wx:if='{{detail.right.rightStatus==11}}' class="primary red">重新维权</a>
+  </view>
+</view>

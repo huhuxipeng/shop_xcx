@@ -1,0 +1,77 @@
+.shopownerBox view {
+  flex: 1;
+  padding: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.binding,.condition,.shop{
+  position: relative;
+  background: rgba(255, 64, 60, 0.3);
+  color: #fff;
+}
+
+.icon2{
+  position: absolute;
+  top: 50%;
+  right: -18rpx;
+  width: 20rpx;
+  height: 56rpx;
+  margin-top: -28rpx;
+}
+
+.profit{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  padding: 40rpx 20rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  -webkit-transform: translate3d(-50%,0%,0);
+  transform: translate3d(-50%,0%,0);
+}
+
+.profitTit{
+  margin-bottom: 20rpx;
+  font-size: 36rpx;
+}
+
+.profit text{
+  font-size: 32rpx;
+  color: #999;
+  line-height: 50rpx;
+}
+
+.nextStep{
+  position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  width: 90%;
+  padding: 20rpx 0;
+  background: #ff403c;
+  color: #fff;
+  text-align: center;
+  border-radius: 15rpx;
+  font-size: 34rpx;
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+}
+
+.becomeShop{
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 100%;
+  height: 920rpx;
+}
+
+.text{
+  position: absolute;
+  top: 16%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+  color: #333;
+}

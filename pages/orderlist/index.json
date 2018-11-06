@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单列表",
+  "usingComponents": {
+    "zan-cell": "../../dist/cell/index",
+    "zan-tab": "../../dist/tab/index",
+    "pay-action": "../../components/payAction/index",
+    "zan-toast": "../../dist/toast/index"
+  }
+}

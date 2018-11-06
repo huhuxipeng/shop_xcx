@@ -1,0 +1,65 @@
+<view class='bank column' wx:if="{{step==0}}">
+  <block wx:for="{{resultMap}}" wx:key="un">
+    <view class='bankBox' data-item="{{item}}" bindtap='selectThis'>  
+      <view class='hu_row'>
+        <image class="icon" src="/static/images/default.png" />
+        <view class="information column">
+          <text>{{item.openBank}}</text>
+          <view>{{item.accountName}}</view>
+        </view>
+      </view>
+      <view class='cardNumber'>{{item.card1}}****{{item.card2}}</view>
+      <view class='setUp hu_row'>
+        <view class='default hu_row' bindtap="defaultFun" data-idx="{{index}}">
+          <icon wx:if="{{item.default}}" type="success" color="#f00" size="16" />
+          <icon wx:else type="circle" color="#f00" size="16" /> 设为默认值
+        </view>
+        <view class='delete hu_row' bindtap="deleteFun" data-idx="{{index}}">
+          <image class='trash' src="/static/images/trash.png" />删除
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<view wx:if="{{step==0}}" bindtap="plusFun" class="plus hu_row">
+  <image src="/static/images/plus.png" />添加银行卡</view>
+
+<view wx:if="{{step==1}}" class='binding'>
+  <view class='tips'>请绑定持卡人本人的银行卡</view>
+  <view class='bindingRow hu_row'>
+    <text>持卡人</text>
+    <input bindinput="nameinput" placeholder="请输入您的姓名" type="text" />
+  </view>
+  <view class='bindingRow hu_row'>
+    <text>卡号</text>
+    <input bindinput="cardinput" placeholder="请输入您的卡号" type="number" />
+  </view>
+  <view class='nextStep' catchtap="plusFun">下一步</view>
+</view>
+
+<view wx:if="{{step==2}}" class='binding'>
+  <view class='tips'>请选择银行卡类型</view>
+  <view class='bindingRow hu_row'>
+    <text>卡类型</text>
+    <input bindinput="choicetype" placeholder="{{cardtype}}" type="text" />
+  </view>
+  <view class='bindingRow hu_row'>
+    <text>手机号</text>
+    <input bindinput="choicephone" maxlength='11' placeholder="请输入您的手机号" type="number" />
+  </view>
+  <view class='nextStep' catchtap="plusFun">下一步</view>
+  <view class='tips tips2'>信息加密处理，仅用于银行卡验证</view>
+</view>
+
+<view wx:if="{{step==3}}" class='binding'>
+  <text class='tips shortMessage'>本次操作需要短信确认，请输入 \n {{decompose1}}****{{decompose2}}收到的短信验证码</text>
+  <view class='bindingRow shortMessageRow hu_row'>
+    <text>校验码</text>
+    <input bindinput="checkCode" placeholder="请输入校验码" type="number" />
+    <text wx:if="{{seconds>=0}}" class='shortMessageText'>{{seconds}}</text>
+    <text wx:else class='shortMessageText' bindtap="secondFun">点击获取校验码</text>
+  </view>
+  <view class='nextStep' catchtap="subFun">提交</view>
+</view>

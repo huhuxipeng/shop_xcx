@@ -1,0 +1,24 @@
+<view>
+  <!-- <modal style="background:none;" title="" hidden="{{hasUserInfo}}" no-cancel='true' confirm-text=""> -->
+    <view  wx:if="{{binding}}">
+      <view class='row'>手机号
+        <input bindchange="changeValue" data-prop="phoneNum" />
+        <button wx:if="{{timeout==0}}" class='primary' style='height:100%;' bindtap="sendCode">发送验证码</button>
+        <button wx:if="{{timeout>0}}" class='primary' disabled='disabled' style='height:100%;' bindtap="sendCode">{{timeout}}S</button>
+      </view>
+      <view class='row'>验证码
+        <input bindchange="changeValue" data-prop="passcode" />
+      </view>
+      <button style='margin-top:12rpx;' open-type='getUserInfo' bindgetuserinfo="getUserinfo">绑定</button>
+    </view>
+    <view wx:else>
+      <view class='flex_center row' style='height:auto;margin-top:0'>
+        <image style='width:222rpx;' mode='widthFix' src='/static/images/logo.png'></image>
+      </view>
+      <view class='row' style='height:auto;margin:52rpx 0;'>
+        <button class='cancel' bindtap='cancel'>拒绝授权</button>
+        <button class='sure' open-type='getUserInfo' bindgetuserinfo="getUserinfo">允许授权</button>
+      </view>
+    </view>
+  <!-- </modal> -->
+</view>

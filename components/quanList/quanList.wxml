@@ -1,0 +1,57 @@
+<!--components/footerBuy/index.wxml-->
+<zan-popup type="bottom" show="{{ show }}">
+  <view  class='popup_main'>
+    <!--关闭按钮-->
+    <image class='close' bindtap="close" mode='widthFix' src="../../static/images/close.png" slot="icon" />
+    <!--弹框内容-->
+        <view class="title">
+           选择优惠券
+         </view>
+    <view class="content">
+      <view class="row" wx:for="{{detailIn}}" wx:key="index">
+       <view  class="left" wx-if="{{item.cpnType == '0'}}">
+       <image src='../../static/images/mycoupon/bg0.png'></image>
+          <view class='jine'>{{item.discountPrice}}</view>
+          <view class='mane'>满{{item.minAmount}}可用</view>
+       </view>
+        <view  class="left" wx-if="{{item.cpnType == '1'}}">
+        <image src='../../static/images/mycoupon/bg1.png'></image>
+          <view class='jine'>{{item.discountPrice}}</view>
+          <view class='mane'>满{{item.minAmount}}可用</view>
+       </view>
+        <view  class="left" wx-if="{{item.cpnType == '2'}}">
+        <image src='../../static/images/mycoupon/bg2.png'></image>
+          <view class='jine'>{{item.discountPrice}}</view>
+          <view class='mane'>满{{item.minAmount}}可用</view>
+       </view>
+        <view  class="left" wx-if="{{item.cpnType == '3'}}">
+        <image src='../../static/images/mycoupon/bg3.png'></image>
+          <view class='jine'>{{item.discountPrice}}</view>
+          <view class='mane'>满{{item.minAmount}}可用</view>
+       </view>
+
+
+
+          <view  class="center">
+            <view class='info'>
+            <text wx-if="{{item.cpnType == '0'}}" class="kind0">分类券</text>
+            <text wx-if="{{item.cpnType == '1'}}" class="kind1">商品券</text>
+            <text wx-if="{{item.cpnType == '2'}}" class="kind2">店铺券</text>
+            <text wx-if="{{item.cpnType == '3'}}" class="kind3">通用券</text>
+            
+            <text>{{item.cpnName}}</text></view>
+            <view class='date'>{{item.useBeginTime}}-{{item.useEndTime}}</view>
+            <!-- <view class='date'>2018-2018</view> -->
+          </view>
+          <view class="right" bindtap='ling'  data-index="{{index}}" data-dis="{{item.discountPrice}}"  data-min="{{item.minAmount}}"  data-id="{{item.id}}"> 
+          <view class='rightIn'>
+             <!-- <text  style="z-index:100;color:red">{{index}}</text> -->
+             <image wx:if="{{clickIndex != index}}"  src='../../static/images/unselect.png'></image>
+             <image wx:if="{{clickIndex == index}}"  src='../../static/images/select.png'></image>
+          </view>
+          </view>
+      </view>
+      
+    </view>
+  </view>
+</zan-popup>

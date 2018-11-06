@@ -1,0 +1,37 @@
+<view class='Box'>
+  <navigator url="/pages/help/help" hover-class="none" open-type="navigate" class='help hu_row'>帮助</navigator>
+
+  <view class='tab hu_row'>
+    <view bindtap="integralClick">
+      <text class="{{sele?'sele':''}}">红积分</text>
+    </view>
+    <view bindtap="integralClick2">
+      <text class="{{sele?'':'sele'}}">云积分</text>
+    </view>
+  </view>
+
+  <view class='putForward hu_row'>
+    <view class='hu_row'>
+      <image class='goldIcon' src="/static/images/goldIcon.png"></image>
+      <view class='putForwardGold column'>
+        <view class="{{sele?'':'hide'}}">可提现</view>
+        <view class="{{sele?'hide':''}}">当前积分</view>
+        <text wx:if="{{sele}}">{{res_data.redPoint}}</text>
+        <text wx:else>{{res_data.cloudPoint}}</text>
+      </view>
+    </view>
+    <text class="putForwardBtn {{sele?'':'hide'}}" bindtap='takeMoney' >提现</text>
+  </view>
+
+  <view class='integralBtnBox column'>
+    <view class='integralBtn hu_row'>
+      <view class='line column'>累计收入<text>{{res_data.redPonitIncome}}</text></view>
+      <view class='column'>待确认<text>{{res_data.redPointToBeConfirmed}}</text></view>
+    </view>
+    <view class="integralBtn hu_row {{sele?'':'hide'}}">
+      <view class='line column'>提现中<text>{{res_data.redPonitWithdrawals}}</text></view>
+      <view class='column'>已提现<text>{{res_data.redPointAlreadyPresente}}</text></view>
+    </view>
+  </view>
+
+</view>

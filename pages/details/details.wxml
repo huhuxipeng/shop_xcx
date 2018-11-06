@@ -1,0 +1,149 @@
+<swiper class='swiperBox' indicator-dots autoplay interval="3000">
+  <block wx:for="{{swipers}}" wx:key="uniq">
+    <swiper-item>
+      <image src="{{item.image}}" />
+    </swiper-item>
+  </block>
+</swiper>
+<view wx:if="{{flashsaleId}}" class='qianggou_wrap'>
+  <view class='text'>距离结束时间</view>
+  <view class='time_wrap flex flex_center'>
+    <view class='child'>{{time.h}}</view>:
+    <view class='child'>{{time.m}}</view>:
+    <view class='child'>{{time.s}}</view>
+  </view>
+  <image class='qianggou_img' src='/static/images/count_down.jpg'></image>
+</view>
+<view class='cartBtn' bindtap='cartFun'>
+  <image src="/static/images/details/icon0.png" />
+</view>
+<!-- <navigator class='cartBtn' open-type="switchTab" url="/pages/shopcar/shopcar">
+  <image src="/static/images/details/icon0.png" />
+</navigator> -->
+
+<view class='box column'>
+  <view wx:if="{{goldChangerId}}" class=' row between'>
+    <view class='money flex'>
+      <view class='present'>{{datas.exchangeCoin}}金币</view>
+      <view class='primary'>￥{{datas.mktPrice}}</view>
+    </view>
+    <view class="gray">已售{{datas.buyCount}}件</view>
+  </view>
+  <view wx:elif="{{flashsaleId}}" class='money hu_row'>
+    <view class='present'>￥{{flashsaleGoodInfo.flashsalePrice}}</view>
+    <view class='primary'>￥{{flashsaleGoodInfo.goodsPrice}}</view>
+    <view class="sold">已售{{flashsaleGoodInfo.soldBase}}件</view>
+  </view>
+  <view wx:else class='money hu_row'>
+    <view class='present'>￥{{datas.price}}</view>
+    <view class='primary'>￥{{datas.mktprice}}</view>
+    <view class="sold">已售{{buyCount}}件</view>
+  </view>
+  <view wx:if="{{goldChangerId}}" class='name'>{{goldDetail.exchangeName}}</view>
+  <view wx:else class='name'>{{datas.name}}</view>
+  <view wx:if="{{tagName}}" class='label hu_row'>
+    <block wx:for="{{tagName}}" wx:key="un">
+      <text>{{item}}</text>
+    </block>
+  </view>
+  <view wx:if="{{!flashsaleId&&!goldChangerId}}" class='shopownerBox hu_row'>
+    <text>积分福利</text>
+    <view class='shopownerBtn'>
+      <text wx:if="{{identityId==2}}" bindtap="becomeShop">成为店长</text>
+      <text wx:else bindtap="iExtension">我要推广</text>
+      <image src="/static/images/shopcar/arrow2.png" />
+    </view>
+  </view>
+  <view wx:if="{{!flashsaleId&&!goldChangerId}}" class='give hu_row'>
+    <text>自购赠送</text>
+    <view class='red'>红积分：{{redPointRatio}}</view>
+    <view>云积分：{{cloudPointRatio}}</view>
+  </view>
+  <view wx:if="{{!flashsaleId&&!goldChangerId}}" class='give hu_row'>
+    <text>推广赠送</text>
+    <view class='red'>红积分：{{ExtensionRedPointRatio}}</view>
+    <view>云积分：{{ExtensionCloudPointRatio}}</view>
+  </view>
+  <view class='shopownerBox hu_row' bindtap='showFooterBuy'>
+    <text>请选择颜色分类</text>
+    <image class='seleArrow' src="/static/images/shopcar/arrow2.png" />
+  </view>
+  <view class='shopownerBox hu_row' wx:if="{{couponList.length}}" bindtap='pickCoupon'>
+    <text>领券</text>
+    <view class='couponList flex_grow_1'>
+      <view wx:for="{{couponList}}" wx:if="{{index<3}}" wx:key="index" class='child'>
+        满{{item.minAmount}}减{{item.discountPrice}}券
+        <image src='/static/images/details/image_shop_list_coupon.png'></image>
+      </view>
+    </view>
+    <image class='seleArrow' src="/static/images/shopcar/arrow2.png" />
+  </view>
+  <view class='shopBox hu_row'>
+    <image src="{{shopStore.shopStoreLogo}}" />
+    <view class='shopInformation column'>
+      <view class='shopName'>{{shopStore.shopStoreName}}</view>
+      <view class='bond'>已交保证金
+        <text>￥{{bond}}</text>元，请放心购买</view>
+    </view>
+    <navigator class='getShop' open-type="navigate" url="/pages/shop/shop?goodsId={{goodsId}}">进入店铺</navigator>
+  </view>
+
+</view>
+<view>
+  <detail-tab intro="{{datas.intro}}" goodsId="{{goodsId}}"></detail-tab>
+</view>
+<view>
+  <footer-buy data="{{data}}" goldChangerId="{{goldChangerId}}" flashsaleId="{{flashsaleId}}" flashsaleGoodsId="{{flashsaleGoodsId}}" show="{{show}}"></footer-buy>
+</view>
+<view class='nav row'>
+  <navigator class='navShop column' open-type="navigate" url="/pages/shop/shop?goodsId={{goodsId}}">
+    <image src="/static/images/details/icon1.png" />店铺</navigator>
+  <view class='navService column' bindtap="serviceFun">
+    <image src="/static/images/details/icon2.png" />客服</view>
+  <view wx:if="{{!flashsaleId&&!goldChangerId}}" class='navCollection column' bindtap="collectionFun">
+    <image wx:if="{{collection==false}}" src="/static/images/details/icon3.png" />
+    <image wx:else src="/static/images/details/icon3_sele.png" /> 收藏
+  </view>
+  <text wx:if="{{!flashsaleId&&!goldChangerId}}" class='join' bindtap='showFooterBuy'>加入购物车</text>
+  <text wx:if="{{!goldChangerId}}" class='purchase flex_grow_1' bindtap='showFooterBuy'>立即购买</text>
+  <text wx:elif="{{activityNum}}" class="purchase flex_grow_1" bindtap='showFooterBuy'>立即兑换</text>
+  <text wx:else class="purchase flex_grow_1 {{activityNum?'':'activityNum'}}">已兑完</text>
+  <!-- <text wx:else class='purchase flex_grow_1' bindtap='showFooterBuy'>立即兑换</text> -->
+</view>
+<zan-popup type="bottom" show="{{showCouponPopup}}">
+  <view class='popup_wrap flex_column'>
+    <view class='header'>
+      领优惠券
+      <image src='/static/images/details/close.png' bindtap='hideCouponPopup' class='close'></image>
+    </view>
+    <view class='flex_grow_1 list_wrap'>
+      <view wx:for="{{couponList}}" wx:key="index" class='row {{item.color}}'>
+        <view class='left flex_column flex_center shrink_0'>
+          <image wx:if="{{item.color=='color_1'}}" src='/static/images/mycoupon/bg1.png'></image>
+          <image wx:if="{{item.color=='color_2'}}" src='/static/images/mycoupon/bg2.png'></image>
+          <image wx:if="{{item.color=='color_3'}}" src='/static/images/mycoupon/bg0.png'></image>
+          <image wx:if="{{item.color=='color_4'}}" src='/static/images/mycoupon/bg3.png'></image>
+          <view class='coupon'>
+            <span class="little">￥</span>
+            <span class="big">{{item.discountPrice}}</span>
+          </view>
+          <view class='text'>满{{item.minAmount}}元可用</view>
+        </view>
+        <view class='right flex flex_grow_1'>
+          <view class='detail flex_column between flex_grow_1'>
+            <view class='flex '>
+              <view class='cpn_type shrink_0'>{{item.typName}}</view>
+              <view class='cpn_name'>{{item.cpnName}}</view>
+            </view>
+            <view class='cpn_time'>{{item.getBeginTime}}-{{item.getEndTime}}</view>
+            <!-- memberId等于0的时候未领取 -->
+            <image wx:if="{{item.memberId!=0}}" src="/static/images/mycoupon/image_coupon_received.png"></image>
+            <view wx:if="{{item.memberId==0}}" data-item="{{item}}" bindtap='takeCoupon' class='pick_now'>立即领取</view>
+            <!-- <view wx:else class='use_now'>立即使用</view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</zan-popup>
+<couponDetail index="{{index}}" couponList="{{couponList}}" value="{{showCouponDetail}}"></couponDetail>

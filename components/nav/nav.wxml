@@ -1,0 +1,14 @@
+<view class='nav hu_row'>
+  <navigator class='navShop column' open-type="switchTab" url="/pages/home/index">
+    <image src="/static/images/icon/icon0.png" />首页
+  </navigator>
+  <navigator class='navService column'  open-type="switchTab" url="/pages/classification/classification">
+    <image src="/static/images/icon/icon1.png" />分类
+  </navigator>
+  <navigator class='navCollection column'  open-type="switchTab" url="/pages/shopcar/shopcar">
+    <image src="/static/images/icon/icon2.png" />购物车
+  </navigator>
+  <navigator class='navCollection column'  open-type="switchTab" url="/pages/mine/index">
+    <image src="/static/images/icon/icon3.png" />个人中心
+  </navigator>
+</view>

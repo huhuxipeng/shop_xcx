@@ -1,0 +1,237 @@
+<!--pages/mine/index.wxml-->
+<view wx:if="{{userInfo}}" class='header'>
+  <view class='row end' style='margin-bottom:80rpx;'>
+    <a bindtap="setUpFun">设置</a>
+  </view>
+  <view class="row between" style='position: relative;'>
+    <view class='face' bindtap='face'>
+      <image src='{{userInfo.face}}' mode="widthFix"></image>
+      <view wx:if="{{userInfo.identityId==1}}" class='dianzhang'>店长</view>
+    </view>
+    <view class='info flex_column'>
+      <view class='nickname'>
+        {{userInfo.nickname}}
+      </view>
+      <view class='id'>
+        ID:{{userInfo.memberId}}
+      </view>
+    </view>
+    <view class="money">
+      <view class='nickname'>{{userInfo.advance}}</view>
+      <view class='row flex_center'>
+        <span class='gray'>余额（元）</span>
+        <a class='primary' bindtap="recharge">充值</a>
+      </view>
+    </view>
+  </view>
+  <view style='margin-top:85rpx;' class='row_wrap'>
+    <view wx:if="{{userInfo.identityId==2}}" class='row between' style='border-bottom:1px solid #ccc;'>
+      <view class='left'>普通用户</view>
+      <view class='right flex more_warp'>
+        <span class="red" bindtap="shopowner">当店长赚收益</span>
+        <view class='zan-arrow'></view>
+      </view>
+    </view>
+    <view wx:if="{{userInfo.identityId==1}}" class='row between' style='border-bottom:1px solid #ccc;'>
+      <view class='left'>店长会员</view>
+      <view class='right flex more_warp'>
+        <span class="red" bindtap='shopBoxFun' data-idx="0">分享邀请</span>
+        <view class='zan-arrow'></view>
+      </view>
+    </view>
+    <view class='row between' style='padding:25px;'>
+      <view class='flex_column flex_center' bindtap="redcloud" data-idx="0">
+        <view class='gray'>
+          红积分
+        </view>
+        <view class='jifen'>
+          {{userInfo.redPoint}}
+        </view>
+      </view>
+      <view class='flex_column flex_center' bindtap="goldDetailed">
+        <view class='gray'>
+          金币
+        </view>
+        <view class='jifen'>
+          {{userInfo.coin}}
+        </view>
+      </view>
+      <view class='flex_column flex_center' bindtap="redcloud" data-idx="1">
+        <view class='gray'>
+          云积分
+        </view>
+        <view class='jifen'>
+          {{userInfo.cloudPoint}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <image class='background' src='../../static/images/mine/headerbg.png'></image>
+</view>
+<view class='row_wrap'>
+  <view class='row between order_menu_wrap' style='padding:10px;'>
+    <view bindtap='showOrderList' class='flex_column flex_center '>
+      <image mode="widthFix" src='../../static/images/mine/gopay.png'></image>
+      <view class='jifen'>
+        购买订单
+      </view>
+    </view>
+    <view bindtap='showMyGroup' class='flex_column flex_center'>
+      <image mode="widthFix" src='../../static/images/mine/bargains.png'></image>
+      <view class='jifen'>
+        拼团订单
+      </view>
+    </view>
+    <view bindtap='showRightOrderList' class='flex_column flex_center'>
+      <image mode="widthFix" src='../../static/images/mine/groups.png'></image>
+      <view class='jifen'>
+        维权订单
+      </view>
+    </view>
+    <view bindtap='showGoldOrderList' class='flex_column flex_center'>
+      <image mode="widthFix" src='../../static/images/mine/change.png'></image>
+      <view class='jifen'>
+        兑换订单
+      </view>
+    </view>
+
+  </view>
+</view>
+<view class='row_wrap' style='margin-top:25rpx;'>
+  <view class='row between'>
+    <view class='left flex flex_center'>
+      <image style='width:50rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/my_gold.png'></image>
+      <view class='flex_column flex_center'>
+        <view style='text-align:left;'>
+        砍价免费拿
+        </view>
+        <view class='gray' style='font-size:25rpx'>
+        和好友一起砍价，0元拿好货
+        </view>
+      </view>
+    </view>
+    <view class='right flex flex_column flex_center'>
+      <a class="primary  red" bindtap="cutprice">前往砍价</a>
+    </view>
+  </view>
+</view>
+<view class='shopownerBox hu_row' wx:if="{{userInfo.identityId==1}}">
+  <view bindtap='shopBoxFun' data-idx='0' class='shopBox hu_row'>
+    <image src="/static/images/icon6.png" />
+    <view class='ts column'>
+      <view>店长邀请码</view>
+      <view class='color'>开启店长</view>
+    </view>
+  </view>
+  <view bindtap='shopBoxFun' data-idx='1' class='shopBox hu_row'>
+    <image src="/static/images/icon7.png" />
+    <view class='column'>
+      <view>我的商品</view>
+      <view class='color'>您推荐的商品</view>
+    </view>
+  </view>
+  <view bindtap='shopBoxFun' data-idx='2' class='shopBox hu_row'>
+    <image src="/static/images/icon8.png" />
+    <view class='column'>
+      <view>我的客户</view>
+      <view class='color'>客户越多收益越高</view>
+    </view>
+  </view>
+  <view bindtap='shopBoxFun' data-idx='3' class='shopBox hu_row'>
+    <image src="/static/images/icon9.png" />
+    <view class='column'>
+      <view>我的银行卡</view>
+      <view class='color'>提现银行卡管理</view>
+    </view>
+  </view>
+</view>
+<view class='row_wrap mine_menu' style='margin-top:25rpx;'>
+  <view class='row between' bindtap='sharePoster'>
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/icon8.png'></image>
+      <view>
+        分享海报二维码
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+  <view class='row between' bindtap='couponFun'>
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/icon7.png'></image>
+      <view>
+        我的优惠券
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+  <view class='row between' bindtap='invitation'>
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/mine_ico_invitationcode_3.png'></image>
+      <view>
+        我的邀请码
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+  <view class='row between' bindtap='collection'>
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/mine_ico_collection_3.png'></image>
+      <view>
+        商品收藏
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+  <view class='row between' bindtap='bankCard'>
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/mine_ico_bankcard_3.png'></image>
+      <view>
+        银行卡管理
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+  <view class='row between' bindtap="address">
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/mine_ico_address_.png'></image>
+      <view>
+        收货地址
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+  <view class='row between' bindtap="serviceFun">
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/mine_ico_customerservice_3.png'></image>
+      <view>
+        客服中心
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+  <view class='row between' bindtap='about'>
+    <view class='left flex flex_center'>
+      <image style='width:30rpx;margin-right:25rpx;' mode="widthFix" src='../../static/images/mine/mine_ico_aboutus_3.png'></image>
+      <view>
+        关于我们
+      </view>
+    </view>
+    <view class='right more_warp'>
+      <view class='zan-arrow'></view>
+    </view>
+  </view>
+</view>

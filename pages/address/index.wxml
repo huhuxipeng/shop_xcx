@@ -1,0 +1,32 @@
+<!--pages/address/index.wxml-->
+<view style='padding:20rpx;height:100%;overflow:auto;padding-bottom:75rpx;'>
+  <view class='flex' wx:for="{{memberAddressList}}" wx:key="index">
+    <view wx:if="{{isSelect}}" class='flex_center flex'>
+      <zan-checkbox data-index="{{index}}" checkbox-class="checkbox-demo" bindchange="selectAddr"></zan-checkbox>
+    </view>
+    <view class='row_wrap'>
+      <view class='row between'>
+        <view>收货人：{{item.name}}</view>
+        <view class='red'>{{item.mobile}}</view>
+      </view>
+      <view class='row'>
+        {{item.provinceName}}{{item.cityName}}{{item.districtName}}{{item.addressDetail}}
+      </view>
+      <view wx:if="{{!isSelect}}" class='row  between'>
+        <view>
+          <zan-checkbox data-index="{{index}}" checked="{{item.defAddr}}" checkbox-class="checkbox-demo" bindchange="handleCheckboxChange">设为默认地址</zan-checkbox>
+        </view>
+        <view class='flex'>
+          <a class="action flex_center flex" data-index="{{index}}" bindtap="editAddress">
+            <image class='icon' mode='widthFix' src="../../static/images/editor.png"></image>编辑</a>
+          <a class="action flex_center flex" data-index="{{index}}" bindtap="delAddress">
+            <image class='icon' mode='widthFix' src="../../static/images/editor.png"></image>删除</a>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<zan-toast id="set_success"></zan-toast>
+<view class='footer row'>
+  <a class="row_button" bindtap="addAddress">添加新地址</a>
+</view>

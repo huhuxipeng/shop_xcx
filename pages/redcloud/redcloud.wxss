@@ -1,0 +1,81 @@
+.Box{
+  background: #fff;
+}
+
+.help{
+  padding-top: 20rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  color: red;
+  justify-content: flex-end;
+}
+
+.tab{
+  margin-top: 20rpx;
+  padding-bottom: 12rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.tab view{
+  flex: 1;
+  text-align: center;
+}
+
+.tab view text{
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.tab view .sele{
+  border-bottom: 2px solid red;
+}
+
+.putForward{
+  padding: 60rpx 120rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goldIcon{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 10rpx;
+  margin-right: 16rpx;
+}
+
+.putForwardGold{
+  font-size: 24rpx;
+}
+
+.putForwardGold text{
+  margin-top: 10rpx;
+  font-size: 40rpx;
+}
+
+.putForwardBtn{
+  height: 40rpx;
+  padding: 6rpx 40rpx;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  color: #f22d07;
+  border: 1px solid #f22d07;
+}
+
+.integralBtn{
+  border-top: 1px solid #eee;
+}
+
+.integralBtn view{
+  flex: 1;
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.line{
+  border-right: 1px solid #eee;
+}
+
+.hide{
+  display: none;
+}

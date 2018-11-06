@@ -1,0 +1,39 @@
+/* pages/appraise/index.wxss */
+.left image{
+  width:153rpx;
+}
+.row{
+  font-size: 30rpx;
+}
+.child image{
+  height: 66rpx;
+  width: 55rpx;
+  position: relative;top:-5rpx;
+}
+.right{
+  padding-left: 15rpx;
+}
+.row textarea{
+  border:1px solid #ccc;
+  width: 100%;
+  padding: 15rpx;
+}
+.appraiseImgWrap{
+  position: relative;
+
+}
+.appraiseImgWrap image{
+  width: 140rpx;height: 140rpx;
+  margin-right: 20rpx;
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+}
+.appraiseImgWrap image.delete{
+  width:40rpx;
+  height: 40rpx;
+  position: absolute;
+  top:-15rpx;
+  right:-15rpx;
+}

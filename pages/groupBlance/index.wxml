@@ -1,0 +1,91 @@
+<view class="line"></view>
+<view class='address hu_row'>
+  <image class='positionIcon' src="/static/images/positionIcon.png" />
+  <view wx:if="{{addr}}" bindtap='selectAddress'>
+    <view class='addressContent column'>
+      <view class='addressContent1 hu_row'>
+        收货人: {{addr.name}}
+        <text>{{addr.mobile}}</text>
+      </view>
+      <view class='addressContent2'>{{addr.provinceName}}{{addr.cityName}}{{addr.districtName}}{{addr.addressDetail}}</view>
+    </view>
+    <image class='arrow2' src="/static/images/shopcar/arrow2.png" />
+  </view>
+  <text wx:else class='add' bindtap='selectAddress'>去添加收货地址</text>
+</view>
+<view class="line"></view>
+<block>
+  <view class='settleBox'>
+    <block>
+      <view class='productContent hu_row'>
+        <image class='product' src="{{res_data.spell.image}}" />
+        <view class='productBox column'>
+          <view class='productName'>{{res_data.spell.goodsTitle}}</view>
+          <view class='parameter'>{{res_data.spell.specs}}</view>
+          <view class='hu_row settleMoney'>￥{{res_data.spell.spellPrice}}
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='listBox column'>
+      <view class='leaveWord hu_row'>
+        给商家留言:
+        <input type="text" data-prop="remark" bindChange="changeValue" placeholder="(选填:30字域内)" />
+      </view>
+       <!-- <view class='postage hu_row' bindtap='tanQuan'> -->
+        <!-- <text>店铺优惠</text> -->
+        <!-- <view> -->
+        <!-- <text class='hongzi'>￥-20.00</text> -->
+        <!-- <image class='quanIn' src="/static/images/shopcar/arrow2.png" /> -->
+        <!-- </view>
+      </view> -->
+      <view class='postage hu_row'>
+        <text>邮费</text>
+        <text>￥{{shipAmount}}</text>
+      </view>
+      <view class='smallPlan hu_row'>
+        共计{{res_data.spell.num}}件商品，小计
+        <text>￥{{res_data.spell.spellPrice}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+
+<!-- <block>
+  <view class='zhifufangshi'>支付方式：</view>
+  <view class='settleBox ' id='zhifu'>
+    <view class='shopBox hu_row' bindtap="wxfu">
+      <image src="/static/images/wx.jpg" /> 微信支付(推荐)
+
+      <view class='selectImg'>
+        <image wx:if="{{weix}}" src="/static/images/unselect.png" />
+        <image wx:if="{{weixz}}" src="/static/images/select.png" />
+      </view>
+    </view>
+    <view class='shopBox hu_row' bindtap="yefu">
+      <image src="/static/images/ye.jpg" /> 余额支付
+
+      <view class='selectImg'>
+        <image wx:if="{{ye}}" src="/static/images/unselect.png" />
+        <image wx:if="{{yez}}" src="/static/images/select.png" />
+      </view>
+    </view>
+    <view class='shopBox hu_row' bindtap="hjffu">
+      <image src="/static/images/hjf.jpg" /> 红积分支付
+
+      <view class='selectImg'>
+        <image wx:if="{{hjf}}" src="/static/images/unselect.png" />
+        <image wx:if="{{hjfz}}" src="/static/images/select.png" />
+      </view>
+    </view>
+  </view>
+</block>
+
+  <quan-list show="{{show}}"></quan-list> -->
+
+<pay-action show="{{showPayAction}}" orderId="{{orderId}}" spellId="{{spellId}}" payOptions="{{payOptions}}"></pay-action>
+<view class='total hu_row'>
+  合计:
+  <text>￥{{total}}</text>
+  <view class='payment column' bindtap="paymentFun">立即支付</view>
+</view>

@@ -1,0 +1,34 @@
+<view class='column' wx:if="{{empty}}">
+  <block wx:for="{{shops}}" wx:key="un">
+    <view class='commodityList hu_row'>
+      <image class='commodity' bindtap="navFun" data-idx="{{index}}" src="{{item.image}}"></image>
+      <view class='commodityDetails column'>
+        <view class='name' bindtap="navFun" data-idx="{{index}}">{{item.name}}</view>
+        <view class='commodityMoney hu_row'>
+          <view class='column'>
+            ￥{{item.price}}
+            <text>￥{{item.mktprice}}</text>
+          </view>
+          <text class='cancel' bindtap="cancelFun" data-idx="{{index}}">取消收藏</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<!-- 没数据出现推荐版块 -->
+<view wx:else>
+  <view class='shoppingEmpty'>
+    <view class='shopBox'>
+      <image src="/static/images/collection.png"></image>
+      <view class='shopText'>
+        <text>您很久没有收藏过商品了</text>
+        <navigator url="/pages/search/search">马上去逛逛</navigator>
+      </view>
+    </view>
+  </view>
+  <view class='recommend'>精品推荐</view>
+  <list id="tempList" detail="{{parameter}}"></list>
+</view>
+<list id="tempList" detail="{{parameter}}"></list>

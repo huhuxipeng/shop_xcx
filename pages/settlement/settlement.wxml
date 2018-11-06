@@ -1,0 +1,210 @@
+<view class="line"></view>
+<view class='address hu_row'>
+  <image class='positionIcon' src="/static/images/positionIcon.png" />
+  <view wx:if="{{addr}}" bindtap='selectAddress'>
+    <view class='addressContent column'>
+      <view class='addressContent1 hu_row'>
+        收货人: {{addr.name}}
+        <text>{{addr.mobile}}</text>
+      </view>
+      <view class='addressContent2'>{{addr.provinceName}}{{addr.cityName}}{{addr.districtName}}{{addr.addressDetail}}</view>
+    </view>
+    <image class='arrow2' src="/static/images/shopcar/arrow2.png" />
+  </view>
+  <text wx:else class='add' bindtap='selectAddress'>去添加收货地址</text>
+</view>
+<view class="line"></view>
+
+<view wx:if="{{productType}}">
+  <view class='realName hu_row'>
+    真实姓名：
+    <input type="text" /> 
+  </view>
+  <view class='realName hu_row'>
+    身份证号：
+    <input bindinput="bindKeyInput" type="text" />
+  </view>
+  <view class='realName customs hu_row'>海关政策要求，身份证信息仅用于海关清关，本平台会加密保存</view>
+</view>
+
+<!-- 限时抢购 -->
+<block wx:if="{{orderType==1}}">
+  <view class='settleBox'>
+    <block>
+      <view class='productContent hu_row'>
+        <image class='product' src="{{flashsaleDetail.goodsImage}}" />
+        <view class='productBox column'>
+          <view class='productName'>{{flashsaleDetail.goodsName}}</view>
+          <view class='parameter'>{{flashsaleDetail.specs}}</view>
+          <view class='hu_row settleMoney'>￥{{flashsaleDetail.flashsalePrice}}
+            <text>x{{flashsaleDetail.buyCount}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='listBox column'>
+      <view class='leaveWord hu_row'>
+        给商家留言:
+        <input type="text" placeholder="(选填:30字域内)" />
+      </view>
+      <view class='postage hu_row'>
+        <text>邮费</text>
+        <text>￥{{flashsaleDetail.shipAmount}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 砍价商品 -->
+<block wx:elif="{{orderType==4}}">
+  <view class='settleBox'>
+    <block>
+      <view class='productContent hu_row'>
+        <image class='product' src="{{bargainDetail.goods.image}}" />
+        <view class='productBox column'>
+          <view class='productName'>{{bargainDetail.goods.name}}</view>
+          <view class='parameter'>{{bargainDetail.goods.specs}}</view>
+          <view class='hu_row settleMoney'>￥{{bargainDetail.bargainOrder.orderAmount}}
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='listBox column'>
+      <view class='leaveWord hu_row'>
+        给商家留言:
+        <input type="text" placeholder="(选填:30字域内)" />
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 金币兑换 -->
+<block wx:elif="{{orderType==2}}">
+  <view class='settleBox'>
+    <block>
+      <view class='productContent hu_row'>
+        <image class='product' src="{{goldChangerDetail.goodsImage}}" />
+        <view class='productBox column'>
+          <view class='productName'>{{goldChangerDetail.goodsName}}</view>
+          <view class='parameter'>{{goldChangerDetail.specs}}</view>
+          <view class='hu_row settleMoney'>{{goldChangerDetail.exchangeCoin}}金币
+            <text>{{goldChangerDetail.buyCount}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='listBox column'>
+      <view class='leaveWord hu_row'>
+        给商家留言:
+        <input type="text" placeholder="(选填:30字域内)" />
+      </view>
+    </view>
+  </view>
+</block>
+
+
+<block  wx:for="{{comList}}" wx:key="unique">
+  <view class='settleBox'>
+    <view class='shopBox hu_row'>
+      <image src="/static/images/shopcar/icon.png" /> {{item.comName}}
+    </view>
+
+    <block wx:for="{{item.goodsList}}" wx:key="unique">
+      <view class='productContent hu_row'>
+        <image class='product' src="{{item.image}}" />
+        <view class='productBox column'>
+          <view class='productName'>{{item.name}}</view>
+          <view class='parameter'>{{item.specs}}</view>
+          <view class='hu_row settleMoney'>￥{{item.price}}
+            <text>x{{item.buyCount}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class='listBox column'>
+      <view class='leaveWord hu_row'>
+        给商家留言:
+        <input type="text" placeholder="(选填:30字域内)" />
+      </view>
+
+      <view class='postage hu_row' bindtap='tanQuan' data-item="{{item}}" data-index="{{index}}" wx:if="{{item.couponList}}">
+        <text>店铺优惠</text>
+        <view>
+        <text class='hongzi' wx:if="{{xuanlequan[index]}}">使用优惠券</text>
+          <text class='hongzi' wx:if="{{!xuanlequan[index]}}">-￥{{discountPrice[index]}}</text>
+        <image class='quanIn' src="/static/images/shopcar/arrow2.png" />
+        </view>
+      </view>
+
+      <view class='postage hu_row'>
+        <text>邮费</text>
+        <text>￥{{item.shipAmount}}</text>
+      </view>
+      <view wx:if="{{switchvals}}" class='postage hu_row' style='line-height:70rpx;'>
+        <text>云积分</text>
+        <view>
+          <text style='text-align:right;padding-right:25rpx;'>云积分抵扣-￥{{cloudPoint}}</text>
+          <switch  bindchange="useCloudChange" />
+        </view>
+      </view>
+      <view class='smallPlan hu_row'>
+        共计{{common[index]}}件商品，小计
+        <text wx:if="{{useCloud}}">￥{{(smallPlan[index]*1000 -cloudPoint*1000  -jianPrice*1000)/1000}}</text>
+        <text wx:else>￥{{(smallPlan[index]*1000 -jianPrice*1000)/1000}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+<!-- <block>
+  <view class='zhifufangshi'>支付方式：</view>
+  <view class='settleBox ' id='zhifu'>
+    <view class='shopBox hu_row' bindtap="wxfu">
+      <image src="/static/images/wx.jpg" /> 微信支付(推荐)
+
+      <view class='selectImg'>
+        <image wx:if="{{weix}}" src="/static/images/unselect.png" />
+        <image wx:if="{{weixz}}" src="/static/images/select.png" />
+      </view>
+    </view>
+    <view class='shopBox hu_row' bindtap="yefu">
+      <image src="/static/images/ye.jpg" /> 余额支付
+
+      <view class='selectImg'>
+        <image wx:if="{{ye}}" src="/static/images/unselect.png" />
+        <image wx:if="{{yez}}" src="/static/images/select.png" />
+      </view>
+    </view>
+    <view class='shopBox hu_row' bindtap="hjffu">
+      <image src="/static/images/hjf.jpg" /> 红积分支付
+
+      <view class='selectImg'>
+        <image wx:if="{{hjf}}" src="/static/images/unselect.png" />
+        <image wx:if="{{hjfz}}" src="/static/images/select.png" />
+      </view>
+    </view>
+  </view>
+</block> -->
+
+
+
+  <quan-list show="{{show}}" detailIn="{{quanList}}" detailIndex="{{INDEX}}" discountPrice="{{discountPrice}}" xuanlequan="{{xuanlequan}}" couponJson="{{couponJson}}"  Wodejia="{{Wodejia}}"></quan-list>
+
+<pay-action show="{{showPayAction}}" orderId="{{orderId}}" bargainId="{{bargainId}}" flashsaleId="{{flashsaleId}}" payOptions="{{payOptions}}"></pay-action>
+<view wx:if="{{!useCloud}}" class='total hu_row'>
+  合计:
+  <text wx:if="{{orderType==2}}">{{total}}金币</text>
+  <text wx:if="{{goodsTotalPrice}}">￥{{(goodsTotalPrice*1000 - All*1000)/1000}}</text>
+  <text wx:else>￥{{(total*1000 - All*1000)/1000}}</text>
+  <view class='payment column' bindtap="paymentFun">立即支付</view>
+</view>
+<view wx:else class='total hu_row'>
+  合计:
+  <text wx:if="{{goodsTotalPrice}}">￥{{(goodsTotalPrice*1000 -cloudPoint*1000 - All*1000)/1000}}</text>
+  <text wx:else>￥{{(total*1000-cloudPoint*1000 -All*1000)/1000}}</text>
+  <view class='payment column' bindtap="paymentFun">立即支付</view>
+</view>
+
+
+
+

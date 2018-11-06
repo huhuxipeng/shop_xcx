@@ -1,0 +1,60 @@
+<!--components/footerBuy/index.wxml-->
+<zan-popup type="bottom" show="{{ show }}">
+  <view  class='popup_main'>
+    <!--关闭按钮-->
+    <image class='close' bindtap="close" mode='widthFix' src="../../static/images/close.png" slot="icon" />
+    <!--弹框内容-->
+    <view class="content">
+      <view class="row">
+        <image class='face' mode='widthFix' src="{{detail.good.image}}" />
+        <view class='right' wx:if="{{bargainId}}">
+          <view class="goods_name">{{detail.good.name}}</view>
+          <view class="red">￥{{detail.good.targetPrice}}</view>
+        </view>
+        <view class='right' wx:elif="{{flashsaleId}}">
+          <view class="goods_name">{{product.name}}</view>
+          <view class="red">￥{{product.flashsalePrice}}</view>
+          <view class="gray" style='font-size:27rpx;'>（库存{{product.activitySock}}）</view>
+        </view>
+        <view class='right' wx:elif="{{goldChangerId}}">
+          <view class="goods_name">{{product.name}}</view>
+          <view class="red">{{detail.good.exchangeCoin}}金币</view>
+          <!-- <view class="gray" style='font-size:27rpx;'>（库存{{product.store}}）</view> -->
+        </view>
+        <view class='right' wx:elif="{{activityId}}">
+          <view class="goods_name">{{detail.goodsTitle}}</view>
+          <view wx:if="{{detail.good.price}}" class="red">￥{{detail.good.price}}</view>
+          <view wx:else class="red">￥{{product.price}}</view>
+          <view class="gray" style='font-size:27rpx;'>（库存{{product.store}}）</view>
+        </view>
+        <view class='right' wx:else>
+          <view class="goods_name">{{product.name}}</view>
+          <!-- <view wx:if="{{detail.good.price}}" class="red">￥{{detail.good.price}}</view> -->
+          <view class="red">￥{{product.price}}</view>
+          <view class="gray" style='font-size:27rpx;'>（库存{{product.store}}）</view>
+        </view>
+      </view>
+      <view wx:if="{{detail.goodsSpecList!=null}}">
+        <view class="category" wx:for="{{detail.goodsSpecList}}" wx:key="index">
+          <view class='row'>{{item.specName}}</view>
+          <ul class="cate row">
+            <li wx:for="{{item.detail}}" wx:for-index="i" data-index="{{index}}" data-i="{{i}}" class="{{item.show?'cols':''}}" bindtap="selectSpec" wx:key="index">{{item.specValue}}</li>
+          </ul>
+        </view>
+      </view>
+
+      <view class="row between" wx:if="{{!bargainId&&!isDuobao}}">
+        <p>购买数量</p>
+        <zan-stepper stepper="{{ stepper.stepper }}" min="{{ stepper.min }}" max="{{ stepper.max }}" bind:change="handleZanStepperChange">
+        </zan-stepper>
+      </view>
+    </view>
+  </view>
+  <view class="footers row">
+    <view class="addcars flex_grow_1" bindtap="joinca" wx:if="{{!slot&&!goldChangerId&&!activityId&&!bargainId&&!flashsaleId}}">加入购物车</view>
+    <view class="buynows flex_grow_1" bindtap="purchase" wx:if="{{!slot&&!goldChangerId&&!activityId&&!bargainId}}">立即购买</view>
+    <view class="buynows flex_grow_1" bindtap="changeGold" wx:if="{{goldChangerId}}">立即兑换</view>
+    <view class="buynows flex_grow_1" bindtap="purchase" wx:if="{{activityId||bargainId}}">确定</view>
+    <view class="export flex_grow_1" wx:if="{{slot}}">已告罄</view>
+  </view>
+</zan-popup>

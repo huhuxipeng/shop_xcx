@@ -1,0 +1,163 @@
+.limitBanner {
+  float: left;
+  width: 100%;
+  height: 331rpx;
+}
+
+.Box {
+  display: flex;
+  white-space: nowrap;
+}
+
+.box {
+  display: inline-block;
+  width: 250rpx;
+  padding: 15rpx 0;
+  background: #5a5a5a;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.sele {
+  background: #f37d66;
+}
+
+.countDown {
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+
+.list {
+  margin-top: 30rpx;
+}
+
+.listLi {
+  padding: 15rpx;
+}
+
+.commodity {
+  flex-shrink: 0;
+  width: 270rpx;
+  height: 270rpx;
+  margin-right: 30rpx;
+}
+
+.content {
+  width: 100%;
+}
+
+.name {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  min-height: 120rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.limitPrice {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.price {
+  margin: 0 30rpx;
+  color: red;
+  font-weight: bold;
+}
+
+.limitPrice view {
+  text-decoration: line-through;
+}
+
+.rob {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: red;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rob view {
+  padding: 0 60rpx;
+  background: #fbc0b4;
+}
+
+.rob text {
+  padding: 8rpx 20rpx;
+  background: red;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.hide {
+  display: none;
+}
+
+.notice {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 85%;
+  padding: 15rpx 15rpx 0;
+  background: #fff;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  font-size: 30rpx;
+  text-align: center;
+  color: #333;
+}
+
+.noticeTit{
+  margin: 10rpx 0 20rpx;
+}
+
+.noticeContent{
+  width: 80%;
+  margin: 0 auto;
+  color: #999;
+  line-height: 50rpx;
+}
+
+.notice input{
+  width: 75%;
+  margin: 40rpx auto 40rpx;
+  padding-left: 5%;
+  border: 1px solid #eee;
+  border-radius: 15rpx;
+  text-align: left;
+}
+
+.noticeBtn{
+  border-top: 1px solid #eee;
+}
+
+.noticeBtn text{
+  width: 50%;
+  padding: 20rpx 0;
+}
+
+.cancel{
+  border-right: 1px solid #eee;
+}
+
+.timeLimitBox{
+  position: relative;
+}
+
+.noticeBg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}

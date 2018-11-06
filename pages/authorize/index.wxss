@@ -1,0 +1,49 @@
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+   height: 75rpx;
+   line-height: 75rpx;
+   margin-top:12rpx;
+   white-space: nowrap;
+   color:#333333;
+}
+
+
+.shrink_0{
+    flex-shrink:0;
+    -webkit-flex-shrink:0;
+}
+.between {
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+.flex_column {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.flex_column image {
+    width: 100%;
+}
+.row input{
+  height: 100%;flex-grow: 1;
+  width:auto;
+  padding-left: 12rpx;
+}
+.row button.primary,.row button.primary{
+  height: 100%;
+  white-space: nowrap;
+  line-height: 70rpx;
+  width: auto;
+}
+.row button{
+  height:68rpx;line-height:68rpx;
+  padding: 0 42rpx;
+}
+.sure{
+  background:#f22d07;color:white;
+}
+

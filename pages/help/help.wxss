@@ -1,0 +1,30 @@
+.tab{
+  overflow: auto;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+}
+
+.tab view{
+  flex: 1;
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.sele{
+  border-bottom: 2px solid red;
+}
+
+.answer{
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.answer view{
+  margin-top: 10rpx;
+}
+
+.answer .subject{
+  margin-bottom: 40rpx;
+  color: #666;
+}

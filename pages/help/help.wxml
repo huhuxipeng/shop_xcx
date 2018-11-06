@@ -1,0 +1,13 @@
+<view class='tab hu_row'>
+  <view bindtap="seleClick" data-idx="0" class="{{sele==0?'sele':''}}">金币</view>
+  <view bindtap="seleClick" data-idx="1" class="{{sele==1?'sele':''}}">红积分</view>
+  <view bindtap="seleClick" data-idx="2" class="{{sele==2?'sele':''}}">黄积分</view>
+  <view bindtap="seleClick" data-idx="3" class="{{sele==3?'sele':''}}">云积分</view>
+</view>
+
+<view class='answer'>
+  <block wx:for="{{helpList}}" wx:key="un">
+    <view>{{item.title}}</view>
+    <view class='subject'>{{item.content}}</view>
+  </block>
+</view>

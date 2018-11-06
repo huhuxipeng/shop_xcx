@@ -1,0 +1,180 @@
+page {
+  padding-bottom: 120rpx;
+}
+
+.cutpriceBanner {
+  width: 100%;
+  height: 262rpx;
+}
+
+.example {
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 15rpx;
+}
+
+.marquee_text{
+  transform: translateX(375px);
+}
+
+.broadcastList {
+  min-width: 750rpx;
+  margin-right: 75rpx;
+  font-size: 28rpx;
+  align-items: center;
+}
+
+.broadcastList text{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.broadcastList image {
+  width: 60rpx;
+  height: 60rpx;
+  flex-shrink: 0;
+  margin-right: 15rpx;
+  border-radius: 100%;
+}
+
+.cutpriceBox {
+  background: #fff;
+}
+
+.cutpriceList {
+  margin: 15rpx 15rpx 0;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.cutpriceList image {
+  width: 225rpx;
+  height: 225rpx;
+  margin-right: 15rpx;
+  flex-shrink: 0;
+}
+
+.productContent {
+  width: 100%;
+  color: #333;
+}
+
+.productName {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+
+.already {
+  margin-top: 80rpx;
+  font-size: 24rpx;
+  color: #ccc;
+}
+
+.price {
+  width: 100%;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: red;
+  justify-content: space-between;
+}
+
+.cutpricePrice {
+  padding: 10rpx 20rpx;
+  background: red;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.cutpriceNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  border-top: 1px solid #eee;
+  justify-content: space-between;
+}
+
+.cutpriceNav view {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.cutpriceNav image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 15rpx;
+}
+
+.cutpriceNav .cutprNavShow {
+  display: block;
+}
+
+.MycutpriceBox {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  background: none;
+}
+
+.MycutpriceBox .cutpriceList, .launchBox {
+  background: #fff;
+}
+
+.MycutpriceBox .cutpriceList {
+  margin: 20rpx 0 0 0;
+  padding: 15rpx;
+}
+
+.MycutpriceBox .price {
+  margin-top: 100rpx;
+  justify-content: flex-start;
+  color: #333;
+}
+
+.MycutpriceBox .price text {
+  color: red;
+}
+
+.launchBox {
+  margin-bottom: 0;
+  padding: 20rpx 15rpx;
+  font-size: 28rpx;
+  color: red;
+  justify-content: space-between;
+}
+
+.launchBox text {
+  width: 225rpx;
+  text-align: center;
+  color: #ccc;
+}
+
+.launchBox view {
+  padding: 10rpx 20rpx;
+  background: red;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.hide {
+  display: none;
+}
+
+.opac{
+  opacity: 0;
+}

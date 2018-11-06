@@ -1,0 +1,47 @@
+<swiper class='swiperBox' indicator-dots autoplay interval="3000">
+  <block wx:for="{{swipers}}" wx:key="uniq">
+    <swiper-item>
+      <image mode="widthFix" src="{{item.image}}" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='giftDetailsBox column'>
+  <view class='name'>{{giftPackage.gpName}}</view>
+  <view class='money hu_row'>
+    <view class='hu_row'>
+      <text class='present'>￥{{giftPackage.price}}</text>
+      <text class='primary'>￥{{giftPackage.mktprice}}</text>
+    </view>
+    <text>红积分：0</text>
+  </view>
+  <view class='shipping'>包邮(偏远地区除外)</view>
+</view>
+
+<view class='choice hu_row' bindtap='showFun'>
+  <text>请选择颜色分类</text>
+  <image src="/static/images/arrow.png" />
+</view>
+
+<view class='details hu_row'>
+  <text>商品详情</text>
+</view>
+<detail-tab intro="{{datas.intro}}" goodsId="{{goodsId}}"></detail-tab>
+<view class='purchaseBtn' bindtap='showFun'>立即购买</view>
+
+<!-- 隐藏区域 -->
+<view class='blackBg' wx:if="{{parameterState}}" bindtap="hideFun"></view>
+<view class='hideBox' animation="{{animationData}}">
+  <view class='specifications hu_row'>
+    <image src="{{res.giftPackageGallery[0].image}}" /> ￥{{giftPackage.price}}
+  </view>
+  <view class='parameterNum hu_row'>
+    购买数量
+    <view class='listBox hu_row'>
+      <text class='reduce' bindtap='parameterReduce'>-</text>
+      <input class='listBox_number' placeholder="1" value="{{parameterNum}}" type="text" />
+      <text class='plus' bindtap='parameterPlus'>+</text>
+    </view>
+  </view>
+  <view class='purchaseBtn' bindtap='jumpFun'>立即购买</view>
+</view>

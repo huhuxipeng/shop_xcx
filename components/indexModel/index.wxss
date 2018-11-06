@@ -1,0 +1,33 @@
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex_center {
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items:center;
+}
+.shrink_0{
+    flex-shrink:0;
+    -webkit-flex-shrink:0;
+}
+.between {
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+.flex_column {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.flex_column image {
+    width: 100%;
+}
+image.child{
+  width:20%;
+}
+

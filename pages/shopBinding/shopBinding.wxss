@@ -1,0 +1,102 @@
+.shopownerBox view {
+  flex: 1;
+  padding: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.binding {
+  position: relative;
+  background: rgba(255, 64, 60, 0.3);
+  color: #fff;
+}
+
+.shop,.condition {
+  background: #eee;
+  color: #ccc;
+}
+
+.icon2{
+  position: absolute;
+  top: 50%;
+  right: -18rpx;
+  width: 20rpx;
+  height: 56rpx;
+  margin-top: -28rpx;
+}
+
+.profit,.form{
+  padding: 40rpx 20rpx;
+  background: #fff;
+}
+
+.profitTit{
+  margin-bottom: 20rpx;
+  font-size: 36rpx;
+}
+
+.profit text{
+  margin-top: 10rpx;
+  font-size: 32rpx;
+  color: #999;
+  line-height: 50rpx;
+}
+
+.form{
+  margin-top: 20rpx;
+}
+
+.form view{
+  font-size: 30rpx;
+}
+
+.form input{
+  height: 70rpx;
+  margin: 20rpx 0;
+  padding-left: 20rpx;
+  border: 1px solid #eee;
+  border-radius: 15rpx;
+  font-size: 28rpx;
+}
+
+.codeBox{
+  position: relative;
+}
+
+.code{
+  position: absolute;
+  bottom: 22rpx;
+  right: 20rpx;
+  z-index: 2;
+  height: 70rpx;
+  background: #fff;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  border-radius: 15rpx;
+}
+
+.agreementBox{
+  align-items: center;
+}
+
+.agreement{
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #008dde;
+}
+
+.nextStep{
+  width: 90%;
+  margin: 40rpx auto 0;
+  padding: 20rpx 0;
+  background: #eee;
+  text-align: center;
+  border-radius: 15rpx;
+  color: #999;
+  font-size: 34rpx;
+}
+
+.nextStepColor{
+  background: #ff403c;
+  color: #fff;
+}

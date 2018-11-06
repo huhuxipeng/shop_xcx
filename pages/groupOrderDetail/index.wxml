@@ -1,0 +1,86 @@
+<!--pages/orderDetail/index.wxml-->
+<view class='order_state_wrap'>
+  <view class='row between'>
+    <view class='flex_column'>
+      <view>{{statusText}}</view>
+    </view>
+    <view class='icon_wrap flex_center flex'>
+      <image mode='widthFix' src='{{statusImg}}'></image>
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between'>
+    <view class='left flex '>
+      <view class='flex_center flex'>
+        <image mode='widthFix' class='icon' src="/static/images/positionIcon.png">
+        </image>
+      </view>
+      <view class='flex_column'>
+        <view>
+          收货人：{{detail.shipName}}
+        </view>
+        <view>
+          {{detail.shipAddress}}
+        </view>
+      </view>
+    </view>
+    <view class='right'>
+      {{detail.shipMobile}}
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row '>
+    <image mode='widthFix' class="icon" src='/static/images/shopcar/icon.png'></image>
+    {{detail.comName}}
+    <view class='more_wrap'>
+      <view class='more'></view>
+    </view>
+  </view>
+  <view class='bg_fa'>
+    <view class='row between align_center'>
+      <image class='goods_img' mode='widthFix' src="{{detail.image}}"></image>
+      <view class='flex_column justify_center goods_detail'>
+        <view class='goods_name'>{{detail.goodsTitle}}</view>
+        <view class='gray'>规格：{{detail.productSpecs}}</view>
+      </view>
+      <view class='flex_column goods_prize'>
+        <view>￥{{detail.spellPrice}}</view>
+        <view class='gray pri_line'>￥{{detail.goodsPrice}}</view>
+        <view class='gray'>X{{detail.num}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between' style='border-bottom:1px solid #eee'>
+    <view>商品金额</view>
+    <view>￥{{detail.orderAmount}}</view>
+  </view>
+  <view class='row between'>
+    <view>运费</view>
+    <view>￥{{detail.shipAmount}}</view>
+  </view>
+</view>
+<view class='row_wrap'>
+  <view class='row between'>
+    <view>应付总额</view>
+    <view>￥{{detail.payAmount}}</view>
+    <!-- <view>￥{{detail.spellPrice}}</view> -->
+  </view>
+</view>
+<view class='row_wrap'>
+  <view wx:if="{{detail.orderSn}}" class='row between'>
+    <view>订单号</view>
+    <view>{{detail.orderSn}}</view>
+  </view>
+  <view wx:if="{{detail.createDate}}" class='row between'>
+    <view>下单时间</view>
+    <view>{{detail.createDate}}</view>
+  </view>
+  <view wx:if="{{detail.paymentDate}}" class='row between'>
+    <view>付款时间</view>
+    <view>{{detail.paymentDate}}</view>
+  </view>
+</view>

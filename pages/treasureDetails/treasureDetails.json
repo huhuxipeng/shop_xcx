@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "夺宝详情",
+  "usingComponents": {
+    "detail-tab": "../../components/detailTab/index",
+    "footer-buy": "../../components/footerBuy/index"
+  }
+}

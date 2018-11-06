@@ -1,0 +1,41 @@
+<view class='row_wrap'>
+  <view wx:for="{{detail.orderItemsList}}" wx:key="index" class='row '>
+    <view class='left'>
+      <image mode='widthFix' src="{{item.goodsImage}}"></image>
+    </view>
+    <view class='flex_grow_1 flex between flex_center right'>
+      <view>评价：</view>
+      <view data-type="0" bindtap='selectType' class='child flex flex_center'>
+        <image wx:if="{{appraiseType==0}}" src='../../static/images/icon/hao1_1.png'></image>
+        <image wx:else src='../../static/images/icon/hao1.png'></image>好评</view>
+      <view data-type="1" bindtap='selectType' class='child flex flex_center'>
+        <image wx:if="{{appraiseType==1}}" src='../../static/images/icon/hao2_1.png'></image>
+        <image wx:else src='../../static/images/icon/hao2.png'></image>中评</view>
+      <view data-type="2" bindtap='selectType' class='child flex flex_center'>
+        <image wx:if="{{appraiseType==2}}" src='../../static/images/icon/hao3_1.png'></image>
+        <image wx:else src='../../static/images/icon/hao3.png'></image>差评</view>
+    </view>
+  </view>
+  <view class='row'>
+    <textarea placeholder='请输入评价内容' data-prop="appraiseText" bindinput="changeValue">
+    </textarea>
+  </view>
+  <view class='row'>
+    <view class='appraiseImgWrap' wx:for="{{imageList}}" wx:key="index">
+      <image class='delete' bindtap='deleteImg' data-index="{{index}}" src="../../static/images/close2.png"></image>
+      <image src="{{item}}"></image>
+    </view>
+    <view class='appraiseImgWrap'>
+      <image bindtap='selectImg' src="../../static/images/camera.png"></image>
+    </view>
+  </view>
+</view>
+<view class='row'>
+  <zan-checkbox checkbox-class="checkbox-demo" data-prop="anonFlag" bindchange="changeValue">匿名提交</zan-checkbox>
+</view>
+<view class='row footer'>
+  <a bindtap="submit" class="row_button">提交</a>
+</view>
+<view style='visibility:hidden'>
+  <canvas canvas-id="attendCanvasId" style='position:flex;top:-1000px;width:{{canvasWidth}};height:{{canvasHeight}}'></canvas>
+</view>

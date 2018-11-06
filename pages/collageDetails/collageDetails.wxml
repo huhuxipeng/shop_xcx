@@ -1,0 +1,154 @@
+<view class='wrap'>
+  <swiper class='swiperBox' indicator-dots autoplay interval="3000">
+    <swiper-item>
+      <image src="{{res_data.image}}" />
+    </swiper-item>
+  </swiper>
+  <view class='box column'>
+    <view class='money hu_row'>
+      <view class='present'>￥{{res_data.spellPrice}}</view>
+      <view class='primary'>￥{{res_data.goodsPrice}}</view>
+      <view class="sold">{{res_data.num}}人拼团</view>
+    </view>
+    <view class='nameBox hu_row'>
+      <image class='collageIcon' src="/static/images/collageIcon.png" />
+      <view class='name'>{{res_data.goodsTitle}}</view>
+    </view>
+    <view class='shipping column'>
+      <view class='shipping_introduce hu_row'>
+        <text>包邮（偏远地区除外）</text>
+        <text>已{{res_data.alreadyNum}}人参与</text>
+      </view>
+      <view class='name'>{{res_data.goodsDescribe}}</view>
+    </view>
+    <view class='conductBox column'>
+      <view class='conductBoxTit hu_row'>
+        <text>{{len}}人在开团,可以直接参与拼团</text>
+        <text bindtap='moreFun'>查看更多</text>
+      </view>
+      <block wx:for="{{Ongoing}}" wx:key="un">
+        <view class='group hu_row'>
+          <image src="{{item.originatorFace==''?'/static/images/default.png':item.originatorFace}}" />
+          <text class='groupName'>{{item.originatorName}}</text>
+          <view class='groupTime column'>
+            <view>还差
+              <text>{{item.participateNum}}人</text>拼成</view>
+            <text>剩余{{item.endDate}}</text>
+          </view>
+          <view class='groupBtn' bindtap='groupBtn' data-idx="{{index}}">去拼团</view>
+        </view>
+      </block>
+    </view>
+    <view class='step column'>
+      <view class='stepTit hu_row'>
+        <text>拼团步骤</text>
+        <text bindtap="ruleFun">说明></text>
+      </view>
+      <view class='stepBox hu_row'>
+        <view class='column'>
+          <text>1</text>
+          <view>选择商品</view>
+        </view>
+        <view class='column'>
+          <text>2</text>
+          <view>支付开团活参团</view>
+        </view>
+        <view class='column'>
+          <text>3</text>
+          <view>等待新人参团支付</view>
+        </view>
+        <view class='column'>
+          <text>4</text>
+          <view>达到人数拼团成功</view>
+        </view>
+      </view>
+    </view>
+    <view class='shopBox hu_row'>
+      <image src="{{res_data.shopStoreLogo}}" />
+      <view class='shopInformation column'>
+        <view class='shopName'>{{res_data.shopStoreName}}</view>
+        <view class='bond'>已交保证金
+          <text>￥{{res_data.bond}}</text>元，请放心购买</view>
+      </view>
+      <navigator class='getShop' open-type="navigate" url="/pages/shop/shop?goodsId={{goodsId}}">进入店铺</navigator>
+    </view>
+  </view>
+  <view class='bg' wx:if="{{explain}}"></view>
+  <view>
+    <detail-tab intro="{{res_data.goodsIntro}}" goodsId="{{res_data.goodsId}}"></detail-tab>
+  </view>
+  <view>
+  
+    <footer-buy data="{{data}}" activityId="{{res_data.activityId}}" spellId="{{spellId}}" show="{{show}}"></footer-buy>
+  </view>
+  <view class='explain' wx:if="{{explain}}">
+    <view class='explainTit'>
+      活动规则
+      <image bindtap="closeRuleFun" class='close2' src="/static/images/close2.png" />
+    </view>
+    <view class='roll'>
+      <view class='row' wx:for="{{res_data.rulesArr}}" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+  
+  <!-- 正在拼团弹窗 -->
+  <view class='bg' wx:if="{{groupPopup}}"></view>
+  <view class='explain groupPopup' wx:if="{{groupPopup}}">
+    <view class='explainTit'>
+      正在拼团
+      <image bindtap="groupPopupFun" class='close2' src="/static/images/close2.png" />
+    </view>
+    <view class='roll'>
+      <block wx:for="{{Ongoing}}" wx:key="un">
+        <view class='group hu_row'>
+          <image src="{{item.originatorFace==''?'/static/images/default.png':item.originatorFace}}" />
+          <text class='groupName'>{{item.originatorName}}</text>
+          <view class='groupTime column'>
+            <view>还差
+              <text>{{item.participateNum}}人</text>拼成</view>
+            <text>剩余{{item.endDate}}</text>
+          </view>
+          <view class='groupBtn' bindtap='groupBtn' data-idx="{{index}}">去拼团</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 参与拼团弹窗 -->
+  <view class='bg' wx:if="{{participate}}"></view>
+  <view class='explain groupPopup' wx:if="{{participate}}">
+    <view class='explainTit'>
+      参与拼团
+      <image bindtap="participateFun" class='close2' src="/static/images/close2.png" />
+    </view>
+    <view class='roll'>
+      <view class='leftover'>仅剩
+        <text>{{leftoverQuota}}</text>个名额，{{Ongoing[leftoverIdx].endDate}}后结束
+      </view>
+      <view class='head hu_row'>
+        <block wx:for="{{participateDetails}}" wx:key="un">
+          <view class='headBox'>
+            <text wx:if="{{index==0}}">拼主</text>
+            <image src="{{item.face==''?'/static/images/default.png':item.face}}" />
+          </view>
+        </block>
+      </view>
+    </view>
+    <text class='participate' bindtap='showFooterBuy' data-state="true">参与拼团</text>
+  </view>
+</view>
+<view class='nav row'>
+  <navigator class='navShop column' open-type="navigate" url="/pages/shop/shop?goodsId={{goodsId}}">
+    <image src="/static/images/details/icon1.png" />店铺</navigator>
+  <view class='navService column' bindtap="serviceFun">
+    <image src="/static/images/details/icon2.png" />客服</view>
+  <view class='navCollection column' bindtap="collectionFun">
+    <image wx:if="{{collection==false}}" src="/static/images/details/icon3.png" />
+    <image wx:else src="/static/images/details/icon3_sele.png" /> 收藏
+  </view>
+  <navigator class='join column' open-type="navigate" url="/pages/details/details?goodsId={{goodsId}}">
+    <text>￥{{res_data.goodsPrice}}</text> 单独购买
+  </navigator>
+  <view bindtap='showFooterBuy' class='flex_column flex_center buy_button flex_grow_1'>
+    <text>￥{{res_data.spellPrice}}</text> 立即拼团
+  </view>
+</view>

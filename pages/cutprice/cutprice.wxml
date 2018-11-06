@@ -1,0 +1,72 @@
+<view style="{{Box?'opacity:1;height:auto;':'opacity:0;height:0;'}}">
+  <image class="cutpriceBanner" src="/static/images/3.png"></image>
+  <view class="example">
+    <view animation="{{animationData}}" class="marquee_text hu_row" style='width:{{length}}px'>
+      <block wx:for="{{dataList}}" wx:key="un">
+        <view class='broadcastList hu_row'>
+          <image src="{{item.weixinFace}}"></image>
+          <text>{{item.nickname}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='cutpriceBox column'>
+    <block wx:for="{{bargainGoodsList}}" wx:key="un">
+      <view class='cutpriceList hu_row'>
+        <image src="{{item.image}}"></image>
+        <view class='productContent column'>
+          <text class='productName'>{{item.title}}</text>
+          <text class='already'>{{item.recipientNum}}人已{{item.targetPrice}}元拿到</text>
+          <view class='price hu_row'>
+            <text>原价{{item.goodsPrice}}元</text>
+            <view class='cutpricePrice' bindtap="jump" data-idx="{{index}}">砍价{{item.targetPrice}}元得</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view wx:if="{{bargainOrderList.length>0}}" class="MycutpriceBox cutpriceBox column {{Box?'hide':''}}">
+  <block wx:for="{{bargainOrderList}}" wx:key="un">
+    <view class='cutpriceList hu_row' bindtap="jump2" data-idx="{{index}}">
+      <image src="{{item.image}}"></image>
+      <view class='productContent column'>
+        <text class='productName'>{{item.name}}</text>
+        <view class='price hu_row' wx:if="{{item.bargainOrderStatus==0}}">
+          已砍
+          <text>{{item.bargainPrices}}</text>元,还剩
+          <text>{{item.surplusPrice}}</text>元
+        </view>
+        <view class='price hu_row' wx:elif="{{item.bargainOrderStatus==1}}">砍价成功</view>
+        <view class='price hu_row' wx:elif="{{item.bargainOrderStatus==4}}">配货中</view>
+        <view class='price hu_row' wx:elif="{{item.bargainOrderStatus==6}}">已发货</view>
+        <view class='price hu_row' wx:elif="{{item.bargainOrderStatus==7}}">已收货</view>
+        <view class='price hu_row' wx:elif="{{item.bargainOrderStatus==8}}">已完成</view>
+        <view class='price hu_row' wx:elif="{{item.bargainOrderStatus==9}}">砍价失败</view>
+      </view>
+    </view>
+    <view class="launchBox hu_row">
+      <text>我发起的砍价</text>
+      <div wx:if="{{item.surplusPrice!=0}}" class="{{launchBox?'':'opac'}}">{{item.takeDate}}结束</div>
+      <view wx:if="{{item.surplusPrice!=0&&item.bargainOrderStatus==0}}" bindtap="jump2" data-idx="{{index}}">分享砍价</view>
+      <view wx:elif="{{item.bargainOrderStatus==1&&item.type==1}}" data-item="{{item}}"  bindtap="showFooterBuy">立即领取</view>
+      <view wx:elif="{{item.bargainOrderStatus==9&&item.type==1}}" bindtap="jump" data-idx="{{index}}">再砍一次</view>
+      <view wx:if="{{item.bargainOrderStatus==6}}" bindtap="jump3" data-idx="{{index}}">查看物流</view>
+      <view wx:if="{{item.bargainOrderStatus==6}}" bindtap="jump4" data-idx="{{index}}">确认收货</view>
+    </view>
+  </block>
+</view>
+
+<view class='cutpriceNav hu_row'>
+  <view class='hu_row' catchtap="cutpriceNavFun" data-id="nav1">
+    <image wx:if="{{shopIcon==false}}" src="/static/images/shopIcon1.png"></image>
+    <image wx:else src="/static/images/shopIcon2.png"></image>砍价商品
+  </view>
+  <view class='hu_row' catchtap="cutpriceNavFun" data-id="nav2">
+    <image wx:if="{{mybarIcon==false}}" src="/static/images/mybarIcon1.png"></image>
+    <image wx:else src="/static/images/mybarIcon2.png"></image>我的砍价
+  </view>
+</view>
+<footer-buy data="{{data}}" bargainId="{{bargainId}}" show="{{showFooterBuy}}"></footer-buy>

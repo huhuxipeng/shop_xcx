@@ -1,0 +1,21 @@
+<view class='wrap column'>
+  <view class='main'>
+    <view class='money'>金额</view>
+    <view class='import hu_row'>￥
+      <input type="number" placeholder="200元起，且为200元整数倍" bindinput="bindKeyInput" />
+    </view>
+    <view class='tips hu_row'>
+      <view>温馨提示：</view>
+      <text>请根据您的消费需求理性选择充值金额</text>
+    </view>
+  </view>
+
+  <view class='btnBox'>
+    <view class="rechargeBtn {{selectAllStatus?'rechargeBtn2':''}}" bindtap="recharge">充值</view>
+    <view class='agreementBox hu_row'>
+      <icon class="quanxuanBtn" wx:if="{{selectAllStatus}}" size="20" type="success" color="#ff5900" bindtap="selectAll" />
+      <icon class="quanxuanBtn" wx:else size="20" type="circle" bindtap="selectAll" />
+      <text class='agreement' bindtap='agreement'>我已经阅读并同意《充值协议》</text>
+    </view>
+  </view>
+</view>

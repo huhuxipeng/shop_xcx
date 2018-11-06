@@ -1,0 +1,38 @@
+<view class="available column">
+  可用金币
+  <text class='goldNum'>{{memberCoin}}</text>
+  <view class='tips hu_row'>
+    <text>金币换好礼</text>
+    <text>会员专享</text>
+    <text>每月更新</text>
+  </view>
+</view>
+
+<view class='tab'>
+  <view class='tabBox hu_row'>
+    <view class="tabBtn {{idx==0?'sele':''}}" data-idx="0" bindtap="tabBtnFun">全部</view>
+    <view class="tabBtn {{idx==1?'sele':''}}" data-idx="1" bindtap="tabBtnFun">0-999</view>
+    <view class="tabBtn {{idx==2?'sele':''}}" data-idx="2" bindtap="tabBtnFun">1000-2999</view>
+    <view class="tabBtn {{idx==3?'sele':''}}" data-idx="3" bindtap="tabBtnFun">3000-5999</view>
+    <view class="tabBtn {{idx==4?'sele':''}}" data-idx="4" bindtap="tabBtnFun">6000-9999</view>
+    <view class="tabBtn {{idx==5?'sele':''}}" data-idx="5" bindtap="tabBtnFun">10000+</view> 
+  </view>
+</view>
+
+<view class='list column'>
+  <block wx:for="{{rows}}" wx:key="un">
+    <view class='listLi hu_row'>
+      <image class='commodity' src="{{item.squareImage}}" />
+      <view class='content column'>
+        <view class='name'>{{item.exchangeName}}</view>
+        <text class='gold'>{{item.exchangeCoin}}金币</text>
+        <view class='exchangeBox hu_row'>
+          <text>￥{{item.mktPrice}}</text>
+          <view class="{{item.activityNum.length>3?'':'goldBtn'}}" data-item="{{item}}" bindtap='toChangeGold'>{{item.activityNum}}</view>
+          <!-- <view class='goldBtn' wx:else data-item="{{item}}" bindtap='toChangeGold'></view> -->
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+

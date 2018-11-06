@@ -1,0 +1,154 @@
+.treasure{
+  float: left;
+  width: 100%;
+  height: 240rpx;
+}
+
+.example {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 60rpx;
+  padding: 10rpx 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.marquee_text {
+  transform: translateX(375px);
+}
+
+.broadcastList {
+  margin-right: 75rpx;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.broadcastList image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 15rpx;
+  border-radius: 100%;
+}
+
+.broadcastList text{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.hide{
+  display: none;
+}
+
+.list{
+  overflow: hidden;
+  _height: 0;
+  width: 100%;
+}
+
+.listBox{
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  background: #fff;
+}
+
+.listBox image{
+  width: 100%;
+  height: 320rpx;
+}
+
+.listName,.listData{
+  padding: 0 20rpx;
+}
+
+.listName{
+  margin: 20rpx 0;
+  font-size: 32rpx;
+  color: #ccc;
+}
+
+.listData{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listData_money{
+  font-size: 36rpx;
+  color: orangered;
+}
+
+.go{
+  align-items: center;
+  font-size: 26rpx;
+  color: #ccc;
+}
+
+.go text{
+  margin-left: 20rpx;
+  padding: 8rpx 16rpx;
+  background: orangered;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.rule{
+  position: absolute;
+  top: 5rpx;
+  right: 10rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+}
+
+.explain {
+  overflow-y: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  width: 80%;
+  max-height: 660rpx;
+  padding: 15rpx;
+  background: #fff;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 15rpx;
+}
+
+.explainTit{
+  position: relative;
+  padding-bottom: 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.close2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.explainText{
+  margin-top: 10rpx;
+  line-break: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+}

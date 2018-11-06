@@ -1,0 +1,227 @@
+page {
+  background: #fff;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.tab {
+  height: 87rpx;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab_li {
+  position: relative;
+  flex: 1;
+  height: 87rpx;
+  line-height: 87rpx;
+  text-align: center;
+}
+
+.tab_sele {
+  color: #f23814;
+}
+
+.xian {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 128rpx;
+  margin-left: -64rpx;
+  border-bottom: 4rpx solid #f23814;
+}
+
+.tab_sele .xian {
+  display: block;
+}
+
+.voucher {
+  overflow-y: auto;
+  padding: 20rpx 20rpx 166rpx;
+}
+
+.voucherBox {
+  margin-bottom: 20rpx;
+}
+
+.voucherIcon {
+  position: relative;
+  width: 212rpx;
+  height: 218rpx;
+}
+
+.vouIcon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.voucherIconText {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  color: #fff;
+}
+
+.voucherIconText view {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+}
+
+.voucherIconText view text {
+  font-size: 72rpx;
+}
+
+.voucherIconText .vou_ms {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+
+.voucher_content {
+  position: relative;
+  top: 2rpx;
+  flex: 1;
+  width: 100%;
+}
+
+.voucher_content1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 215rpx;
+  padding: 20rpx;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  box-shadow: 0rpx 0rpx 10rpx #ccc;
+}
+
+.name {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  min-height: 80rpx;
+  margin-bottom: 8rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+
+.name text {
+  margin-right: 10rpx;
+  padding: 6rpx 10rpx;
+  border-radius: 0.213333rem;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.coupon0 {
+  background: #4bc489;
+}
+
+.coupon1 {
+  background: #ea8033;
+}
+
+.coupon2 {
+  background: #9b49c3;
+}
+
+.coupon3 {
+  background: #4d7ae8;
+}
+
+.coupon4 {
+  background: #ccc;
+}
+
+.overdue {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140rpx;
+  height: 164rpx;
+}
+
+.date {
+  min-height: 68rpx;
+  margin-bottom: 8rpx;
+  padding-bottom: 10rpx;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #4a4a4a;
+  border-bottom: 2rpx dashed #dedede;
+}
+
+.useBtn {
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.useClass0 {
+  color: #9b49c3;
+  border: 0.026667rem solid #9b49c3;
+}
+
+.useClass1 {
+  color: #4d7ae8;
+  border: 0.026667rem solid #4d7ae8;
+}
+
+.useClass2 {
+  color: #4bc489;
+  border: 0.026667rem solid #4bc489;
+}
+
+.useClass3 {
+  color: #ea8033;
+  border: 0.026667rem solid #ea8033;
+}
+
+.details {
+  flex: 1;
+  justify-content: flex-end;
+  margin-top: 10rpx;
+  align-items: center;
+  font-size: 20rpx;
+  color: #4a4a4a;
+}
+
+.details image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 20rpx;
+}
+
+.binding_voucher {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: #4a4a4a;
+  box-shadow: 5rpx 0 5rpx #ccc;
+}
+
+.binding_voucher image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}

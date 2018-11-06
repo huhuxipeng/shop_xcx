@@ -1,0 +1,30 @@
+<!--pages/orderlist/index.wxml-->
+<view class='rightBox'>
+  <ul class='list_wrap'>
+    <li wx:for="{{dataList}}" wx:key="index">
+      <view class='row between order_title'>
+        <image class='orderlistIcon' src="/static/images/shopcar/icon.png"></image>
+        <view class='flex'>{{item.order.comName}}</view>
+        <view class='gray'>></view>
+      </view>
+      <view class='bg_fa' wx:for="{{item.items}}" wx:for-item="o" wx:for-index="i" wx:key="i">
+        <view bindtap='orderDetail' data-id="{{item.id}}" class='row between'>
+          <image class='goods_img' mode='widthFix' src="{{o.goodsImage}}"></image>
+          <view class='flex_column justify_center goods_detail'>
+            <view class='goods_name'>{{o.goodsName}}</view>
+            <view class='gray'>规格：{{o.productSpec}}</view>
+          </view>
+          <view class='flex_column goods_prize'>
+            <view>￥{{o.price}}</view>
+            <view class='gray pri_line'>￥{{o.goodsPrice}}</view>
+            <view class='gray'>X{{o.buyCount}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='row'>
+        <a>{{item.type}}</a>
+        <a class="red">{{item.status}}</a>
+      </view>
+    </li>
+  </ul>
+</view>

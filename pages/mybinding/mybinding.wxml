@@ -1,0 +1,5 @@
+<view class="binding" id="binding">
+  <view class="tit">请输入正确的优惠码</view>
+  <input class="codeInput" bindinput='codeFun' type="text" placeholder="优惠码" />
+  <view class="receive" bindtap="receiveFun">立即领取</view>
+</view>

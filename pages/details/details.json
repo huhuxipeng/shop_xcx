@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "detail-tab": "../../components/detailTab/index",
+    "footer-buy": "../../components/footerBuy/index",
+    "couponDetail": "../../components/couponDetail/index",
+    "zan-popup": "../../dist/popup/index"
+  }
+}

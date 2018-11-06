@@ -1,0 +1,48 @@
+/* components/detailTab/index.wxss */
+.no_data{
+  width:100%;
+}
+rich-text{
+width:100%;
+overflow: hidden;padding: 5rpx;
+}
+.hehe{
+  width:100%;
+}
+.user{
+  width:44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  margin-right:6rpx;
+}
+.wrap{
+  background: white;
+  width:100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-bottom: 15rpx;
+}
+.row{
+  display: flex;
+  display: -webkit-flex;
+  font-size: 24rpx;
+  height: 44rpx;line-height: 44rpx;
+}
+.between{
+  justify-content: space-between;
+}
+.flex{
+    display: flex;
+  display: -webkit-flex;
+}
+.flex_center {
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.appraiseImage{
+  width: 222rpx;
+  max-width: 333rpx;
+}

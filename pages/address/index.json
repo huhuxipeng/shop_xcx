@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "收货地址",
+  "usingComponents": {
+    "zan-toast": "../../dist/toast/index",
+    "zan-checkbox": "../../dist/checkbox/index"
+  }
+}
